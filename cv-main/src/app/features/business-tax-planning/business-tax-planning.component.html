@@ -1,0 +1,163 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <nav class="breadcrumb">
+        <a routerLink="/business">Business Services</a>
+        <span class="separator">›</span>
+        <span>Tax Planning</span>
+      </nav>
+
+      <h1>Strategic Tax Planning for Small to Medium Businesses</h1>
+      <p class="hero-subtitle">
+        Effective tax planning isn't just about saving money — it's about
+        building a stronger, more sustainable business. At MNA Accounting LTD,
+        we help small to medium businesses optimise their tax position with
+        proactive, personalised strategies that support long-term growth.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What We Offer</h2>
+      <p class="section-subtitle">
+        Strategic tax planning services to optimize your business tax position
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <div class="service-icon">{{ service.icon }}</div>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Planning Areas Section -->
+<section class="planning-areas-section">
+  <div class="container">
+    <h2>Key Tax Planning Areas</h2>
+    <p class="section-subtitle">
+      Comprehensive tax strategies across all business taxes
+    </p>
+
+    <div class="planning-areas-grid">
+      <div class="planning-area-card" *ngFor="let area of planningAreas">
+        <div class="area-icon">{{ area.icon }}</div>
+        <h3>{{ area.title }}</h3>
+        <p>{{ area.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tax Planning Process Section -->
+<section class="process-section">
+  <div class="container">
+    <h2>Our Tax Planning Process</h2>
+    <p class="section-subtitle">
+      A structured approach to minimize your tax liability
+    </p>
+
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h3>Current Position Review</h3>
+          <p>
+            We analyze your existing tax position and identify opportunities
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h3>Strategy Development</h3>
+          <p>
+            We create a tailored tax strategy aligned with your business goals
+          </p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h3>Implementation</h3>
+          <p>We help implement the strategy and optimize your tax position</p>
+        </div>
+      </div>
+
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h3>Ongoing Monitoring</h3>
+          <p>Regular reviews to ensure your strategy remains effective</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-content">
+      <div class="benefits-text">
+        <h2>Why Choose MNA Accounting?</h2>
+        <ul class="benefits-list">
+          <li *ngFor="let benefit of benefits">
+            <span class="benefit-check">•</span>
+            <span>{{ benefit }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="benefits-visual">
+        <div class="highlight-card">
+          <div class="highlight-icon">🎯</div>
+          <h3>Strategic Planning</h3>
+          <p>
+            Proactive tax strategies that support your business growth and
+            profitability
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Plan Smarter with MNA Accounting</h2>
+      <p>
+        Let's build a tax strategy that works for your business.<br />
+        Book a free consultation or contact us today to get started.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Book Free Consultation</a>
+        <a routerLink="/contact" class="cta-secondary">Contact Us</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <span>07551 551717</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <span>info&#64;mnaaccounting.co.uk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

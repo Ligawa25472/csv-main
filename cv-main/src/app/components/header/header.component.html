@@ -1,0 +1,96 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-section">
+        <img src="mnalogo.jpeg" alt="MNA Accounting Ltd" class="logo" />
+        <div class="company-info">
+          <h1>MNA ACCOUNTING LTD</h1>
+          <p class="tagline">Expert qualified bookkeeping & accounting</p>
+        </div>
+      </div>
+
+      <nav class="nav-desktop">
+        <a routerLink="/home" routerLinkActive="active">Home</a>
+        <a routerLink="/about" routerLinkActive="active">About Us</a>
+        <div class="dropdown">
+          <a class="dropdown-toggle">Business Services</a>
+          <div class="dropdown-menu">
+            <a routerLink="/business/corporation-tax">Corporation Tax</a>
+            <a routerLink="/business/vat-returns">VAT Returns</a>
+            <a routerLink="/business/payroll-cis">Payroll & CIS</a>
+            <a routerLink="/business/bookkeeping">Bookkeeping</a>
+            <a routerLink="/business/year-end-accounts">Year End Accounts</a>
+            <a routerLink="/business/management-accounts"
+              >Management Accounts</a
+            >
+            <a routerLink="/business/tax-planning">Tax Planning</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a class="dropdown-toggle">Personal Services</a>
+          <div class="dropdown-menu">
+            <a routerLink="/personal/self-assessment">Self Assessment</a>
+            <a routerLink="/personal/capital-gains-tax">Capital Gains Tax</a>
+            <a routerLink="/personal/tax-planning">Tax Planning</a>
+            <a routerLink="/personal/cis">CIS</a>
+          </div>
+        </div>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
+      </nav>
+
+      <div class="header-cta">
+        <a href="tel:07551551717" class="phone-number">📞 07551551717</a>
+        <button class="mobile-menu-btn" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen" aria-controls="mobile-nav">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-overlay" *ngIf="isMenuOpen" (click)="closeMenu()" aria-hidden="true"></div>
+    <nav id="mobile-nav" class="nav-mobile" role="navigation" [class.active]="isMenuOpen" [attr.aria-hidden]="!isMenuOpen">
+      <div class="mobile-menu-header">
+        <span>Menu</span>
+        <button class="close-btn" (click)="closeMenu()">✕</button>
+      </div>
+      <a routerLink="/home" (click)="closeMenu()">Home</a>
+      <a routerLink="/about" (click)="closeMenu()">About Us</a>
+      <div class="mobile-section">
+        <span class="section-title">Business Services</span>
+        <a routerLink="/business/corporation-tax" (click)="closeMenu()"
+          >Corporation Tax</a
+        >
+        <a routerLink="/business/vat-returns" (click)="closeMenu()"
+          >VAT Returns</a
+        >
+        <a routerLink="/business/payroll-cis" (click)="closeMenu()"
+          >Payroll & CIS</a
+        >
+        <a routerLink="/business/bookkeeping" (click)="closeMenu()"
+          >Bookkeeping</a
+        >
+        <a routerLink="/business/year-end-accounts" (click)="closeMenu()"
+          >Year End Accounts</a
+        >
+        <a routerLink="/business/management-accounts" (click)="closeMenu()"
+          >Management Accounts</a
+        >
+        <a routerLink="/business/tax-planning" (click)="closeMenu()"
+          >Tax Planning</a
+        >
+      </div>
+      <div class="mobile-section">
+        <span class="section-title">Personal Services</span>
+        <a routerLink="/personal/self-assessment" (click)="closeMenu()"
+          >Self Assessment</a
+        >
+        <a routerLink="/personal/capital-gains-tax" (click)="closeMenu()"
+          >Capital Gains Tax</a
+        >
+        <a routerLink="/personal/tax-planning" (click)="closeMenu()"
+          >Tax Planning</a
+        >
+        <a routerLink="/personal/cis" (click)="closeMenu()">CIS</a>
+      </div>
+      <a routerLink="/contact" (click)="closeMenu()">Contact</a>
+    </nav>
+  </div>
+</header>

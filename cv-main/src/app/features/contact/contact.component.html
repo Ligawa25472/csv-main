@@ -1,0 +1,183 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Get In Touch</h1>
+      <p class="hero-subtitle">
+        Ready to streamline your business finances? Contact us today for a free
+        consultation and discover how we can help your business thrive.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Methods Section -->
+<section class="contact-methods-section">
+  <div class="container">
+    <div class="contact-methods-grid">
+      <div class="contact-method" *ngFor="let method of contactMethods">
+        <div class="contact-method-icon">{{ method.icon }}</div>
+        <div class="contact-method-info">
+          <h3 class="contact-method-label">{{ method.label }}</h3>
+          <div class="contact-method-value">
+            <a *ngIf="method.action" [href]="method.action">{{
+              method.value
+            }}</a>
+            <span *ngIf="!method.action">{{ method.value }}</span>
+          </div>
+          <p class="contact-method-description">{{ method.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Form Section -->
+<section class="contact-form-section">
+  <div class="container">
+    <div class="form-layout">
+      <div class="form-info">
+        <h2>Send Us a Message</h2>
+        <p>
+          Fill out the form below and we'll get back to you as soon as possible.
+          We're here to help with all your accounting needs.
+        </p>
+
+        <div class="response-time">
+          <div class="response-icon">⚡</div>
+          <div>
+            <strong>Quick Response</strong>
+            <p>We typically respond within 24 hours</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form
+          (ngSubmit)="onSubmit()"
+          #contactFormRef="ngForm"
+          class="contact-form"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                [(ngModel)]="contactForm.name"
+                required
+                placeholder="Your full name"
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                [(ngModel)]="contactForm.email"
+                required
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [(ngModel)]="contactForm.phone"
+              required
+              placeholder="Your phone number"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="message">How can we help you? *</label>
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="contactForm.message"
+              required
+              placeholder="Tell us about your accounting needs..."
+              rows="5"
+              class="form-textarea"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="submit-btn"
+            [disabled]="!isFormValid() || isSubmitting"
+            [class.loading]="isSubmitting"
+          >
+            <span *ngIf="!isSubmitting">Send Message</span>
+            <span *ngIf="isSubmitting">Sending...</span>
+          </button>
+
+          <div *ngIf="isSubmitted" class="success-message">
+            <div class="success-icon">✅</div>
+            <div>
+              <strong>Message Sent Successfully!</strong>
+              <p>Thank you for contacting us. We'll get back to you soon.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Media Section -->
+<section class="social-section">
+  <div class="container">
+    <h2>Follow Us</h2>
+    <p>
+      Stay connected with MNA Accounting on social media for updates and tips
+    </p>
+
+    <div class="social-links">
+      <a
+        *ngFor="let social of socialLinks"
+        [href]="social.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-link"
+      >
+        <div class="social-icon">{{ social.icon }}</div>
+        <div class="social-info">
+          <strong>{{ social.name }}</strong>
+          <span>{{ social.handle }}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Get Started?</h2>
+      <p>
+        Don't wait – take the first step towards better financial management for
+        your business.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary"
+          >📞 Call for Free Consultation</a
+        >
+        <a href="mailto:info@mnaaccounting.co.uk" class="cta-secondary"
+          >✉️ Email Us</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
