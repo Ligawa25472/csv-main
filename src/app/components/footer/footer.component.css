@@ -46,9 +46,34 @@
   letter-spacing: 0.02em;
 }
 
+.footer-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--spacing-3);
+}
+
+.footer-gallery figure {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-base);
+}
+
+.footer-gallery img:hover {
+  transform: scale(1.03);
+}
+
 .footer-blurb {
-  max-width: 480px;
-  color: rgba(255, 255, 255, 0.85);
+  max-width: 420px;
+  color: rgba(255, 255, 255, 0.9);
   line-height: 1.8;
 }
 

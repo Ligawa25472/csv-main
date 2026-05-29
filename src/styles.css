@@ -121,6 +121,37 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+html,
+body,
+#root,
+app-root,
+main {
+  min-width: 0;
+}
+
+* {
+  min-width: 0;
+}
+
+body,
+button,
+input,
+textarea,
+select,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 body.no-scroll {
   overflow: hidden;
 }
