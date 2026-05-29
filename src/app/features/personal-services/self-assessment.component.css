@@ -1,0 +1,88 @@
+.page-body {
+  padding: 4rem 0 6rem;
+}
+
+.page-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: 2rem;
+}
+
+@media (max-width: 840px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-block {
+  margin-top: 2rem;
+}
+
+.feature-block h3 {
+  margin-bottom: 1rem;
+}
+
+.feature-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.feature-block li {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  line-height: 1.7;
+}
+
+.page-aside {
+  position: relative;
+}
+
+.aside-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.aside-card h3 {
+  margin-top: 0;
+}
+
+.aside-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.aside-card li {
+  color: var(--body);
+  line-height: 1.75;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.95rem 1.3rem;
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--brand-700);
+}

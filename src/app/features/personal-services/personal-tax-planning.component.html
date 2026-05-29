@@ -1,0 +1,58 @@
+<section class="hero">
+  <div class="container">
+    <div class="bg-image bg-image--cover" style="background-image: url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1343008663-612x612.jpg');"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Personal Tax Planning</p>
+      <h1>Build a smarter personal tax position with expert guidance</h1>
+      <p class="hero-subtitle">
+        Our personal tax planning service helps you protect income, maximise allowances, and prepare for life changes with confidence.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Speak to our team</a>
+        <a routerLink="/contact" class="cta-secondary">Request advice</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="container">
+    <div class="page-grid">
+      <div>
+        <h2>Plan your personal tax year with clarity</h2>
+        <p>
+          We combine experienced tax knowledge with easy-to-follow advice so you can make the most of reliefs, allowances and efficient timing for income and savings.
+        </p>
+        <div class="feature-block">
+          <h3>How we support you</h3>
+          <ul>
+            <li *ngFor="let step of steps">{{ step }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="page-aside">
+        <div class="aside-card">
+          <h3>Personal tax planning includes</h3>
+          <ul>
+            <li>Income assessment and allowance checks</li>
+            <li>Dividend and pension planning</li>
+            <li>Capital gains and inheritance considerations</li>
+          </ul>
+          <a routerLink="/contact" class="btn btn-primary">Start planning</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="feature-section">
+      <h3>Benefit from proactive advice</h3>
+      <div class="feature-grid">
+        <article class="feature-card" *ngFor="let benefit of benefits">
+          <div class="feature-mark"><app-icon name="check"></app-icon></div>
+          <p>{{ benefit }}</p>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>

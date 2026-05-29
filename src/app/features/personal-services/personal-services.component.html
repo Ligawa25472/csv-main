@@ -1,0 +1,80 @@
+<section class="hero">
+  <div class="container">
+    <div class="bg-image bg-image--cover" style="background-image: url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1229894730-612x612.jpg');"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Personal Services</p>
+      <h1>Personal tax support for individuals, contractors and investors</h1>
+      <p class="hero-subtitle">
+        Our personal services are built to help you manage HMRC paperwork, optimise your position, and keep your tax affairs professional and stress-free.
+      </p>
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="cta-primary">Get expert help</a>
+        <a routerLink="/personal/self-assessment" class="cta-secondary">Explore services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Personal service pages</h2>
+      <p>
+        Each service page is designed with a mobile-first layout and clear actions so users can quickly find guidance, supporting features and next steps.
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card" *ngFor="let service of services">
+        <div class="service-header">
+          <div class="service-icon"><app-icon [name]="service.icon" class="icon-large"></app-icon></div>
+          <h3 class="service-title">{{ service.title }}</h3>
+        </div>
+
+        <p class="service-description">{{ service.description }}</p>
+
+        <ul class="feature-list">
+          <li *ngFor="let feature of service.features">
+            <span class="feature-check"><app-icon name="check"></app-icon></span>
+            <span>{{ feature }}</span>
+          </li>
+        </ul>
+
+        <a [routerLink]="service.link" class="service-link">Learn more →</a>
+      </article>
+    </div>
+
+    <section class="benefits-section">
+      <div class="benefits-card">
+        <h2>Designed for all devices</h2>
+        <p>
+          These pages follow the site’s existing design language with readable text, clean spacing and stacked sections for mobile users. Every service page loads quickly and keeps the content easy to scan.
+        </p>
+        <div class="benefits-list">
+          <div class="benefit-item">
+            <div class="benefit-icon"><app-icon name="star"></app-icon></div>
+            <div>
+              <h3>Mobile-first clarity</h3>
+              <p>Text, buttons and sections are sized for phones and tablets as well as desktop screens.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><app-icon name="shield"></app-icon></div>
+            <div>
+              <h3>Trusted presentation</h3>
+              <p>Professional layouts, simple navigation and strong headings make each service page look polished.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon"><app-icon name="check"></app-icon></div>
+            <div>
+              <h3>Fast access</h3>
+              <p>Direct route links from the header, footer and overview page make the new personal services easy to find.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>

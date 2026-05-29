@@ -1,0 +1,58 @@
+<section class="hero">
+  <div class="container">
+    <div class="bg-image bg-image--cover" style="background-image: url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1263182301-612x612.jpg');"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Self Assessment</p>
+      <h1>Fast, accurate self assessment support from experienced accountants</h1>
+      <p class="hero-subtitle">
+        We make income tax filing straightforward for contractors, freelancers, rental owners and sole traders, helping you avoid penalties and keep your records in order.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Call to start now</a>
+        <a routerLink="/contact" class="cta-secondary">Book a free review</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="container">
+    <div class="page-grid">
+      <div>
+        <h2>Self assessment made simple</h2>
+        <p>
+          Our self assessment service is tailored for individuals and small business owners who want a professional tax return process without the stress. We review your income, expenses and tax position so you can file with confidence.
+        </p>
+        <div class="feature-block">
+          <h3>What we include</h3>
+          <ul>
+            <li *ngFor="let feature of features">{{ feature }}</li>
+          </ul>
+        </div>
+
+        <div class="feature-block">
+          <h3>Why clients choose this service</h3>
+          <ul>
+            <li *ngFor="let outcome of outcomes">{{ outcome }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="page-aside">
+        <div class="aside-card">
+          <h3>What to expect</h3>
+          <p>
+            Clear guidance, secure document review and a friendly service that keeps personal tax filing compliant and timely.
+          </p>
+          <ul>
+            <li>Confirm your income and allowable expenses</li>
+            <li>Prepare and submit your return</li>
+            <li>Answer HMRC queries on your behalf</li>
+          </ul>
+          <a routerLink="/contact" class="btn btn-primary">Arrange a call</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

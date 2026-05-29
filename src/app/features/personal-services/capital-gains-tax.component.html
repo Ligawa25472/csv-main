@@ -1,0 +1,57 @@
+<section class="hero">
+  <div class="container">
+    <div class="bg-image bg-image--cover" style="background-image: url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1321433268-612x612.jpg');"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Capital Gains Tax</p>
+      <h1>Mitigate personal CGT with precise planning and reliable reporting</h1>
+      <p class="hero-subtitle">
+        We help you understand the tax implications of property and investment disposals, claim every available relief and make your return with confidence.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Talk to an adviser</a>
+        <a routerLink="/contact" class="cta-secondary">Schedule a review</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="container">
+    <div class="info-grid">
+      <div>
+        <h2>Structured support for capital gains, tailored to individuals</h2>
+        <p>
+          From sale of property to disposal of investments, we assess your position and provide step-by-step guidance so you make informed decisions and avoid HMRC surprises.
+        </p>
+      </div>
+
+      <div class="info-panel">
+        <h3>We help with</h3>
+        <ul>
+          <li *ngFor="let point of points">{{ point }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="feature-section">
+      <h3>Why this service matters</h3>
+      <div class="feature-grid">
+        <article class="feature-card" *ngFor="let benefit of benefits">
+          <div class="feature-mark"><app-icon name="check"></app-icon></div>
+          <p>{{ benefit }}</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="cta-panel">
+      <div>
+        <h3>Ready to review your gains?</h3>
+        <p>
+          We make CGT manageable by turning complex calculations into clear, practical advice that fits your personal finances.
+        </p>
+      </div>
+      <a routerLink="/contact" class="btn btn-primary">Start your review</a>
+    </div>
+  </div>
+</section>

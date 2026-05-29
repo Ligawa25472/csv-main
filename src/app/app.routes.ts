@@ -13,12 +13,12 @@ import { YearEndAccountsComponent } from './features/year-end-accounts/year-end-
 import { ManagementAccountsComponent } from './features/management-accounts/management-accounts.component';
 import { BusinessTaxPlanningComponent } from './features/business-tax-planning/business-tax-planning.component';
 
-// Personal services components (to be created)
-// import { PersonalServicesComponent } from './features/personal-services/personal-services.component';
-// import { SelfAssessmentComponent } from './features/self-assessment/self-assessment.component';
-// import { CapitalGainsTaxComponent } from './features/capital-gains-tax/capital-gains-tax.component';
-// import { PersonalTaxPlanningComponent } from './features/personal-tax-planning/personal-tax-planning.component';
-// import { PersonalCisComponent } from './features/personal-cis/personal-cis.component';
+// Personal services components
+import { PersonalServicesComponent } from './features/personal-services/personal-services.component';
+import { SelfAssessmentComponent } from './features/personal-services/self-assessment.component';
+import { CapitalGainsTaxComponent } from './features/personal-services/capital-gains-tax.component';
+import { PersonalTaxPlanningComponent } from './features/personal-services/personal-tax-planning.component';
+import { PersonalCisComponent } from './features/personal-services/personal-cis.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -39,12 +39,12 @@ export const routes: Routes = [
   },
   { path: 'business/tax-planning', component: BusinessTaxPlanningComponent },
 
-  // Personal Services Routes (uncomment as you create components)
-  // { path: 'personal', component: PersonalServicesComponent },
-  // { path: 'personal/self-assessment', component: SelfAssessmentComponent },
-  // { path: 'personal/capital-gains-tax', component: CapitalGainsTaxComponent },
-  // { path: 'personal/tax-planning', component: PersonalTaxPlanningComponent },
-  // { path: 'personal/cis', component: PersonalCisComponent },
+  // Personal Services Routes
+  { path: 'personal', component: PersonalServicesComponent },
+  { path: 'personal/self-assessment', component: SelfAssessmentComponent },
+  { path: 'personal/capital-gains-tax', component: CapitalGainsTaxComponent },
+  { path: 'personal/tax-planning', component: PersonalTaxPlanningComponent },
+  { path: 'personal/cis', component: PersonalCisComponent },
 
   // Wildcard route - must be last
   { path: '**', redirectTo: '/home' },
