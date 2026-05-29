@@ -295,21 +295,25 @@ img, video {
 
 .service-card,
 .process-step,
-.highlight-card {
-  background: var(--white);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-8);
-  box-shadow: var(--shadow-sm);
+.highlight-card,
+.feature-card,
+.aside-card {
+  background: var(--white) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius-lg) !important;
+  padding: var(--spacing-8) !important;
+  box-shadow: var(--shadow-sm) !important;
   transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
 }
 
 .service-card:hover,
 .process-step:hover,
-.highlight-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--brand-100);
+.highlight-card:hover,
+.feature-card:hover,
+.aside-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--shadow-lg) !important;
+  border-color: var(--brand-100) !important;
 }
 
 .step-number {
@@ -1008,24 +1012,33 @@ li {
 
 .btn:active { transform: translateY(1px); }
 
-.btn-primary {
-  background: var(--brand);
-  color: var(--white);
-  box-shadow: var(--shadow-sm);
-}
-.btn-primary:hover {
-  background: var(--brand-dark);
-  box-shadow: var(--shadow);
-  color: var(--white);
+.btn-primary,
+.cta-primary {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark)) !important;
+  color: var(--white) !important;
+  box-shadow: var(--shadow-sm) !important;
+  border-color: transparent !important;
 }
 
-.btn-accent {
-  background: var(--accent);
-  color: var(--white);
+.btn-primary:hover,
+.cta-primary:hover {
+  background: linear-gradient(135deg, var(--brand-dark), var(--brand)) !important;
+  box-shadow: var(--shadow) !important;
+  color: var(--white) !important;
 }
-.btn-accent:hover {
-  background: var(--accent-dark);
-  color: var(--white);
+
+.btn-accent,
+.cta-secondary {
+  background: var(--white) !important;
+  color: var(--brand) !important;
+  border: 1px solid var(--line-strong) !important;
+}
+
+.btn-accent:hover,
+.cta-secondary:hover {
+  border-color: var(--brand) !important;
+  background: var(--brand-50) !important;
+  color: var(--brand-dark) !important;
 }
 
 .btn-secondary {
@@ -1052,7 +1065,12 @@ li {
 .btn-lg { padding: 1.1rem 2rem; font-size: 1.05rem; }
 .btn-block { width: 100%; }
 
-.btn svg { width: 20px; height: 20px; }
+.btn svg,
+.cta-primary svg,
+.cta-secondary svg {
+  width: 20px;
+  height: 20px;
+}
 
 /* ---------- Cards ---------- */
 .card {
@@ -1085,8 +1103,27 @@ li {
 .icon-chip svg { width: 26px; height: 26px; }
 .icon-chip--accent { background: var(--accent-50); color: var(--accent-dark); }
 
-/* Inline svg sizing for app-icon */
-app-icon { display: inline-flex; line-height: 0; }
+/* Icon sizing and reusable icon styles */
+app-icon {
+  display: inline-flex;
+  line-height: 0;
+  vertical-align: middle;
+}
+
+.icon-small svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.icon-medium svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.icon-large svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
 
 /* ---------- Grids ---------- */
 .grid {

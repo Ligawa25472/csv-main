@@ -114,17 +114,26 @@ const ICONS: IconPaths = {
   template: `<span
     class="icon-svg"
     [innerHTML]="svg"
-    [attr.aria-hidden]="true"
+    aria-hidden="true"
   ></span>`,
   styles: [
     `
-      .icon-svg {
+      :host {
         display: inline-flex;
         line-height: 0;
+        vertical-align: middle;
       }
+
+      .icon-svg {
+        display: inline-flex;
+        width: 1em;
+        height: 1em;
+      }
+
       :host ::ng-deep svg {
         width: 1em;
         height: 1em;
+        stroke-width: 2;
       }
     `,
   ],
