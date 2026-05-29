@@ -1,1 +1,327 @@
-/* You can add global styles to this file, and also import other style files */
+/* ============================================================
+   MNA Accounting — Global Design System
+   ============================================================ */
+
+/* ---------- Design Tokens ---------- */
+:root {
+  /* Brand */
+  --brand: #0f4c75;
+  --brand-dark: #0a3354;
+  --brand-light: #1d6fa5;
+  --brand-50: #eef6fb;
+  --brand-100: #d7e9f5;
+
+  /* Accent (used sparingly) */
+  --accent: #0f9e8e;
+  --accent-dark: #0c7f72;
+  --accent-50: #e6f6f4;
+
+  /* Neutrals */
+  --ink: #0f1c2e;
+  --body: #475569;
+  --muted: #64748b;
+  --line: #e2e8f0;
+  --line-strong: #cbd5e1;
+  --surface: #f6f9fc;
+  --surface-2: #eef2f7;
+  --white: #ffffff;
+
+  /* Status */
+  --success: #15803d;
+  --success-bg: #ecfdf3;
+  --danger: #b42318;
+  --danger-bg: #fef3f2;
+
+  /* Effects */
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 1px 2px rgba(15, 28, 46, 0.06);
+  --shadow: 0 8px 24px rgba(15, 28, 46, 0.08);
+  --shadow-lg: 0 24px 60px rgba(15, 28, 46, 0.14);
+  --ring: 0 0 0 4px rgba(15, 76, 117, 0.16);
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Plus Jakarta Sans", var(--font-sans);
+
+  /* Layout */
+  --container: 1200px;
+}
+
+/* ---------- Reset / Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--body);
+  background: var(--white);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  line-height: 1.15;
+  margin: 0 0 0.5em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--ring);
+  border-radius: 6px;
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 3.5rem 0;
+}
+
+@media (min-width: 768px) {
+  .section { padding: 5rem 0; }
+}
+
+.section--tight { padding: 2.5rem 0; }
+.bg-surface { background: var(--surface); }
+.bg-brand { background: var(--brand); }
+
+/* Section heading block */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 0.75rem;
+}
+
+.section-head {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.section-head h2 {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-bottom: 0.75rem;
+}
+
+.section-head p {
+  font-size: 1.075rem;
+  color: var(--muted);
+  margin: 0;
+}
+
+.text-center { text-align: center; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0.95rem 1.6rem;
+  border-radius: 999px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease,
+    color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--brand);
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+.btn-primary:hover {
+  background: var(--brand-dark);
+  box-shadow: var(--shadow);
+  color: var(--white);
+}
+
+.btn-accent {
+  background: var(--accent);
+  color: var(--white);
+}
+.btn-accent:hover {
+  background: var(--accent-dark);
+  color: var(--white);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--brand);
+  border-color: var(--line-strong);
+}
+.btn-secondary:hover {
+  border-color: var(--brand);
+  background: var(--brand-50);
+  color: var(--brand-dark);
+}
+
+.btn-ghost-light {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.btn-ghost-light:hover {
+  background: rgba(255, 255, 255, 0.22);
+  color: var(--white);
+}
+
+.btn-lg { padding: 1.1rem 2rem; font-size: 1.05rem; }
+.btn-block { width: 100%; }
+
+.btn svg { width: 20px; height: 20px; }
+
+/* ---------- Cards ---------- */
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card--hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: var(--brand-100);
+}
+
+/* Icon chip */
+.icon-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: var(--brand-50);
+  color: var(--brand);
+  margin-bottom: 1.1rem;
+}
+.icon-chip svg { width: 26px; height: 26px; }
+.icon-chip--accent { background: var(--accent-50); color: var(--accent-dark); }
+
+/* Inline svg sizing for app-icon */
+app-icon { display: inline-flex; line-height: 0; }
+
+/* ---------- Grids ---------- */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.grid-2 { grid-template-columns: 1fr; }
+.grid-3 { grid-template-columns: 1fr; }
+.grid-4 { grid-template-columns: 1fr; }
+
+@media (min-width: 640px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ---------- Pills / badges ---------- */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ---------- Prose (privacy / terms) ---------- */
+.prose { max-width: 760px; margin: 0 auto; }
+.prose h2 { font-size: 1.5rem; margin-top: 2.25rem; }
+.prose h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+.prose p, .prose li { color: var(--body); }
+.prose ul { padding-left: 1.25rem; margin-bottom: 1rem; list-style: disc; }
+.prose li { margin-bottom: 0.4rem; }
+.prose a { color: var(--brand); text-decoration: underline; }
+
+/* ---------- Utilities ---------- */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  background: var(--brand);
+  color: var(--white);
+  padding: 0.75rem 1rem;
+  border-radius: 0 0 8px 0;
+  z-index: 2000;
+}
+.skip-link:focus { left: 0; }
