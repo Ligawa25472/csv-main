@@ -13,7 +13,7 @@ import {
   standalone: true,
   imports: [CommonModule, RouterModule, IconComponent],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css',
+  styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent {
   site = SITE;
