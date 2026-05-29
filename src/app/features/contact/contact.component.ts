@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, IconComponent],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })
@@ -59,19 +60,19 @@ export class ContactComponent {
   socialLinks = [
     {
       name: 'LinkedIn',
-      icon: '💼',
+      icon: 'linkedin',
       url: 'https://linkedin.com/company/mna-accounting-ltd',
       handle: 'MNA Accounting LTD',
     },
     {
       name: 'Instagram',
-      icon: 'camera',
+      icon: 'instagram',
       url: 'https://instagram.com/mnaaccounting',
       handle: '@MNA accounting LTD',
     },
     {
       name: 'Facebook',
-      icon: 'book',
+      icon: 'facebook',
       url: 'https://facebook.com/mnaaccounting',
       handle: 'MNA Accounting LTD',
     },
