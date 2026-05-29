@@ -371,6 +371,26 @@ img, video {
   align-items: stretch;
 }
 
+.cta-section.cta-dark .cta-content {
+  background: transparent;
+  box-shadow: none;
+}
+
+.cta-section.cta-dark .cta-content h2,
+.cta-section.cta-dark .cta-content p,
+.cta-section.cta-dark .contact-item,
+.cta-section.cta-dark .contact-item span {
+  color: white;
+}
+
+.cta-section.cta-dark .cta-secondary {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.cta-section.cta-dark .cta-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .cta-copy {
   display: grid;
   gap: var(--spacing-5);
