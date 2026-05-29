@@ -1,0 +1,103 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Brand + NAP -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="mnalogo.jpeg" alt="MNA Accounting Ltd logo" />
+          <span>MNA Accounting Ltd</span>
+        </div>
+        <p class="footer-blurb">
+          Affordable, expert-qualified accounting for businesses and individuals
+          across Birmingham, the West Midlands and remotely UK-wide.
+        </p>
+
+        <address class="footer-nap">
+          <a [href]="site.phoneHref" class="nap-row">
+            <app-icon name="phone"></app-icon>
+            <span>{{ site.phone }}</span>
+          </a>
+          <a [href]="'mailto:' + site.email" class="nap-row">
+            <app-icon name="mail"></app-icon>
+            <span>{{ site.email }}</span>
+          </a>
+          <span class="nap-row">
+            <app-icon name="mapPin"></app-icon>
+            <span>
+              {{ site.address.street }}, {{ site.address.locality }},
+              {{ site.address.region }} {{ site.address.postalCode }}
+            </span>
+          </span>
+          <span class="nap-row">
+            <app-icon name="clock"></app-icon>
+            <span>{{ site.openingHours }}</span>
+          </span>
+        </address>
+
+        <div class="footer-social">
+          <a [href]="site.social.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <app-icon name="linkedin"></app-icon>
+          </a>
+          <a [href]="site.social.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <app-icon name="instagram"></app-icon>
+          </a>
+          <a [href]="site.social.facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <app-icon name="facebook"></app-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Business services -->
+      <nav class="footer-col" aria-label="Business services">
+        <h3>Business Services</h3>
+        <ul>
+          <li *ngFor="let s of businessServices">
+            <a [routerLink]="s.link">{{ s.name }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Personal services -->
+      <nav class="footer-col" aria-label="Personal services">
+        <h3>Personal Services</h3>
+        <ul>
+          <li *ngFor="let s of personalServices">
+            <a [routerLink]="s.link">{{ s.name }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Company -->
+      <nav class="footer-col" aria-label="Company">
+        <h3>Company</h3>
+        <ul>
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/business">All Services</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+          <li><a routerLink="/terms">Terms of Service</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-cta">
+      <div>
+        <strong>Ready to lower your accounting costs?</strong>
+        <span>Book a free, no-obligation consultation today.</span>
+      </div>
+      <a routerLink="/contact" class="btn btn-accent">
+        Get your free quote
+        <app-icon name="arrowRight"></app-icon>
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
+      <p class="footer-legal-links">
+        <a routerLink="/privacy-policy">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <a routerLink="/terms">Terms</a>
+      </p>
+    </div>
+  </div>
+</footer>
