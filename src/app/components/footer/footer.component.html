@@ -12,43 +12,17 @@
           across Birmingham, the West Midlands and remotely UK-wide.
         </p>
 
-        <div class="footer-gallery" aria-label="Accounting and finance imagery">
-        </div>
         <div class="footer-info" aria-label="Company highlights">
           <p class="footer-blurb-small">
-            MNA Accounting Ltd — Qualified accountants delivering clear, fixed-fee
-            services for small & medium businesses. Remote-first, locally trusted.
+            MNA Accounting Ltd delivers fixed-fee accounting, tax and advisory
+            services with clear reporting and a trusted local team.
           </p>
 
           <ul class="footer-trust">
-            <li><app-icon name="check" class="icon-small"></app-icon> Transparent fixed pricing</li>
-            <li><app-icon name="handshake" class="icon-small"></app-icon> Personal account manager</li>
-            <li><app-icon name="sparkles" class="icon-small"></app-icon> Cloud accounting specialists</li>
+            <li><app-icon name="check" class="icon-small"></app-icon> Transparent pricing</li>
+            <li><app-icon name="handshake" class="icon-small"></app-icon> Dedicated account manager</li>
+            <li><app-icon name="sparkles" class="icon-small"></app-icon> Cloud accounting expertise</li>
           </ul>
-        </div>
-            <img src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1129810557-612x612.jpg" alt="Financial planning artwork" />
-          </figure>
-          <figure>
-            <img src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1311977471-612x612.jpg" alt="Office teamwork and financial reports" />
-          </figure>
-          <figure>
-            <img src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1330234595-612x612.jpg" alt="Accounting review with calculator and laptop" />
-          </figure>
-          <figure>
-            <img src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1338373163-612x612.jpg" alt="Financial services overview" />
-          </figure>
-          <figure>
-            <img src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1364223865-612x612.jpg" alt="Business finance imagery" />
-          </figure>
-          <figure>
-            <img src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1406088800-612x612.jpg" alt="Accounting documents on desk" />
-          </figure>
-          <figure>
-            <img src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-2164504974-612x612.jpg" alt="Professional accounting team" />
-          </figure>
-          <figure>
-            <img src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-941729686-612x612.jpg" alt="Financial analytics and charts" />
-          </figure>
         </div>
 
         <address class="footer-nap">
@@ -119,15 +93,27 @@
       </nav>
     </div>
 
-    <div class="footer-cta">
-      <div>
-        <strong>Ready to lower your accounting costs?</strong>
-        <span>Book a free, no-obligation consultation today.</span>
+    <div class="footer-support">
+      <div class="footer-contact-cards">
+        <div class="contact-card">
+          <span class="card-label">Speak with us</span>
+          <a [href]="site.phoneHref" class="card-action">{{ site.phone }}</a>
+        </div>
+        <div class="contact-card">
+          <span class="card-label">Send a message</span>
+          <a [href]="'mailto:' + site.email" class="card-action">{{ site.email }}</a>
+        </div>
       </div>
-      <a routerLink="/contact" class="btn btn-accent">
-        Get your free quote
-        <app-icon name="arrowRight"></app-icon>
-      </a>
+      <div class="footer-cta-panel">
+        <p class="footer-cta-title">Ready to simplify your business finances?</p>
+        <p class="footer-cta-copy">
+          Speak to our qualified accountants today and start with a clear plan.
+        </p>
+        <a routerLink="/contact" class="btn btn-primary btn-block">
+          Request a free consultation
+          <app-icon name="arrowRight"></app-icon>
+        </a>
+      </div>
     </div>
 
     <div class="footer-bottom">
