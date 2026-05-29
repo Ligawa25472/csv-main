@@ -1,36 +1,37 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-business-tax-planning',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, IconComponent],
   templateUrl: './business-tax-planning.component.html',
   styleUrl: './business-tax-planning.component.css',
 })
 export class BusinessTaxPlanningComponent {
   services = [
     {
-      icon: '🔍',
+      icon: 'search',
       title: 'Tax Efficiency Reviews',
       description:
         'We assess your current tax setup and identify opportunities to reduce liabilities and improve cash flow.',
     },
     {
-      icon: '📋',
+      icon: 'fileText',
       title: 'Advice on Allowable Expenses & Reliefs',
       description:
         "We ensure you're claiming all eligible deductions, reliefs, and allowances to minimise your tax burden.",
     },
     {
-      icon: '💰',
+      icon: 'pound',
       title: 'Planning for Dividends & Director Salaries',
       description:
         'We help you structure income in the most tax-efficient way, balancing salary, dividends, and benefits.',
     },
     {
-      icon: '🚀',
+      icon: 'rocket',
       title: 'Support for Business Restructuring & Growth',
       description:
         "Whether you're expanding, merging, or changing your business model, we provide tax guidance to support your plans.",
@@ -45,13 +46,13 @@ export class BusinessTaxPlanningComponent {
 
   planningAreas = [
     {
-      icon: '🏢',
+      icon: 'building',
       title: 'Corporation Tax',
       description:
         'Minimize corporation tax liability through strategic planning and allowable deductions',
     },
     {
-      icon: '🧾',
+      icon: 'receipt',
       title: 'VAT Planning',
       description:
         'Optimize VAT position and cash flow through scheme selection and timing strategies',
@@ -63,7 +64,7 @@ export class BusinessTaxPlanningComponent {
         'Structure remuneration packages efficiently to minimize PAYE and NI contributions',
     },
     {
-      icon: '📈',
+      icon: 'trending',
       title: 'Capital Allowances',
       description:
         'Maximize capital allowances and reliefs on business assets and equipment',

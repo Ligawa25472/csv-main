@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-business-services',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, IconComponent],
   templateUrl: './business-services.component.html',
   styleUrl: './business-services.component.css',
 })
 export class BusinessServicesComponent {
   services = [
     {
-      icon: '🏢',
+      icon: 'building',
       title: 'Corporation Tax',
       description:
         'Proactive and personalised Corporation Tax services designed to keep your business compliant and reduce your tax liability.',
@@ -25,7 +26,7 @@ export class BusinessServicesComponent {
       link: '/business/corporation-tax',
     },
     {
-      icon: '🧾',
+      icon: 'receipt',
       title: 'VAT Returns',
       description:
         'Accurate, timely VAT support for businesses. We simplify the process and ensure compliance while helping you manage cash flow.',
@@ -38,7 +39,7 @@ export class BusinessServicesComponent {
       link: '/business/vat-returns',
     },
     {
-      icon: '💰',
+      icon: 'pound',
       title: 'Payroll & CIS',
       description:
         'Complete payroll solution ensuring your team is paid accurately, your business stays compliant, and operations run smoothly.',
@@ -51,7 +52,7 @@ export class BusinessServicesComponent {
       link: '/business/payroll-cis',
     },
     {
-      icon: '📚',
+      icon: 'book',
       title: 'Bookkeeping',
       description:
         'Reliable bookkeeping services to keep your business organised, compliant, and ready for growth.',
@@ -64,7 +65,7 @@ export class BusinessServicesComponent {
       link: '/business/bookkeeping',
     },
     {
-      icon: '📊',
+      icon: 'chart',
       title: 'Year End Accounts',
       description:
         'Accurate year-end accounts prepared with precision and clarity to keep you compliant and informed.',
@@ -77,7 +78,7 @@ export class BusinessServicesComponent {
       link: '/business/year-end-accounts',
     },
     {
-      icon: '📈',
+      icon: 'trending',
       title: 'Management Accounts',
       description:
         'Insightful management accounts for smarter business decisions with timely, tailored reports.',
@@ -90,7 +91,7 @@ export class BusinessServicesComponent {
       link: '/business/management-accounts',
     },
     {
-      icon: '🎯',
+      icon: 'target',
       title: 'Tax Planning',
       description:
         'Strategic tax planning to build a stronger, more sustainable business with proactive, personalised strategies.',

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, IconComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -28,41 +29,41 @@ export class HomeComponent implements OnInit {
 
   services = [
     {
-      icon: '📚',
+      icon: 'book',
       name: 'Bookkeeping',
       description:
         'Complete financial record management and transaction tracking for your business',
       link: '/business/bookkeeping',
     },
     {
-      icon: '📋',
+      icon: 'fileText',
       name: 'Self Assessment',
       description:
         'Personal and business tax return preparation and submission',
       link: '/personal/self-assessment',
     },
     {
-      icon: '💰',
+      icon: 'pound',
       name: 'Payroll & CIS',
       description:
         'Employee payment processing and Construction Industry Scheme management',
       link: '/business/payroll-cis',
     },
     {
-      icon: '🧾',
+      icon: 'receipt',
       name: 'VAT Returns',
       description:
         'VAT registration, calculations and timely submissions to HMRC',
       link: '/business/vat-returns',
     },
     {
-      icon: '📊',
+      icon: 'chart',
       name: 'Management Accounts',
       description: 'Financial reporting and business performance analysis',
       link: '/business/management-accounts',
     },
     {
-      icon: '📈',
+      icon: 'trending',
       name: 'Corporation Tax',
       description: 'Expert corporation tax services for limited companies',
       link: '/business/corporation-tax',
@@ -71,23 +72,23 @@ export class HomeComponent implements OnInit {
 
   benefits = [
     {
-      icon: '💷',
+      icon: 'pound',
       title: '40% Lower Fees',
       description: 'On average, we charge 40% less than other accountants',
     },
     {
-      icon: '🎯',
+      icon: 'target',
       title: 'Local Expertise',
       description:
         'Deep understanding of Birmingham and West Midlands business landscape',
     },
     {
-      icon: '📱',
+      icon: 'mobile',
       title: 'Remote Support',
       description: 'Full online accounting services available nationwide',
     },
     {
-      icon: '🤝',
+      icon: 'handshake',
       title: 'Personal Service',
       description: 'You always deal with someone who knows your business',
     },

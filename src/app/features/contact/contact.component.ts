@@ -65,13 +65,13 @@ export class ContactComponent {
     },
     {
       name: 'Instagram',
-      icon: '📷',
+      icon: 'camera',
       url: 'https://instagram.com/mnaaccounting',
       handle: '@MNA accounting LTD',
     },
     {
       name: 'Facebook',
-      icon: '📘',
+      icon: 'book',
       url: 'https://facebook.com/mnaaccounting',
       handle: 'MNA Accounting LTD',
     },
@@ -79,21 +79,21 @@ export class ContactComponent {
 
   contactMethods = [
     {
-      icon: '📞',
+      icon: 'phone',
       label: 'Call Us',
       value: '07551 551717',
       action: 'tel:07551551717',
       description: 'Speak directly with our team',
     },
     {
-      icon: '✉️',
+      icon: 'mail',
       label: 'Email Us',
       value: 'info@mnaaccounting.co.uk',
       action: 'mailto:info@mnaaccounting.co.uk',
       description: 'Send us a message anytime',
     },
     {
-      icon: '📍',
+      icon: 'mapPin',
       label: 'Location',
       value: 'Birmingham, UK',
       action: '',

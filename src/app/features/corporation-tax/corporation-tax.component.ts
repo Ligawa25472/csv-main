@@ -1,36 +1,37 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-corporation-tax',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, IconComponent],
   templateUrl: './corporation-tax.component.html',
   styleUrl: './corporation-tax.component.css',
 })
 export class CorporationTaxComponent {
   services = [
     {
-      icon: '📋',
+      icon: 'fileText',
       title: 'HMRC Registration Support',
       description:
         'We handle all the paperwork to register your business for Corporation Tax with HMRC.',
     },
     {
-      icon: '💰',
+      icon: 'pound',
       title: 'Accurate Profit Calculations',
       description:
         'After preparing your company accounts, we calculate your Corporation Tax liability using expert knowledge and up-to-date tax rules.',
     },
     {
-      icon: '🎯',
+      icon: 'target',
       title: 'Tax Reliefs & Allowable Expenses',
       description:
         'We ensure your business claims all eligible tax reliefs and expenses to minimise your tax bill.',
     },
     {
-      icon: '📊',
+      icon: 'chart',
       title: 'Proactive Tax Advice',
       description:
         "Beyond compliance, we offer strategic tax planning to help you pay only what's necessary — and nothing more.",
@@ -42,7 +43,7 @@ export class CorporationTaxComponent {
         'We notify you of upcoming Corporation Tax deadlines to help you avoid penalties and stay on track.',
     },
     {
-      icon: '💷',
+      icon: 'pound',
       title: 'Fixed Fees & Flexible Packages',
       description:
         'Our services are tailored to your business needs, with transparent pricing and no hidden costs.',

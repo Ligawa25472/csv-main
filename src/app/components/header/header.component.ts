@@ -1,11 +1,12 @@
 import { Component, OnDestroy } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, IconComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
 })

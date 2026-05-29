@@ -6,13 +6,14 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, IconComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css',
 })
@@ -21,23 +22,23 @@ export class AboutComponent implements AfterViewInit {
   dataToken = '92be7690-1180-46e4-bee7-5524ee38f2c3';
   values = [
     {
-      icon: '💷',
+      icon: 'pound',
       title: 'Affordability',
       description: 'Transparent pricing with no hidden fees.',
     },
     {
-      icon: '📈',
+      icon: 'trending',
       title: 'Growth-Focused Advice',
       description: 'We go beyond compliance to help you grow.',
     },
     {
-      icon: '🎯',
+      icon: 'target',
       title: 'Local Expertise',
       description:
         'Deep understanding of the West Midlands business landscape.',
     },
     {
-      icon: '🤝',
+      icon: 'handshake',
       title: 'Personal Service',
       description: "You'll always deal with someone who knows your business.",
     },
@@ -45,22 +46,22 @@ export class AboutComponent implements AfterViewInit {
 
   clientTypes = [
     {
-      icon: '🏢',
+      icon: 'building',
       title: 'Small to Medium Businesses',
       description: 'Complete accounting solutions for growing companies',
     },
     {
-      icon: '👔',
+      icon: 'tie',
       title: 'Sole Traders',
       description: 'Tailored services for individual business owners',
     },
     {
-      icon: '🔨',
+      icon: 'hammer',
       title: 'Contractors & Freelancers',
       description: 'Specialist support for independent professionals',
     },
     {
-      icon: '🚀',
+      icon: 'rocket',
       title: 'Startups & Growing Companies',
       description: 'Flexible services that scale with your business',
     },

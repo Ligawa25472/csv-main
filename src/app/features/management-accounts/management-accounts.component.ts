@@ -1,36 +1,37 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-management-accounts',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, IconComponent],
   templateUrl: './management-accounts.component.html',
   styleUrl: './management-accounts.component.css',
 })
 export class ManagementAccountsComponent {
   services = [
     {
-      icon: '📊',
+      icon: 'chart',
       title: 'Monthly or Quarterly Management Accounts',
       description:
         'Regular reporting tailored to your business needs, including profit and loss, balance sheets, and cash flow summaries.',
     },
     {
-      icon: '💡',
+      icon: 'lightbulb',
       title: 'Customised Financial Insights',
       description:
         'We highlight key trends, variances, and opportunities to help you stay in control of your finances.',
     },
     {
-      icon: '📈',
+      icon: 'trending',
       title: 'Budgeting & Forecasting Support',
       description:
         'We help you set realistic budgets and financial forecasts to guide your business strategy.',
     },
     {
-      icon: '🔍',
+      icon: 'search',
       title: 'Performance Reviews & Advisory',
       description:
         'We meet with you to review your numbers and provide practical advice to improve profitability and efficiency.',
@@ -50,7 +51,7 @@ export class ManagementAccountsComponent {
       ],
     },
     {
-      icon: '📋',
+      icon: 'fileText',
       title: 'Quarterly Reports',
       description:
         'Comprehensive quarterly reviews perfect for established businesses with stable operations',

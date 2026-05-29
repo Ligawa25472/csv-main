@@ -1,36 +1,37 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-year-end-accounts',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, IconComponent],
   templateUrl: './year-end-accounts.component.html',
   styleUrl: './year-end-accounts.component.css',
 })
 export class YearEndAccountsComponent {
   services = [
     {
-      icon: '📊',
+      icon: 'chart',
       title: 'Annual Financial Statement Preparation',
       description:
         'We will compile your profit and loss, balance sheet, and supporting notes in line with UK accounting standards.',
     },
     {
-      icon: '📋',
+      icon: 'fileText',
       title: 'HMRC & Companies House Submissions',
       description:
         'We will file your accounts and corporation tax return on time, avoiding penalties and ensuring full compliance.',
     },
     {
-      icon: '🏢',
+      icon: 'building',
       title: 'Tailored Support for Limited Companies & Sole Traders',
       description:
         "Whether you're incorporated or self-employed, we adapt our approach to suit your structure.",
     },
     {
-      icon: '💡',
+      icon: 'lightbulb',
       title: 'Clear Explanations & Guidance',
       description:
         'We will walk you through your accounts so you understand your numbers and what they mean for your business.',
@@ -39,7 +40,7 @@ export class YearEndAccountsComponent {
 
   accountTypes = [
     {
-      icon: '🏢',
+      icon: 'building',
       title: 'Limited Companies',
       description: 'Full statutory accounts preparation and filing',
       requirements: [
@@ -50,7 +51,7 @@ export class YearEndAccountsComponent {
       ],
     },
     {
-      icon: '👤',
+      icon: 'user',
       title: 'Sole Traders',
       description: 'Self-employment accounts for tax purposes',
       requirements: [

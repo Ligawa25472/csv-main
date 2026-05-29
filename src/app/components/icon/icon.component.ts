@@ -8,6 +8,30 @@ type IconPaths = { [key: string]: string };
  * Lightweight inline SVG icon set (stroke-based, currentColor).
  * Replaces emoji "icons" across the site for a professional, accessible look.
  */
+const EMOJI_ICON_MAP: IconPaths = {
+  '📞': 'phone',
+  '✉️': 'mail',
+  '📧': 'mail',
+  '📊': 'chart',
+  '📈': 'trending',
+  '📅': 'calendar',
+  '💼': 'briefcase',
+  '💰': 'pound',
+  '🎯': 'target',
+  '🧾': 'receipt',
+  '📚': 'book',
+  '💻': 'mobile',
+  '📱': 'mobile',
+  '⚡': 'sparkles',
+  '🤝': 'handshake',
+  '🏢': 'building',
+  '✅': 'check',
+  '💷': 'pound',
+  '📋': 'fileText',
+  '☰': 'menu',
+  '✕': 'close',
+};
+
 const ICONS: IconPaths = {
   // Services
   book: '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>',
@@ -68,6 +92,14 @@ const ICONS: IconPaths = {
     '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
   send: '<line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>',
   lock: '<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>',
+  bell: "<circle cx="12" cy="12" r="9"/><path d="M8 13a4 4 0 0 0 8 0c0-3.31-1.79-6-4-6s-4 2.69-4 6"/><path d="M9 17h6"/>",
+  search: "<circle cx="11" cy="11" r="6"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>",
+  lightbulb: "<path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a6 6 0 0 0-4 10c.82.85 1.67 1.6 2 3v1h4v-1c.33-1.4 1.18-2.15 2-3a6 6 0 0 0-4-10z"/>",
+  rocket: "<path d="M5 16.18 4 20l3.82-1 5.5-5.5"/><path d="M10 9a5 5 0 1 1 5 5"/><path d="M12 2l3 3"/><path d="M13 3 9 7"/>",
+  diamond: "<path d="M12 2 22 12 12 22 2 12 12 2"/><path d="M2 12h20"/>",
+  tie: "<path d="M12 2 15 9 12 14 9 9 12 2"/><path d="M12 14v8"/>",
+  hammer: "<path d="M2 22 10 14"/><path d="M16 8 22 2l2 2-6 6-3 3-6 6-2-2 6-6 3-3"/>",
+  camera: "<rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3"/><path d="M7 6h2"/>",
   sparkles:
     '<path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/>',
 };
@@ -109,7 +141,8 @@ export class IconComponent {
   constructor(private sanitizer: DomSanitizer) {}
 
   private render() {
-    const path = ICONS[this._name] || '';
+    const iconKey = EMOJI_ICON_MAP[this._name] || this._name;
+    const path = ICONS[iconKey] || '';
     const markup = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" focusable="false">${path}</svg>`;
     this.svg = this.sanitizer.bypassSecurityTrustHtml(markup);
   }
