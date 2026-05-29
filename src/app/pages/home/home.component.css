@@ -188,12 +188,11 @@
 
 .footer-cta-inner {
   display: grid;
-  grid-template-columns: 1.4fr 0.9fr;
+  grid-template-columns: 1fr auto;
   gap: var(--spacing-6);
-  align-items: stretch;
+  align-items: center;
   background: #ffffff;
   border-radius: var(--radius-xl);
-  border: 1px solid var(--line);
   padding: var(--spacing-8);
   box-shadow: var(--shadow-sm);
 }
@@ -204,10 +203,10 @@
 }
 
 .footer-cta-copy h2 {
-  font-size: clamp(2rem, 3vw, 2.6rem);
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
   margin: 0;
   color: var(--ink);
-  line-height: 1.12;
+  line-height: 1.18;
 }
 
 .footer-cta-copy .cta-eyebrow {
@@ -232,46 +231,56 @@
   width: min(100%, 420px);
 }
 
-.footer-cta-contacts {
+.footer-support-flat {
+  display: grid;
+  gap: var(--spacing-5);
+  background: transparent;
+  border: none;
+  padding-top: var(--spacing-6);
+}
+
+.footer-support-links {
   display: grid;
   gap: var(--spacing-4);
 }
 
-.contact-card {
-  display: grid;
-  grid-template-columns: auto 1fr;
+.footer-support-item {
+  display: flex;
   gap: var(--spacing-4);
   align-items: center;
-  padding: var(--spacing-5);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  background: var(--surface);
+  color: rgba(15, 28, 46, 0.94);
 }
 
-.contact-card a {
-  color: var(--brand-dark);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.card-label {
-  display: block;
-  margin-bottom: 0.15rem;
-  font-size: 0.8rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--brand);
-}
-
-.card-icon {
-  width: 44px;
-  height: 44px;
+.footer-support-icon {
+  width: 40px;
+  height: 40px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 14px;
-  background: var(--brand-100);
+  border-radius: 12px;
+  background: rgba(15, 76, 117, 0.08);
+  color: var(--brand);
+}
+
+.footer-support-label {
+  display: block;
+  margin-bottom: 0.1rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--brand-dark);
+}
+
+.footer-support-item a {
+  color: var(--ink);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer-support-button {
+  width: 100%;
+  max-width: 320px;
+  justify-self: start;
 }
 
 .btn-block {
@@ -287,7 +296,8 @@
     text-align: left;
   }
 
-  .cta-actions {
+  .cta-actions,
+  .footer-support-button {
     width: 100%;
   }
 }
@@ -541,40 +551,40 @@
 }
 
 .map-placeholder {
-  background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 100%);
-  color: var(--white);
-  padding: var(--spacing-12);
+  background: transparent;
+  padding: 0;
   border-radius: var(--radius-xl);
-  text-align: center;
   width: 100%;
   max-width: 340px;
-  box-shadow: var(--shadow-lg);
+  text-align: left;
+}
+
+.hero-visual {
   position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-xl);
   overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.decorative {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .map-placeholder::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-}
-
-.map-placeholder h3 {
-  font-size: clamp(3rem, 10vw, 4.5rem);
-  margin-bottom: var(--spacing-4);
-  position: relative;
-  z-index: 1;
+  display: none;
 }
 
 .map-placeholder p {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
-  position: relative;
-  z-index: 1;
+  margin: var(--spacing-5) 0 0;
+  color: var(--ink);
 }
 
 /* ========== CTA SECTION ========== */
