@@ -33,7 +33,7 @@
 
     <div class="services-grid">
       <div class="service-card" *ngFor="let service of services">
-        <div class="service-icon"><app-icon [name]="service.icon" class="icon-large"></app-icon></div>
+        <app-icon class="service-icon" [name]="service.icon"></app-icon>
         <h3 class="service-title">{{ service.title }}</h3>
         <p class="service-description">{{ service.description }}</p>
       </div>
@@ -52,7 +52,7 @@
     <div class="frequency-grid">
       <div class="frequency-card" *ngFor="let frequency of reportingFrequency">
         <div class="frequency-header">
-          <div class="frequency-icon">{{ frequency.icon }}</div>
+          <app-icon class="frequency-icon" [name]="frequency.icon"></app-icon>
           <div>
             <h3>{{ frequency.title }}</h3>
             <p>{{ frequency.description }}</p>
@@ -80,7 +80,7 @@
 
     <div class="reports-grid">
       <div class="report-card">
-        <div class="report-icon"><app-icon name="pound" class="icon-small"></app-icon></div>
+        <div class="report-icon">💰</div>
         <h3>Profit & Loss</h3>
         <p>Track revenue, expenses, and profitability trends over time</p>
       </div>
@@ -98,13 +98,13 @@
       </div>
 
       <div class="report-card">
-        <div class="report-icon"><app-icon name="chart" class="icon-small"></app-icon></div>
+        <div class="report-icon">📊</div>
         <h3>Budget vs Actual</h3>
         <p>Compare performance against planned targets</p>
       </div>
 
       <div class="report-card">
-        <div class="report-icon"><app-icon name="trending" class="icon-small"></app-icon></div>
+        <div class="report-icon">📈</div>
         <h3>KPI Dashboard</h3>
         <p>Key performance indicators specific to your business</p>
       </div>
@@ -134,7 +134,7 @@
 
       <div class="benefits-visual">
         <div class="highlight-card">
-          <div class="highlight-icon"></div>
+          <div class="highlight-icon">📊</div>
           <h3>Data-Driven Decisions</h3>
           <p>
             Make informed business decisions with regular, accurate management
@@ -163,11 +163,11 @@
 
       <div class="contact-info">
         <div class="contact-item">
-          <span class="contact-icon"><app-icon name="phone" class="icon-small"></app-icon></span>
+          <span class="contact-icon">📞</span>
           <span>07551 551717</span>
         </div>
         <div class="contact-item">
-          <span class="contact-icon"><app-icon name="mail" class="icon-small"></app-icon></span>
+          <span class="contact-icon">✉️</span>
           <span>info&#64;mnaaccounting.co.uk</span>
         </div>
       </div>

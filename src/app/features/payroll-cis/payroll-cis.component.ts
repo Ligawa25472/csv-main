@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-payroll-cis',
@@ -13,19 +13,19 @@ import { RouterModule } from '@angular/router';
 export class PayrollCisComponent {
   services = [
     {
-      icon: 'pound',
+      icon: 'calculator',
       title: 'Payroll Processing',
       description:
         'We manage weekly, fortnightly, or monthly payroll runs, ensuring your employees are paid correctly and on time.',
     },
     {
-      icon: 'chart',
+      icon: 'send',
       title: 'Real Time Information (RTI) Submissions',
       description:
         'We submit payroll data directly to HMRC, keeping your business compliant with all reporting obligations.',
     },
     {
-      icon: 'hardHat',
+      icon: 'shield',
       title: 'CIS Deductions & Reporting',
       description:
         'For contractors and subcontractors, we handle Construction Industry Scheme (CIS) deductions and file the necessary returns.',

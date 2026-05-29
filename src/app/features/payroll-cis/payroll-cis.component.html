@@ -31,7 +31,7 @@
 
     <div class="services-grid">
       <div class="service-card" *ngFor="let service of services">
-        <div class="service-icon"><app-icon [name]="service.icon" class="icon-large"></app-icon></div>
+        <app-icon class="service-icon" [name]="service.icon"></app-icon>
         <h3 class="service-title">{{ service.title }}</h3>
         <p class="service-description">{{ service.description }}</p>
       </div>
@@ -73,7 +73,7 @@
 
       <div class="cis-visual">
         <div class="info-card">
-          <div class="info-icon"><app-icon name="hardHat" class="icon-small"></app-icon></div>
+          <div class="info-icon">🏗️</div>
           <h3>CIS Specialists</h3>
           <p>Expert handling of Construction Industry Scheme requirements</p>
         </div>
@@ -87,7 +87,7 @@
   <div class="container">
     <div class="benefits-content">
       <div class="benefits-text">
-        <h2>Why Choose MNA Accounting?</h2>
+        <h2>💼 Why Choose MNA Accounting?</h2>
         <ul class="benefits-list">
           <li *ngFor="let benefit of benefits">
             <span class="benefit-check">•</span>
@@ -98,7 +98,7 @@
 
       <div class="benefits-visual">
         <div class="highlight-card">
-          <div class="highlight-icon"><app-icon name="sparkles" class="icon-small"></app-icon></div>
+          <div class="highlight-icon">⚡</div>
           <h3>Hassle-Free Payroll</h3>
           <p>
             Take the complexity out of payroll with our expert management
@@ -114,7 +114,7 @@
 <section class="cta-section">
   <div class="container">
     <div class="cta-content">
-      <h2> Let Us Handle Your Payroll</h2>
+      <h2>📞 Let Us Handle Your Payroll</h2>
       <p>
         Free up your time and reduce risk with our expert payroll services.<br />
         Book a free consultation or contact us today to get started.
@@ -122,18 +122,18 @@
 
       <div class="cta-buttons">
         <a href="tel:07551551717" class="cta-primary"
-          >Book Free Consultation</a
+          >📞 Book Free Consultation</a
         >
-        <a routerLink="/contact" class="cta-secondary">Contact Us</a>
+        <a routerLink="/contact" class="cta-secondary">📧 Contact Us</a>
       </div>
 
       <div class="contact-info">
         <div class="contact-item">
-          <span class="contact-icon"><app-icon name="phone" class="icon-small"></app-icon></span>
+          <span class="contact-icon">📞</span>
           <span>07551 551717</span>
         </div>
         <div class="contact-item">
-          <span class="contact-icon"><app-icon name="mail" class="icon-small"></app-icon></span>
+          <span class="contact-icon">✉️</span>
           <span>info&#64;mnaaccounting.co.uk</span>
         </div>
       </div>

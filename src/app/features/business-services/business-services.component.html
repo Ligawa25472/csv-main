@@ -1,9 +1,6 @@
-<p>business-services works!</p>
 <!-- Hero Section -->
 <section class="hero">
   <div class="container">
-    <div class="bg-image bg-image--cover" style="background-image: url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1364223865-612x612.jpg');"></div>
-    <div class="bg-overlay" aria-hidden="true"></div>
     <div class="hero-content">
       <h1>Business Services</h1>
       <p class="hero-subtitle">
@@ -25,7 +22,7 @@
     <div class="services-grid">
       <div class="service-card" *ngFor="let service of services">
         <div class="service-header">
-          <div class="service-icon"><app-icon [name]="service.icon" class="icon-large"></app-icon></div>
+          <app-icon class="service-icon" [name]="service.icon"></app-icon>
           <h3 class="service-title">{{ service.title }}</h3>
         </div>
 
@@ -52,7 +49,7 @@
         <h2>Why Choose MNA Accounting?</h2>
         <ul class="benefits-list">
           <li *ngFor="let benefit of benefits">
-            <span class="benefit-check"><app-icon name="briefcase" class="icon-small"></app-icon></span>
+            <span class="benefit-check">💼</span>
             <span>{{ benefit }}</span>
           </li>
         </ul>
@@ -129,18 +126,18 @@
 
       <div class="cta-buttons">
         <a href="tel:07551551717" class="cta-primary"
-          >Book Free Consultation</a
+          >📞 Book Free Consultation</a
         >
-        <a routerLink="/contact" class="cta-secondary">Contact Us</a>
+        <a routerLink="/contact" class="cta-secondary">📧 Contact Us</a>
       </div>
 
       <div class="contact-info">
         <div class="contact-item">
-          <span class="contact-icon"><app-icon name="phone" class="icon-small"></app-icon></span>
+          <span class="contact-icon">📞</span>
           <span>07551 551717</span>
         </div>
         <div class="contact-item">
-          <span class="contact-icon"><app-icon name="mail" class="icon-small"></app-icon></span>
+          <span class="contact-icon">✉️</span>
           <span>info&#64;mnaaccounting.co.uk</span>
         </div>
       </div>

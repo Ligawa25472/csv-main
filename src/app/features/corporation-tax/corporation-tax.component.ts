@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-corporation-tax',
@@ -19,13 +19,13 @@ export class CorporationTaxComponent {
         'We handle all the paperwork to register your business for Corporation Tax with HMRC.',
     },
     {
-      icon: 'pound',
+      icon: 'coins',
       title: 'Accurate Profit Calculations',
       description:
         'After preparing your company accounts, we calculate your Corporation Tax liability using expert knowledge and up-to-date tax rules.',
     },
     {
-      icon: 'target',
+      icon: 'shield',
       title: 'Tax Reliefs & Allowable Expenses',
       description:
         'We ensure your business claims all eligible tax reliefs and expenses to minimise your tax bill.',
@@ -37,7 +37,7 @@ export class CorporationTaxComponent {
         "Beyond compliance, we offer strategic tax planning to help you pay only what's necessary — and nothing more.",
     },
     {
-      icon: '⏰',
+      icon: 'clock',
       title: 'Payment Reminders',
       description:
         'We notify you of upcoming Corporation Tax deadlines to help you avoid penalties and stay on track.',

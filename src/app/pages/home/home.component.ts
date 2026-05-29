@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-home',
@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
       link: '/personal/self-assessment',
     },
     {
-      icon: 'pound',
+      icon: 'calculator',
       name: 'Payroll & CIS',
       description:
         'Employee payment processing and Construction Industry Scheme management',
@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
       link: '/business/management-accounts',
     },
     {
-      icon: 'trending',
+      icon: 'briefcase',
       name: 'Corporation Tax',
       description: 'Expert corporation tax services for limited companies',
       link: '/business/corporation-tax',
@@ -72,23 +72,23 @@ export class HomeComponent implements OnInit {
 
   benefits = [
     {
-      icon: 'pound',
+      icon: '💷',
       title: '40% Lower Fees',
       description: 'On average, we charge 40% less than other accountants',
     },
     {
-      icon: 'target',
+      icon: '🎯',
       title: 'Local Expertise',
       description:
         'Deep understanding of Birmingham and West Midlands business landscape',
     },
     {
-      icon: 'mobile',
+      icon: '📱',
       title: 'Remote Support',
       description: 'Full online accounting services available nationwide',
     },
     {
-      icon: 'handshake',
+      icon: '🤝',
       title: 'Personal Service',
       description: 'You always deal with someone who knows your business',
     },

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-year-end-accounts',
@@ -31,7 +31,7 @@ export class YearEndAccountsComponent {
         "Whether you're incorporated or self-employed, we adapt our approach to suit your structure.",
     },
     {
-      icon: 'lightbulb',
+      icon: 'award',
       title: 'Clear Explanations & Guidance',
       description:
         'We will walk you through your accounts so you understand your numbers and what they mean for your business.',
@@ -51,7 +51,7 @@ export class YearEndAccountsComponent {
       ],
     },
     {
-      icon: 'user',
+      icon: 'users',
       title: 'Sole Traders',
       description: 'Self-employment accounts for tax purposes',
       requirements: [

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-management-accounts',
@@ -19,7 +19,7 @@ export class ManagementAccountsComponent {
         'Regular reporting tailored to your business needs, including profit and loss, balance sheets, and cash flow summaries.',
     },
     {
-      icon: 'lightbulb',
+      icon: 'sparkles',
       title: 'Customised Financial Insights',
       description:
         'We highlight key trends, variances, and opportunities to help you stay in control of your finances.',
@@ -40,7 +40,7 @@ export class ManagementAccountsComponent {
 
   reportingFrequency = [
     {
-      icon: '📅',
+      icon: 'clock',
       title: 'Monthly Reports',
       description:
         'Detailed monthly management accounts for businesses requiring frequent financial oversight',
@@ -51,7 +51,7 @@ export class ManagementAccountsComponent {
       ],
     },
     {
-      icon: 'fileText',
+      icon: 'chart',
       title: 'Quarterly Reports',
       description:
         'Comprehensive quarterly reviews perfect for established businesses with stable operations',

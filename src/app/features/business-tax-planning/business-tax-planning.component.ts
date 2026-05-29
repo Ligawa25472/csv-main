@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-business-tax-planning',
@@ -25,19 +25,19 @@ export class BusinessTaxPlanningComponent {
         "We ensure you're claiming all eligible deductions, reliefs, and allowances to minimise your tax burden.",
     },
     {
-      icon: 'pound',
+      icon: 'coins',
       title: 'Planning for Dividends & Director Salaries',
       description:
         'We help you structure income in the most tax-efficient way, balancing salary, dividends, and benefits.',
     },
     {
-      icon: 'rocket',
+      icon: 'sparkles',
       title: 'Support for Business Restructuring & Growth',
       description:
         "Whether you're expanding, merging, or changing your business model, we provide tax guidance to support your plans.",
     },
     {
-      icon: '📅',
+      icon: 'clock',
       title: 'Year-Round Advisory',
       description:
         "Tax planning isn't just for year-end — we offer ongoing advice to keep your strategy aligned with your goals.",
@@ -58,13 +58,13 @@ export class BusinessTaxPlanningComponent {
         'Optimize VAT position and cash flow through scheme selection and timing strategies',
     },
     {
-      icon: '💼',
+      icon: 'briefcase',
       title: 'Employment Taxes',
       description:
         'Structure remuneration packages efficiently to minimize PAYE and NI contributions',
     },
     {
-      icon: 'trending',
+      icon: 'chart',
       title: 'Capital Allowances',
       description:
         'Maximize capital allowances and reliefs on business assets and equipment',

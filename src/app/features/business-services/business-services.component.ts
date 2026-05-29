@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-business-services',
@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
 export class BusinessServicesComponent {
   services = [
     {
-      icon: 'building',
+      icon: 'briefcase',
       title: 'Corporation Tax',
       description:
         'Proactive and personalised Corporation Tax services designed to keep your business compliant and reduce your tax liability.',
@@ -39,7 +39,7 @@ export class BusinessServicesComponent {
       link: '/business/vat-returns',
     },
     {
-      icon: 'pound',
+      icon: 'calculator',
       title: 'Payroll & CIS',
       description:
         'Complete payroll solution ensuring your team is paid accurately, your business stays compliant, and operations run smoothly.',

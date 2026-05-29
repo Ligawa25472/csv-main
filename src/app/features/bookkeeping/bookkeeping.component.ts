@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
+import { IconComponent } from '../../components/icon/icon.component';
 
 @Component({
   selector: 'app-bookkeeping',
@@ -13,25 +13,25 @@ import { RouterModule } from '@angular/router';
 export class BookkeepingComponent {
   services = [
     {
-      icon: 'chart',
+      icon: 'checkCircle',
       title: 'Day-to-Day Transaction Recording',
       description:
         'We track income, expenses, and bank activity to keep your records up to date.',
     },
     {
-      icon: 'building',
+      icon: 'coins',
       title: 'Bank Reconciliation & Expense Tracking',
       description:
         'We ensure your accounts match your bank statements and help you monitor spending.',
     },
     {
-      icon: 'trending',
+      icon: 'chart',
       title: 'Monthly Reports & Cash Flow Summaries',
       description:
         'Get clear insights into your financial health with regular reporting.',
     },
     {
-      icon: 'mobile',
+      icon: 'calculator',
       title: 'Software Integration',
       description:
         'We work with platforms like Xero, QuickBooks, and FreeAgent to streamline your bookkeeping.',
@@ -45,10 +45,10 @@ export class BookkeepingComponent {
   ];
 
   softwarePlatforms = [
-    { name: 'Xero', icon: 'diamond' },
-    { name: 'QuickBooks', icon: 'chart' },
+    { name: 'Xero', icon: '🔷' },
+    { name: 'QuickBooks', icon: '📊' },
     { name: 'FreeAgent', icon: '💼' },
-    { name: 'Sage', icon: 'trending' },
+    { name: 'Sage', icon: '📈' },
   ];
 
   benefits = [
