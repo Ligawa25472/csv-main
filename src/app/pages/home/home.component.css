@@ -18,7 +18,7 @@
 
 /* ========== HERO SECTION ========== */
 .hero {
-  background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 100%);
+  background: linear-gradient(135deg, var(--brand-700) 0%, var(--brand-600) 100%);
   color: var(--white);
   padding: var(--spacing-20) var(--spacing-6);
   text-align: center;
@@ -29,21 +29,27 @@
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-              radial-gradient(circle at 80% 80%, rgba(15, 158, 142, 0.1) 0%, transparent 50%);
+  inset: 0;
+  background: radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.08) 0%, transparent 42%),
+    radial-gradient(circle at 80% 80%, rgba(15, 158, 142, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(1, 22, 53, 0.72) 0%, rgba(1, 22, 53, 0.82) 100%);
   pointer-events: none;
 }
 
+.hero .bg-overlay {
+  background: linear-gradient(180deg, rgba(6, 37, 79, 0.78) 0%, rgba(6, 37, 79, 0.86) 100%);
+}
+
 .hero-content {
-  max-width: 800px;
+  max-width: 760px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   animation: slideUp 0.6s ease-out;
+  padding: var(--spacing-12);
+  border-radius: var(--radius-xl);
+  background: rgba(5, 32, 64, 0.38);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
 }
 
 @keyframes slideUp {
@@ -63,14 +69,17 @@
   margin-bottom: var(--spacing-6);
   line-height: 1.15;
   letter-spacing: -0.02em;
+  color: #ffffff;
+  text-shadow: 0 18px 35px rgba(0, 0, 0, 0.24);
 }
 
 .hero-subtitle {
   font-size: clamp(1.125rem, 4vw, 1.5rem);
   margin-bottom: var(--spacing-8);
-  opacity: 0.95;
-  line-height: 1.65;
+  opacity: 0.92;
+  line-height: 1.85;
   font-weight: 500;
+  color: rgba(255, 255, 255, 0.93);
 }
 
 .value-prop {
@@ -170,6 +179,117 @@
 
 .cta-secondary:active {
   transform: translateY(-1px);
+}
+
+.footer-cta-section {
+  padding: var(--spacing-12) 0;
+  background: var(--surface);
+}
+
+.footer-cta-inner {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr;
+  gap: var(--spacing-6);
+  align-items: stretch;
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  padding: var(--spacing-8);
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-cta-copy {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.footer-cta-copy h2 {
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  margin: 0;
+  color: var(--ink);
+  line-height: 1.12;
+}
+
+.footer-cta-copy .cta-eyebrow {
+  margin: 0;
+  color: var(--brand);
+  font-size: 0.95rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.footer-cta-copy .cta-text {
+  margin: 0;
+  color: var(--body);
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 44rem;
+}
+
+.cta-actions {
+  display: grid;
+  gap: var(--spacing-4);
+  width: min(100%, 420px);
+}
+
+.footer-cta-contacts {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--spacing-4);
+  align-items: center;
+  padding: var(--spacing-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.contact-card a {
+  color: var(--brand-dark);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card-label {
+  display: block;
+  margin-bottom: 0.15rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.card-icon {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--brand-100);
+  color: var(--brand-dark);
+}
+
+.btn-block {
+  width: 100%;
+}
+
+@media (max-width: 880px) {
+  .footer-cta-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-cta-copy {
+    text-align: left;
+  }
+
+  .cta-actions {
+    width: 100%;
+  }
 }
 
 /* ========== SERVICES SECTION ========== */
