@@ -93,29 +93,6 @@
       </nav>
     </div>
 
-    <div class="footer-support footer-support-flat">
-      <div class="footer-support-links">
-        <div class="footer-support-item">
-          <div class="footer-support-icon"><app-icon name="phone"></app-icon></div>
-          <div>
-            <span class="footer-support-label">Phone support</span>
-            <a [href]="site.phoneHref">{{ site.phone }}</a>
-          </div>
-        </div>
-        <div class="footer-support-item">
-          <div class="footer-support-icon"><app-icon name="mail"></app-icon></div>
-          <div>
-            <span class="footer-support-label">Email enquiries</span>
-            <a [href]="'mailto:' + site.email">{{ site.email }}</a>
-          </div>
-        </div>
-      </div>
-      <a routerLink="/contact" class="btn btn-primary btn-block footer-support-button">
-        Request a free consultation
-        <app-icon name="arrowRight"></app-icon>
-      </a>
-    </div>
-
     <div class="footer-bottom">
       <p>&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
       <p class="footer-legal-links">
