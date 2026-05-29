@@ -91,7 +91,9 @@
 
     <div class="values-grid">
       <div class="value-card" *ngFor="let value of values">
-        <div class="value-icon">{{ value.icon }}</div>
+        <div class="value-image">
+          <img [src]="value.imageUrl" [alt]="value.title" />
+        </div>
         <h3 class="value-title">{{ value.title }}</h3>
         <p class="value-description">{{ value.description }}</p>
       </div>

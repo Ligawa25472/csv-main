@@ -150,7 +150,9 @@
         rel="noopener noreferrer"
         class="social-link"
       >
-        <div class="social-icon">{{ social.icon }}</div>
+        <div class="social-icon">
+          <img [src]="social.imageUrl" [alt]="social.name + ' icon'" />
+        </div>
         <div class="social-info">
           <strong>{{ social.name }}</strong>
           <span>{{ social.handle }}</span>

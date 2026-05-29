@@ -57,27 +57,6 @@ export class ContactComponent {
     };
   }
 
-  socialLinks = [
-    {
-      name: 'LinkedIn',
-      icon: 'linkedin',
-      url: 'https://linkedin.com/company/mna-accounting-ltd',
-      handle: 'MNA Accounting LTD',
-    },
-    {
-      name: 'Instagram',
-      icon: 'instagram',
-      url: 'https://instagram.com/mnaaccounting',
-      handle: '@MNA accounting LTD',
-    },
-    {
-      name: 'Facebook',
-      icon: 'facebook',
-      url: 'https://facebook.com/mnaaccounting',
-      handle: 'MNA Accounting LTD',
-    },
-  ];
-
   contactMethods = [
     {
       icon: 'phone',
@@ -99,6 +78,30 @@ export class ContactComponent {
       value: 'Birmingham, UK',
       action: '',
       description: 'Serving West Midlands & Remote',
+    },
+  ];
+
+  socialLinks = [
+    {
+      name: 'LinkedIn',
+      handle: 'MNA Accounting LTD',
+      url: 'https://linkedin.com/company/mna-accounting-ltd',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/alexander-shatov-9Zjd7PE_FRM-unsplash.jpg',
+    },
+    {
+      name: 'Instagram',
+      handle: '@MNA accounting LTD',
+      url: 'https://instagram.com/mnaaccounting',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/alexander-shatov-_tF3vug2FhQ-unsplash.jpg',
+    },
+    {
+      name: 'Facebook',
+      handle: 'MNA Accounting LTD',
+      url: 'https://facebook.com/mnaaccounting',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/mariia-shalabaieva-d64-ghA_rH4-unsplash.jpg',
     },
   ];
 }

@@ -22,23 +22,27 @@ export class AboutComponent implements AfterViewInit {
   dataToken = '92be7690-1180-46e4-bee7-5524ee38f2c3';
   values = [
     {
-      icon: 'pound',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1129810557-612x612.jpg',
       title: 'Affordability',
       description: 'Transparent pricing with no hidden fees.',
     },
     {
-      icon: 'trending',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1311977471-612x612.jpg',
       title: 'Growth-Focused Advice',
       description: 'We go beyond compliance to help you grow.',
     },
     {
-      icon: 'target',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1330234595-612x612.jpg',
       title: 'Local Expertise',
       description:
         'Deep understanding of the West Midlands business landscape.',
     },
     {
-      icon: 'handshake',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1338373163-612x612.jpg',
       title: 'Personal Service',
       description: "You'll always deal with someone who knows your business.",
     },
