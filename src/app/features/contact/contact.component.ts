@@ -59,21 +59,24 @@ export class ContactComponent {
 
   contactMethods = [
     {
-      icon: 'phone',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/alexander-shatov-_qsuER9xYOY-unsplash.jpg',
       label: 'Call Us',
       value: '07551 551717',
       action: 'tel:07551551717',
       description: 'Speak directly with our team',
     },
     {
-      icon: 'mail',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/mariia-shalabaieva-HyyHIYz_l0A-unsplash.jpg',
       label: 'Email Us',
       value: 'info@mnaaccounting.co.uk',
       action: 'mailto:info@mnaaccounting.co.uk',
       description: 'Send us a message anytime',
     },
     {
-      icon: 'mapPin',
+      imageUrl:
+        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/geojango-maps-Z8UgB80_46w-unsplash.jpg',
       label: 'Location',
       value: 'Birmingham, UK',
       action: '',

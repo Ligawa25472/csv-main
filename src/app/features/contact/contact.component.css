@@ -60,14 +60,26 @@
 }
 
 .contact-method-icon {
-  font-size: 3rem;
+  width: 84px;
+  height: 84px;
+  min-width: 84px;
+  border-radius: 20px;
+  overflow: hidden;
   flex-shrink: 0;
+  background: #f8fafc;
+  display: grid;
+  place-items: center;
+}
+
+.contact-method-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .contact-method-info {
   flex: 1;
 }
-
 .contact-method-label {
   font-size: 1.3rem;
   font-weight: 700;

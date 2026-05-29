@@ -16,13 +16,13 @@
   <div class="container">
     <div class="contact-methods-grid">
       <div class="contact-method" *ngFor="let method of contactMethods">
-        <div class="contact-method-icon">{{ method.icon }}</div>
+        <div class="contact-method-icon">
+          <img [src]="method.imageUrl" [alt]="method.label + ' icon'" />
+        </div>
         <div class="contact-method-info">
           <h3 class="contact-method-label">{{ method.label }}</h3>
           <div class="contact-method-value">
-            <a *ngIf="method.action" [href]="method.action">{{
-              method.value
-            }}</a>
+            <a *ngIf="method.action" [href]="method.action">{{ method.value }}</a>
             <span *ngIf="!method.action">{{ method.value }}</span>
           </div>
           <p class="contact-method-description">{{ method.description }}</p>
