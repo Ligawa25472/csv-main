@@ -12,13 +12,29 @@
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 100%);
+  background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 100%),
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="p" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><rect fill="%23ffffff" opacity="0.03" width="100" height="100"/><circle cx="50" cy="50" r="20" fill="%23ffffff" opacity="0.04"/></pattern></defs><rect width="1200" height="600" fill="%230f4c75"/><rect width="1200" height="600" fill="url(%23p)"/></svg>');
+  background-attachment: fixed;
+  background-size: cover, cover;
+  background-position: center, center;
   color: white;
-  padding: var(--spacing-16) var(--spacing-6);
+  padding: clamp(var(--spacing-16), 12vw, var(--spacing-20)) var(--spacing-6);
   text-align: center;
   position: relative;
   overflow: hidden;
   animation: slideDown 0.8s ease-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 420px;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+    min-height: 350px;
+    padding: var(--spacing-16) var(--spacing-6);
+  }
 }
 
 .hero::before {
@@ -58,7 +74,33 @@
 /* Main Content */
 .main-content {
   padding: var(--spacing-16) var(--spacing-6);
-  background: white;
+  background: linear-gradient(135deg, white 0%, #f5f9fc 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.main-content::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(15, 76, 117, 0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.main-content::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(15, 158, 142, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .content-grid {
@@ -66,6 +108,8 @@
   grid-template-columns: 1fr;
   gap: var(--spacing-12);
   align-items: start;
+  position: relative;
+  z-index: 2;
 }
 
 @media (min-width: 768px) {
@@ -172,7 +216,7 @@
 /* Story Section */
 .story-section {
   padding: var(--spacing-16) var(--spacing-6);
-  background: var(--surface);
+  background: linear-gradient(135deg, var(--surface) 0%, #f0f7fc 100%);
   position: relative;
   overflow: hidden;
 }
@@ -181,10 +225,23 @@
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 80% 20%, rgba(15, 76, 117, 0.08) 0%, transparent 50%);
+  right: -15%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at 100% 50%, rgba(15, 76, 117, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.story-section::after {
+  content: '';
+  position: absolute;
+  bottom: -20%;
+  left: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(15, 158, 142, 0.04) 0%, transparent 70%);
+  border-radius: 50%;
   pointer-events: none;
 }
 
@@ -193,7 +250,7 @@
   margin: 0 auto;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .story-content p {

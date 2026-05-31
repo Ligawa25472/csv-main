@@ -52,13 +52,13 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
-  flex: 1;
+  flex: 0 0 auto;
   min-width: 0;
 }
 
 .logo {
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 100%);
   border-radius: 16px;
   display: flex;
@@ -83,28 +83,7 @@
 .company-info {
   min-width: 0;
   overflow: hidden;
-}
-
-.company-info h1 {
-  font-size: 0.875rem;
-  color: var(--ink);
-  font-weight: 700;
-  margin: 0;
-  line-height: 1.1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.tagline {
-  color: var(--body-light);
-  font-size: 0.7rem;
-  font-weight: 500;
-  margin: 0;
-  line-height: 1.1;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  display: none;
 }
 
 @media (min-width: 480px) {
@@ -113,28 +92,12 @@
     height: 46px;
     font-size: 1rem;
   }
-  
-  .company-info h1 {
-    font-size: 0.95rem;
-  }
-  
-  .tagline {
-    font-size: 0.75rem;
-  }
 }
 
 @media (min-width: 768px) {
   .logo {
     width: 50px;
     height: 50px;
-  }
-  
-  .company-info h1 {
-    font-size: 1.125rem;
-  }
-  
-  .tagline {
-    font-size: 0.8rem;
   }
 }
 
