@@ -6,14 +6,41 @@
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%),
+              url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1364223865-612x612.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
   color: white;
   padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll;
+    min-height: 300px;
+  }
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(1, 22, 53, 0.7) 0%, rgba(1, 22, 53, 0.8) 100%);
+  pointer-events: none;
 }
 
 .hero-content {
   max-width: 800px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .breadcrumb {
