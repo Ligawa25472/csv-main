@@ -1,0 +1,355 @@
+/* Floating QR Code Container */
+.floating-qr-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  font-family: inherit;
+}
+
+@media (max-width: 768px) {
+  .floating-qr-container {
+    bottom: 1.5rem;
+    right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-qr-container {
+    bottom: 1rem;
+    right: 0.75rem;
+  }
+}
+
+/* QR Code Card */
+.qr-card {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.9);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.qr-card.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+@media (max-width: 480px) {
+  .qr-card {
+    width: 280px;
+    bottom: 60px;
+  }
+}
+
+/* QR Card Header */
+.qr-header {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.qr-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.qr-header p {
+  margin: 0.4rem 0 0;
+  font-size: 0.85rem;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+/* QR Image Container */
+.qr-image-container {
+  padding: 1.5rem;
+  background: #f8f9fa;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.qr-image {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.qr-image:hover {
+  transform: scale(1.02);
+}
+
+/* QR Instructions */
+.qr-instructions {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  background: #fff;
+  line-height: 1.5;
+}
+
+/* Close Button */
+.qr-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+  line-height: 1;
+  padding: 0;
+}
+
+.qr-close:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: rotate(90deg);
+}
+
+/* Toggle Button */
+.qr-toggle-btn {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  font-weight: 600;
+  font-size: 0.7rem;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  padding: 0;
+}
+
+.qr-toggle-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+}
+
+.qr-toggle-btn:active {
+  transform: scale(0.95);
+}
+
+/* QR Icon */
+.qr-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: -2px;
+}
+
+/* QR Label */
+.qr-label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+/* Pulse Animation */
+.qr-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.3);
+  transform: translate(-50%, -50%);
+  animation: qrPulse 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes qrPulse {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 150%;
+    height: 150%;
+    opacity: 0;
+  }
+}
+
+/* Expanded State */
+.floating-qr-container.expanded .qr-toggle-btn {
+  background: linear-gradient(135deg, #0b5c34 0%, #074d2a 100%);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+  .qr-toggle-btn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .qr-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .qr-label {
+    font-size: 0.6rem;
+  }
+
+  .qr-card {
+    width: 270px;
+  }
+
+  .qr-header {
+    padding: 1.25rem 1rem;
+  }
+
+  .qr-image-container {
+    padding: 1.25rem;
+  }
+
+  .qr-instructions {
+    padding: 1rem 1.25rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Accessibility */
+.qr-toggle-btn:focus-visible {
+  outline: 2px solid #25d366;
+  outline-offset: 2px;
+}
+
+.qr-close:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+
+/* Tablet Adjustments */
+@media (min-width: 600px) and (max-width: 768px) {
+  .floating-qr-container {
+    bottom: 1.75rem;
+    right: 1.5rem;
+  }
+
+  .qr-card {
+    width: 300px;
+  }
+
+  .qr-toggle-btn {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1200px) {
+  .floating-qr-container {
+    bottom: 3rem;
+    right: 3rem;
+  }
+
+  .qr-toggle-btn {
+    width: 65px;
+    height: 65px;
+  }
+
+  .qr-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .qr-label {
+    font-size: 0.75rem;
+  }
+
+  .qr-card {
+    width: 340px;
+    bottom: 85px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .floating-qr-container {
+    display: none;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .qr-card {
+    background: #1a1a1a;
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .qr-image-container {
+    background: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .qr-instructions {
+    background: #1a1a1a;
+    color: #ccc;
+  }
+
+  .qr-header p {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .qr-close {
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .qr-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .qr-card,
+  .qr-toggle-btn,
+  .qr-close,
+  .qr-pulse {
+    transition: none;
+    animation: none;
+  }
+}
