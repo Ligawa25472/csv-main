@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IconComponent } from '../../components/icon/icon.component';
+import { SITE } from '../../core/site.config';
 
 @Component({
   selector: 'app-contact',
@@ -11,6 +12,8 @@ import { IconComponent } from '../../components/icon/icon.component';
   styleUrl: './contact.component.css',
 })
 export class ContactComponent {
+  site = SITE;
+
   contactForm = {
     name: '',
     email: '',
@@ -109,8 +112,8 @@ export class ContactComponent {
       imageUrl:
         'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/mariia-shalabaieva-HyyHIYz_l0A-unsplash.jpg',
       label: 'Email Us',
-      value: 'info@mnaaccounting.co.uk',
-      action: 'mailto:info@mnaaccounting.co.uk',
+      value: 'info@mnaaccounting.com',
+      action: 'mailto:info@mnaaccounting.com',
       description: 'Send us a message anytime',
     },
     {
@@ -127,21 +130,21 @@ export class ContactComponent {
     {
       name: 'LinkedIn',
       handle: 'MNA Accounting LTD',
-      url: 'https://linkedin.com/company/mna-accounting-ltd',
+      url: 'https://www.linkedin.com/in/mna-accounting-ltd-406b7936b?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
       imageUrl:
         'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/alexander-shatov-9Zjd7PE_FRM-unsplash.jpg',
     },
     {
       name: 'Instagram',
-      handle: '@MNA accounting LTD',
-      url: 'https://instagram.com/mnaaccounting',
+      handle: '@mnaaccountingltd',
+      url: 'https://www.instagram.com/mnaaccountingltd?igsh=MTB4cm9ucWQxbHBhag%3D%3D&utm_source=qr',
       imageUrl:
         'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/alexander-shatov-_tF3vug2FhQ-unsplash.jpg',
     },
     {
       name: 'Facebook',
       handle: 'MNA Accounting LTD',
-      url: 'https://facebook.com/mnaaccounting',
+      url: 'https://www.facebook.com/share/14hwqqGV56W/?mibextid=wwXIfr',
       imageUrl:
         'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/mariia-shalabaieva-d64-ghA_rH4-unsplash.jpg',
     },

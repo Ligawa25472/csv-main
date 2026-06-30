@@ -7,7 +7,7 @@ export const SITE = {
   legalName: 'MNA Accounting Ltd',
   tagline: 'Expert qualified bookkeeping & accounting',
   url: 'https://www.mnaaccounting.co.uk',
-  email: 'info@mnaaccounting.co.uk',
+  email: 'info@mnaaccounting.com',
   phone: '07551 551717',
   phoneHref: 'tel:07551551717',
   priceRange: '££',
@@ -34,10 +34,9 @@ export const SITE = {
     'London',
   ],
   social: {
-    linkedin: 'https://linkedin.com/company/mna-accounting-ltd',
-    instagram: 'https://instagram.com/mnaaccounting',
-    facebook: 'https://facebook.com/mnaaccounting',
-    twitter: 'https://twitter.com/mnaaccounting',
+    linkedin: 'https://www.linkedin.com/in/mna-accounting-ltd-406b7936b?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
+    instagram: 'https://www.instagram.com/mnaaccountingltd?igsh=MTB4cm9ucWQxbHBhag%3D%3D&utm_source=qr',
+    facebook: 'https://www.facebook.com/share/14hwqqGV56W/?mibextid=wwXIfr',
     whatsapp: 'https://wa.me/447551551717',
   },
 } as const;
