@@ -19,6 +19,10 @@ import { SelfAssessmentComponent } from './features/personal-services/self-asses
 import { CapitalGainsTaxComponent } from './features/personal-services/capital-gains-tax.component';
 import { PersonalTaxPlanningComponent } from './features/personal-services/personal-tax-planning.component';
 import { PersonalCisComponent } from './features/personal-services/personal-cis.component';
+import { MakingTaxDigitalComponent } from './features/personal-services/making-tax-digital.component';
+
+// Additional business services
+import { CompaniesHouseComponent } from './features/business-services/companies-house.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -38,6 +42,7 @@ export const routes: Routes = [
     component: ManagementAccountsComponent,
   },
   { path: 'business/tax-planning', component: BusinessTaxPlanningComponent },
+  { path: 'business/companies-house', component: CompaniesHouseComponent },
 
   // Personal Services Routes
   { path: 'personal', component: PersonalServicesComponent },
@@ -45,6 +50,7 @@ export const routes: Routes = [
   { path: 'personal/capital-gains-tax', component: CapitalGainsTaxComponent },
   { path: 'personal/tax-planning', component: PersonalTaxPlanningComponent },
   { path: 'personal/cis', component: PersonalCisComponent },
+  { path: 'personal/making-tax-digital', component: MakingTaxDigitalComponent },
 
   // Wildcard route - must be last
   { path: '**', redirectTo: '/home' },

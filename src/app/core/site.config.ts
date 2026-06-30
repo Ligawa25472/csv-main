@@ -7,11 +7,13 @@ export const SITE = {
   legalName: 'MNA Accounting Ltd',
   tagline: 'Expert qualified bookkeeping & accounting',
   url: 'https://www.mnaaccounting.co.uk',
-  email: 'info@mnaaccounting.co.uk',
+  email: 'info@mnaaccountings.co.uk',
   phone: '07551 551717',
   phoneHref: 'tel:07551551717',
   priceRange: '££',
   foundingYear: 2019,
+  companyNumber: '16562260',
+  aatOrgNumber: 'ORG-20224758',
   address: {
     street: '32 The Link',
     locality: 'Birmingham',
@@ -29,11 +31,13 @@ export const SITE = {
     'Warwickshire',
     'Wolverhampton',
     'West Midlands',
+    'London',
   ],
   social: {
-    linkedin: 'https://linkedin.com/company/mna-accounting-ltd',
-    instagram: 'https://instagram.com/mnaaccounting',
-    facebook: 'https://facebook.com/mnaaccounting',
+    linkedin: 'https://www.linkedin.com/in/mna-accounting-ltd-406b7936b?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
+    instagram: 'https://www.instagram.com/mnaaccountingltd?igsh=MTB4cm9ucWQxbHBhag%3D%3D&utm_source=qr',
+    facebook: 'https://www.facebook.com/share/14hwqqGV56W/?mibextid=wwXIfr',
+    whatsapp: 'https://wa.me/447551551717',
   },
 } as const;
 
@@ -45,6 +49,7 @@ export const BUSINESS_SERVICES = [
   { name: 'Year End Accounts', link: '/business/year-end-accounts' },
   { name: 'Management Accounts', link: '/business/management-accounts' },
   { name: 'Tax Planning', link: '/business/tax-planning' },
+  { name: 'Companies House Verification', link: '/business/companies-house' },
 ];
 
 export const PERSONAL_SERVICES = [
@@ -52,4 +57,5 @@ export const PERSONAL_SERVICES = [
   { name: 'Capital Gains Tax', link: '/personal/capital-gains-tax' },
   { name: 'Personal Tax Planning', link: '/personal/tax-planning' },
   { name: 'CIS Refunds', link: '/personal/cis' },
+  { name: 'Making Tax Digital', link: '/personal/making-tax-digital' },
 ];

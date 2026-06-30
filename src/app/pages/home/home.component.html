@@ -10,14 +10,18 @@
       </p>
 
       <div class="value-prop">
-        💰 On average, we charge 40% less than other accountants
+        <app-icon name="dollarSign" class="value-prop-icon"></app-icon>
+        On average, our clients save up to 40% on accounting fees compared with traditional accountancy firms
       </div>
 
       <div class="hero-buttons">
         <button class="cta-primary" (click)="scrollToContact()">
           Get Free Consultation
         </button>
-        <a href="tel:07551551717" class="cta-secondary">📞 Call Now</a>
+        <a href="tel:07551551717" class="cta-secondary">
+          <app-icon name="phone" class="cta-icon"></app-icon>
+          Call Now
+        </a>
       </div>
     </div>
   </div>
@@ -49,10 +53,47 @@
 
     <div class="benefits-grid">
       <div class="benefit-card" *ngFor="let benefit of benefits">
-        <div class="benefit-icon">{{ benefit.icon }}</div>
+        <div class="benefit-icon">
+          <app-icon [name]="benefit.icon"></app-icon>
+        </div>
         <h3 class="benefit-title">{{ benefit.title }}</h3>
         <p class="benefit-description">{{ benefit.description }}</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Free Consultation Section -->
+<section class="consultation">
+  <div class="container">
+    <div class="consultation-content">
+      <h2>Free Initial Consultation</h2>
+      <p class="consultation-subtitle">Not sure what support you need?</p>
+      <p class="consultation-description">
+        Our expert accountants offer a free, no-obligation initial consultation to discuss your business needs and identify the best solutions for you.
+      </p>
+      <div class="consultation-benefits">
+        <div class="consultation-benefit">
+          <app-icon name="check" class="benefit-checkmark"></app-icon>
+          <span>Understand your tax obligations</span>
+        </div>
+        <div class="consultation-benefit">
+          <app-icon name="check" class="benefit-checkmark"></app-icon>
+          <span>Explore available tax-saving opportunities</span>
+        </div>
+        <div class="consultation-benefit">
+          <app-icon name="check" class="benefit-checkmark"></app-icon>
+          <span>Compare accounting software options</span>
+        </div>
+        <div class="consultation-benefit">
+          <app-icon name="check" class="benefit-checkmark"></app-icon>
+          <span>Review fixed fee pricing for your needs</span>
+        </div>
+      </div>
+      <p class="consultation-cta-text">No obligation. No pressure. Just helpful guidance.</p>
+      <button class="cta-primary consultation-button" (click)="scrollToContact()">
+        Book Your Free Consultation
+      </button>
     </div>
   </div>
 </section>
@@ -75,12 +116,13 @@
           <span class="location">Solihull</span>
           <span class="location">Wolverhampton</span>
           <span class="location">West Midlands</span>
+          <span class="location">London</span>
           <span class="location">Remote UK-wide</span>
         </div>
       </div>
       <div class="areas-visual">
         <div class="map-placeholder">
-          <h3>🗺️</h3>
+          <app-icon name="mapPin" class="map-placeholder-icon"></app-icon>
           <p>Local & Remote Services</p>
         </div>
       </div>

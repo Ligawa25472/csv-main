@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { IconComponent } from '../../components/icon/icon.component';
 import { RouterModule } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { SITE } from '../../core/site.config';
 
 @Component({
   selector: 'app-about',
@@ -18,6 +19,7 @@ import { isPlatformBrowser } from '@angular/common';
   styleUrl: './about.component.css',
 })
 export class AboutComponent implements AfterViewInit {
+  site = SITE;
   businessUnitId = '689fa533dd17b897f89e2acc';
   dataToken = '92be7690-1180-46e4-bee7-5524ee38f2c3';
   values = [
@@ -95,9 +97,11 @@ export class AboutComponent implements AfterViewInit {
   }
 
   scrollToContact() {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+    if (typeof document !== 'undefined') {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth' });
+      }
     }
   }
 }

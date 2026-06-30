@@ -128,6 +128,14 @@
               <p>Thank you for contacting us. We'll get back to you soon.</p>
             </div>
           </div>
+
+          <div *ngIf="isError" class="error-message">
+            <div class="error-icon"><app-icon name="alertCircle" class="icon-small"></app-icon></div>
+            <div>
+              <strong>Error Sending Message</strong>
+              <p>{{ errorMessage }}</p>
+            </div>
+          </div>
         </form>
       </div>
     </div>

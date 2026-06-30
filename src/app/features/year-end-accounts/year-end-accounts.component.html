@@ -63,7 +63,7 @@
             class="requirement-item"
             *ngFor="let requirement of type.requirements"
           >
-            <span class="check-icon">✓</span>
+            <app-icon name="check" class="check-icon"></app-icon>
             <span>{{ requirement }}</span>
           </div>
         </div>
@@ -169,7 +169,7 @@
 
       <div class="contact-info">
         <div class="contact-item">
-          <span class="contact-icon">📞</span>
+          <span class="contact-icon"><app-icon name="phone"></app-icon></span>
           <span>07551 551717</span>
         </div>
         <div class="contact-item">
