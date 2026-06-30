@@ -70,10 +70,10 @@ export function app(): express.Express {
         `,
       });
 
-      res.status(200).json({ success: true, message: 'Email sent successfully' });
+      return res.status(200).json({ success: true, message: 'Email sent successfully' });
     } catch (error) {
       console.error('Contact form error:', error);
-      res.status(500).json({ error: 'An error occurred while processing your request' });
+      return res.status(500).json({ error: 'An error occurred while processing your request' });
     }
   });
 
