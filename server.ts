@@ -22,23 +22,25 @@ export function app(): express.Express {
   const resend = new Resend(process.env['RESEND_API_KEY']);
 
   // Email API endpoint for contact form
-  server.post('/api/contact', express.json(), async (req, res) => {
-    try {
-      const { name, email, phone, message } = req.body;
+  server.post('/api/contact', express.json(), (req, res): void => {
+    const { name, email, phone, message } = req.body;
 
-      // Validate input
-      if (!name || !email || !phone || !message) {
-        return res.status(400).json({ error: 'Missing required fields' });
-      }
+    // Validate input
+    if (!name || !email || !phone || !message) {
+      res.status(400).json({ error: 'Missing required fields' });
+      return;
+    }
 
-      // Basic email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        return res.status(400).json({ error: 'Invalid email address' });
-      }
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      res.status(400).json({ error: 'Invalid email address' });
+      return;
+    }
 
-      // Send email using Resend
-      const result = await resend.emails.send({
+    // Send email using Resend
+    resend.emails
+      .send({
         from: 'MNA Accounting <onboarding@resend.dev>',
         to: 'info@mnaaccounting.co.uk',
         replyTo: email,
@@ -51,30 +53,32 @@ export function app(): express.Express {
           <p><strong>Message:</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
         `,
+      })
+      .then((result) => {
+        if (result.error) {
+          console.error('Resend error:', result.error);
+          res.status(500).json({ error: 'Failed to send email' });
+          return;
+        }
+
+        // Also send confirmation email to the user
+        resend.emails.send({
+          from: 'MNA Accounting <onboarding@resend.dev>',
+          to: email,
+          subject: 'We received your message - MNA Accounting',
+          html: `
+            <p>Hello ${name},</p>
+            <p>Thank you for contacting MNA Accounting. We have received your message and will get back to you within one working day.</p>
+            <p>Best regards,<br>MNA Accounting Team</p>
+          `,
+        });
+
+        res.status(200).json({ success: true, message: 'Email sent successfully' });
+      })
+      .catch((error) => {
+        console.error('Contact form error:', error);
+        res.status(500).json({ error: 'An error occurred while processing your request' });
       });
-
-      if (result.error) {
-        console.error('Resend error:', result.error);
-        return res.status(500).json({ error: 'Failed to send email' });
-      }
-
-      // Also send confirmation email to the user
-      await resend.emails.send({
-        from: 'MNA Accounting <onboarding@resend.dev>',
-        to: email,
-        subject: 'We received your message - MNA Accounting',
-        html: `
-          <p>Hello ${name},</p>
-          <p>Thank you for contacting MNA Accounting. We have received your message and will get back to you within one working day.</p>
-          <p>Best regards,<br>MNA Accounting Team</p>
-        `,
-      });
-
-      return res.status(200).json({ success: true, message: 'Email sent successfully' });
-    } catch (error) {
-      console.error('Contact form error:', error);
-      return res.status(500).json({ error: 'An error occurred while processing your request' });
-    }
   });
 
   // Example Express Rest API endpoints
