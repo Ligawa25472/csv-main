@@ -131,22 +131,25 @@ export class ContactComponent {
       name: 'LinkedIn',
       handle: 'MNA Accounting LTD',
       url: 'https://www.linkedin.com/in/mna-accounting-ltd-406b7936b?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
-      imageUrl:
-        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/alexander-shatov-9Zjd7PE_FRM-unsplash.jpg',
+      imageUrl: '/images/social-linkedin.jpg',
     },
     {
       name: 'Instagram',
       handle: '@mnaaccountingltd',
       url: 'https://www.instagram.com/mnaaccountingltd?igsh=MTB4cm9ucWQxbHBhag%3D%3D&utm_source=qr',
-      imageUrl:
-        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/alexander-shatov-_tF3vug2FhQ-unsplash.jpg',
+      imageUrl: '/images/social-instagram.png',
     },
     {
       name: 'Facebook',
       handle: 'MNA Accounting LTD',
       url: 'https://www.facebook.com/share/14hwqqGV56W/?mibextid=wwXIfr',
-      imageUrl:
-        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/mariia-shalabaieva-d64-ghA_rH4-unsplash.jpg',
+      imageUrl: '/images/social-facebook.jpg',
+    },
+    {
+      name: 'WhatsApp',
+      handle: 'Message us',
+      url: 'https://wa.me/447551551717',
+      imageUrl: '/images/social-whatsapp.png',
     },
   ];
 }
