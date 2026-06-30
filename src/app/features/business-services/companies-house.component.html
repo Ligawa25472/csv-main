@@ -1,0 +1,68 @@
+<section class="hero">
+  <div class="container">
+    <div class="bg-image bg-image--cover" style="background-image: url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1263182301-612x612.jpg');"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Companies House Director Verification</p>
+      <h1>Authorised director verification and Companies House compliance</h1>
+      <p class="hero-subtitle">
+        We are authorised as a Companies House Director Verification Provider, offering professional identity verification and corporate compliance support. Streamline your director appointments and statutory obligations with expert guidance.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Call for verification support</a>
+        <a routerLink="/contact" class="cta-secondary">Book a consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="container">
+    <div class="page-grid">
+      <div>
+        <h2>Director verification and Companies House compliance</h2>
+        <p>
+          As an authorised Companies House Director Verification Provider, we provide professional identity verification and corporate compliance support. Whether you're appointing new directors, managing ongoing compliance, or navigating corporate governance requirements, we're here to help.
+        </p>
+
+        <div class="feature-block">
+          <h3>Our Services</h3>
+          <ul>
+            <li *ngFor="let service of services">{{ service }}</li>
+          </ul>
+        </div>
+
+        <div class="feature-block">
+          <h3>Why choose our service</h3>
+          <ul>
+            <li *ngFor="let benefit of benefits">{{ benefit }}</li>
+          </ul>
+        </div>
+
+        <div class="feature-block">
+          <h3>What sets us apart</h3>
+          <ul>
+            <li *ngFor="let reason of whyChoose">{{ reason }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="page-aside">
+        <div class="aside-card">
+          <h3>Authorised verification provider</h3>
+          <p>
+            We are officially authorised by Companies House for director identity verification. Our professional team combines accounting expertise with governance knowledge to support your business needs.
+          </p>
+          <ul>
+            <li>Companies House authorised provider</li>
+            <li>AAT Licensed Accountancy Practice</li>
+            <li>AML Supervised</li>
+            <li>Professional Indemnity Insured</li>
+            <li>Qualified accountants and compliance experts</li>
+          </ul>
+          <a routerLink="/contact" class="btn btn-primary">Get in touch</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

@@ -3,7 +3,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="footer-logo">
-          <img src="mnalogo.jpeg" alt="MNA Accounting Ltd logo" />
+          <img src="/images/mna-logo.png" alt="MNA Accounting Ltd logo" />
           <span>{{ site.name }}</span>
         </div>
         <p class="footer-blurb">
@@ -95,6 +95,12 @@
     </div>
 
     <div class="footer-bottom">
+      <div class="footer-credentials">
+        <p class="credentials-text">
+          <strong>Company Registration:</strong> {{ site.companyNumber }}<br>
+          <strong>AAT Licensed Accountancy Practice:</strong> {{ site.aatOrgNumber }}
+        </p>
+      </div>
       <p>&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
       <p class="footer-legal-links">
         <a routerLink="/privacy-policy">Privacy</a>

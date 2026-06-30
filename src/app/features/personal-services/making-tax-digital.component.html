@@ -1,0 +1,68 @@
+<section class="hero">
+  <div class="container">
+    <div class="bg-image bg-image--cover" style="background-image: url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1263182301-612x612.jpg');"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Making Tax Digital (MTD)</p>
+      <h1>Stay compliant with HMRC's digital tax requirements</h1>
+      <p class="hero-subtitle">
+        We help you set up and manage Making Tax Digital (MTD) compliance, ensuring your quarterly submissions to HMRC are accurate, timely and stress-free. Professional guidance from AAT-licensed accountants.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Call to discuss MTD</a>
+        <a routerLink="/contact" class="cta-secondary">Book a free consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="container">
+    <div class="page-grid">
+      <div>
+        <h2>Making Tax Digital compliance made simple</h2>
+        <p>
+          Making Tax Digital (MTD) is HMRC's requirement for businesses to keep digital records and submit tax returns using compatible software. We help you navigate this transition smoothly, setting up compliant bookkeeping systems and managing your quarterly submissions so you can focus on growing your business.
+        </p>
+
+        <div class="feature-block">
+          <h3>Our MTD Services</h3>
+          <ul>
+            <li *ngFor="let service of services">{{ service }}</li>
+          </ul>
+        </div>
+
+        <div class="feature-block">
+          <h3>Why clients choose our MTD support</h3>
+          <ul>
+            <li *ngFor="let benefit of benefits">{{ benefit }}</li>
+          </ul>
+        </div>
+
+        <div class="feature-block">
+          <h3>Who needs MTD support?</h3>
+          <ul>
+            <li *ngFor="let group of whoNeeds">{{ group }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="page-aside">
+        <div class="aside-card">
+          <h3>Get started with MTD</h3>
+          <p>
+            Our qualified accountants will guide you through MTD setup, integration with approved software, and ongoing quarterly compliance. We're AAT-licensed and experienced in helping businesses of all sizes meet their digital tax obligations.
+          </p>
+          <ul>
+            <li>Initial MTD setup assessment</li>
+            <li>Software selection and integration</li>
+            <li>Quarterly submission management</li>
+            <li>Ongoing compliance support</li>
+            <li>Record-keeping best practices</li>
+          </ul>
+          <a routerLink="/contact" class="btn btn-primary">Arrange a call</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

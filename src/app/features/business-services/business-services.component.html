@@ -30,7 +30,7 @@
 
         <div class="service-features">
           <div class="feature-item" *ngFor="let feature of service.features">
-            <span class="feature-check">✓</span>
+            <app-icon name="check" class="check-icon"></app-icon>
             <span>{{ feature }}</span>
           </div>
         </div>
@@ -126,14 +126,14 @@
 
       <div class="cta-buttons">
         <a href="tel:07551551717" class="cta-primary"
-          >📞 Book Free Consultation</a
+          ><app-icon name="phone"></app-icon> Book Free Consultation</a
         >
         <a routerLink="/contact" class="cta-secondary">📧 Contact Us</a>
       </div>
 
       <div class="contact-info">
         <div class="contact-item">
-          <span class="contact-icon">📞</span>
+          <span class="contact-icon"><app-icon name="phone"></app-icon></span>
           <span>07551 551717</span>
         </div>
         <div class="contact-item">

@@ -127,6 +127,25 @@
   border-color: rgba(255, 255, 255, 0.4);
 }
 
+.value-prop-icon {
+  display: inline-block;
+  margin-right: var(--spacing-2);
+  vertical-align: middle;
+}
+
+.cta-icon {
+  display: inline;
+  margin-right: var(--spacing-2);
+}
+
+.map-placeholder-icon {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  margin-bottom: var(--spacing-4);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .hero-buttons {
   display: flex;
   flex-direction: column;
@@ -559,6 +578,116 @@
   color: var(--body-light);
   line-height: 1.65;
   font-size: 0.95rem;
+}
+
+/* ========== CONSULTATION SECTION ========== */
+.consultation {
+  padding: var(--spacing-20) var(--spacing-6);
+  background: linear-gradient(135deg, var(--brand-50) 0%, var(--brand-100) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.consultation::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(15, 76, 117, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.consultation::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(15, 158, 142, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.consultation-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.consultation-content h2 {
+  font-size: clamp(1.875rem, 5vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: var(--spacing-2);
+}
+
+.consultation-subtitle {
+  font-size: clamp(1.125rem, 3vw, 1.3rem);
+  color: var(--brand-600);
+  font-weight: 600;
+  margin-bottom: var(--spacing-4);
+}
+
+.consultation-description {
+  font-size: 1.025rem;
+  color: var(--body-light);
+  line-height: 1.75;
+  margin-bottom: var(--spacing-8);
+}
+
+.consultation-benefits {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
+  margin: var(--spacing-8) 0;
+  text-align: left;
+}
+
+@media (min-width: 640px) {
+  .consultation-benefits {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.consultation-benefit {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(15, 76, 117, 0.1);
+}
+
+.benefit-checkmark {
+  color: var(--brand-600);
+  font-weight: 700;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.consultation-benefit span:last-child {
+  color: var(--body-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.consultation-cta-text {
+  font-size: 0.95rem;
+  color: var(--body);
+  font-weight: 600;
+  margin: var(--spacing-8) 0 var(--spacing-6);
+  font-style: italic;
+}
+
+.consultation-button {
+  margin-top: var(--spacing-6);
 }
 
 /* ========== AREAS SECTION ========== */

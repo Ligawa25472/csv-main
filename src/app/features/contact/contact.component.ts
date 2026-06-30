@@ -20,32 +20,71 @@ export class ContactComponent {
 
   isSubmitting = false;
   isSubmitted = false;
+  isError = false;
+  errorMessage = '';
 
   onSubmit() {
     if (this.isFormValid()) {
       this.isSubmitting = true;
+      this.isError = false;
+      this.errorMessage = '';
 
-      // Simulate form submission - replace with actual API call
-      setTimeout(() => {
-        this.isSubmitting = false;
-        this.isSubmitted = true;
-        this.resetForm();
+      // Send email via API endpoint
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(this.contactForm),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to send message');
+          }
+          return response.json();
+        })
+        .then(() => {
+          this.isSubmitting = false;
+          this.isSubmitted = true;
+          this.resetForm();
 
-        // Hide success message after 5 seconds
-        setTimeout(() => {
-          this.isSubmitted = false;
-        }, 5000);
-      }, 1000);
+          // Hide success message after 5 seconds
+          setTimeout(() => {
+            this.isSubmitted = false;
+          }, 5000);
+        })
+        .catch((error) => {
+          console.error('Contact form error:', error);
+          this.isSubmitting = false;
+          this.isError = true;
+          this.errorMessage =
+            'Sorry, we could not send your message. Please try again or call us directly at 07551 551717.';
+
+          // Hide error message after 5 seconds
+          setTimeout(() => {
+            this.isError = false;
+          }, 5000);
+        });
     }
   }
 
   isFormValid(): boolean {
-    return !!(
-      this.contactForm.name &&
-      this.contactForm.email &&
-      this.contactForm.phone &&
-      this.contactForm.message
-    );
+    if (
+      !this.contactForm.name ||
+      !this.contactForm.email ||
+      !this.contactForm.phone ||
+      !this.contactForm.message
+    ) {
+      return false;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(this.contactForm.email)) {
+      return false;
+    }
+
+    return true;
   }
 
   resetForm() {

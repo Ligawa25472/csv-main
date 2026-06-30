@@ -72,23 +72,23 @@ export class HomeComponent implements OnInit {
 
   benefits = [
     {
-      icon: '💷',
+      icon: 'dollarSign',
       title: '40% Lower Fees',
       description: 'On average, we charge 40% less than other accountants',
     },
     {
-      icon: '🎯',
+      icon: 'target',
       title: 'Local Expertise',
       description:
         'Deep understanding of Birmingham and West Midlands business landscape',
     },
     {
-      icon: '📱',
+      icon: 'smartphone',
       title: 'Remote Support',
       description: 'Full online accounting services available nationwide',
     },
     {
-      icon: '🤝',
+      icon: 'handshake',
       title: 'Personal Service',
       description: 'You always deal with someone who knows your business',
     },
