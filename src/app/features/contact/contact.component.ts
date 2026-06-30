@@ -112,8 +112,8 @@ export class ContactComponent {
       imageUrl:
         'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/mariia-shalabaieva-HyyHIYz_l0A-unsplash.jpg',
       label: 'Email Us',
-      value: 'info@mnaaccounting.com',
-      action: 'mailto:info@mnaaccounting.com',
+      value: 'info@mnaaccountings.co.uk',
+      action: 'mailto:info@mnaaccountings.co.uk',
       description: 'Send us a message anytime',
     },
     {

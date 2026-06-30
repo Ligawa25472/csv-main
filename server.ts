@@ -42,7 +42,7 @@ export function app(): express.Express {
     resend.emails
       .send({
         from: 'MNA Accounting <onboarding@resend.dev>',
-        to: 'info@mnaaccounting.com',
+        to: 'info@mnaaccountings.co.uk',
         replyTo: email,
         subject: `New Contact Request from ${name}`,
         html: `

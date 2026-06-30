@@ -7,7 +7,7 @@ export const SITE = {
   legalName: 'MNA Accounting Ltd',
   tagline: 'Expert qualified bookkeeping & accounting',
   url: 'https://www.mnaaccounting.co.uk',
-  email: 'info@mnaaccounting.com',
+  email: 'info@mnaaccountings.co.uk',
   phone: '07551 551717',
   phoneHref: 'tel:07551551717',
   priceRange: '££',
