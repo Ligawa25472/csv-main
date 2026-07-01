@@ -99,10 +99,29 @@
 
     <div class="footer-bottom">
       <div class="footer-credentials">
-        <p class="credentials-text">
-          <strong>Company Registration:</strong> {{ site.companyNumber }}<br>
-          <strong>AAT Licensed Accountancy Practice:</strong> {{ site.aatOrgNumber }}
-        </p>
+        <div class="credentials-badges">
+          <div class="credential-item">
+            <strong>Company Registration:</strong> {{ site.companyNumber }}
+          </div>
+          <div class="credential-item">
+            <strong>AAT Licensed Accountancy Practice</strong>
+          </div>
+          <div class="credential-item">
+            <strong>AAT Org Number:</strong> {{ site.aatOrgNumber }}
+          </div>
+          <div class="credential-item">
+            <strong>ACCA Qualified Accountant</strong>
+          </div>
+          <div class="credential-item">
+            <strong>AML Supervised</strong>
+          </div>
+          <div class="credential-item">
+            <strong>Professional Indemnity Insured</strong>
+          </div>
+          <div class="credential-item">
+            <strong>Authorised Director Verification Provider</strong>
+          </div>
+        </div>
       </div>
       <p>&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
       <p class="footer-legal-links">
