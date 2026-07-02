@@ -1,14 +1,58 @@
 /* ============================================================
    MNA Accounting — Global Design System
+   Material Design 3 Enhanced
    ============================================================ */
 
-/* ---------- Design Tokens ---------- */
+/* ---------- Design Tokens (MD3-Aligned) ---------- */
 :root {
-  /* Brand - Professional Blue */
-  --brand: #0f4c75;
-  --brand-dark: #082a45;
-  --brand-light: #1d6fa5;
-  --brand-50: #eef6fb;
+  /* Primary - Professional Blue (MD3 Tonal System) */
+  --md-sys-color-primary: #1e5ba8;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #d4e4ff;
+  --md-sys-color-on-primary-container: #001d47;
+  
+  /* Secondary - Teal Accent */
+  --md-sys-color-secondary: #0f9e8e;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #a5efe7;
+  --md-sys-color-on-secondary-container: #002825;
+  
+  /* Tertiary - Complementary */
+  --md-sys-color-tertiary: #0f7f72;
+  --md-sys-color-on-tertiary: #ffffff;
+  --md-sys-color-tertiary-container: #a5efe7;
+  --md-sys-color-on-tertiary-container: #002825;
+  
+  /* Error */
+  --md-sys-color-error: #b42318;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #f9dedc;
+  --md-sys-color-on-error-container: #410e0b;
+  
+  /* Surfaces with Tonal System */
+  --md-sys-color-surface: #fffbfe;
+  --md-sys-color-on-surface: #1d1b20;
+  --md-sys-color-surface-variant: #ece0ec;
+  --md-sys-color-on-surface-variant: #49454e;
+  
+  /* Surface Containers (for elevation hierarchy) */
+  --md-sys-color-surface-dim: #ded8e0;
+  --md-sys-color-surface-bright: #fffbfe;
+  --md-sys-color-surface-container-lowest: #ffffff;
+  --md-sys-color-surface-container-low: #f7f2fa;
+  --md-sys-color-surface-container: #f3eef7;
+  --md-sys-color-surface-container-high: #ede8f0;
+  --md-sys-color-surface-container-highest: #e8e3eb;
+  
+  /* Outline */
+  --md-sys-color-outline: #79747e;
+  --md-sys-color-outline-variant: #cac4d0;
+  
+  /* Legacy Brand Colors */
+  --brand: #1e5ba8;
+  --brand-dark: #0f4287;
+  --brand-light: #4a7ba7;
+  --brand-50: #f0f7ff;
   --brand-100: #d7e9f5;
   --brand-200: #b1d5eb;
   --brand-300: #8ac1e1;
@@ -19,13 +63,11 @@
   --brand-800: #0f4287;
   --brand-900: #082a5e;
 
-  /* Accent - Teal */
   --accent: #0f9e8e;
   --accent-dark: #0c7f72;
   --accent-light: #20b8a0;
   --accent-50: #e6f6f4;
 
-  /* Success & Status */
   --success: #15803d;
   --success-bg: #ecfdf3;
   --warning: #d97706;
@@ -33,20 +75,29 @@
   --danger: #b42318;
   --danger-bg: #fef3f2;
 
-  /* Neutrals */
-  --ink: #0f1c2e;
-  --ink-secondary: #374151;
-  --body: #475569;
-  --body-light: #6b7280;
+  --ink: #1d1b20;
+  --ink-secondary: #49454e;
+  --body: #49454e;
+  --body-light: #79747e;
   --muted: #9ca3af;
-  --muted-light: #d1d5db;
+  --muted-light: #cac4d0;
   --line: #e5e7eb;
-  --line-strong: #cbd5e1;
-  --surface: #f9fafb;
-  --surface-light: #f3f4f6;
+  --line-strong: #cac4d0;
+  --surface: #fffbfe;
+  --surface-light: #f7f2fa;
   --white: #ffffff;
 
-  /* Effects */
+  /* MD3 Shape System */
+  --md-sys-shape-corner-none: 0;
+  --md-sys-shape-corner-extra-small: 4px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-large-increased: 20px;
+  --md-sys-shape-corner-extra-large: 28px;
+  --md-sys-shape-corner-full: 9999px;
+  
+  /* Legacy Radius Tokens */
   --radius-xs: 4px;
   --radius-sm: 8px;
   --radius: 12px;
@@ -54,19 +105,27 @@
   --radius-xl: 20px;
   --radius-full: 9999px;
   
+  /* MD3 Elevation + Tonal (prefer tonal over shadows) */
+  --elevation-0: 0 0 0 0 transparent;
+  --elevation-1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --elevation-2: 0 3px 6px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.12);
+  --elevation-3: 0 6px 12px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.12);
+  --elevation-4: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.12);
+  --elevation-5: 0 12px 24px rgba(0, 0, 0, 0.15), 0 5px 10px rgba(0, 0, 0, 0.12);
+  
   --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-2xl: 0 25px 50px -12px rgba(15, 76, 117, 0.25);
+  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 25px 50px -12px rgba(30, 91, 168, 0.15);
   
-  --ring: 0 0 0 3px rgba(15, 76, 117, 0.1);
+  --ring: 0 0 0 3px rgba(30, 91, 168, 0.1);
 
   /* Typography */
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Roboto, sans-serif;
-  --font-display: "Segoe UI", Roboto, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Roboto Flex", Roboto, sans-serif;
+  --font-display: "Segoe UI", "Roboto Flex", Roboto, sans-serif;
   --font-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
 
   /* Layout */
@@ -76,7 +135,7 @@
   --container-lg: 1024px;
   --container-xl: 1280px;
   
-  /* Spacing Scale */
+  /* MD3 Spacing System (8dp base) */
   --spacing-2: 0.5rem;
   --spacing-4: 1rem;
   --spacing-6: 1.5rem;
@@ -86,10 +145,13 @@
   --spacing-20: 5rem;
   --spacing-24: 6rem;
   
-  /* Transitions */
+  /* MD3 Transitions (Emphasized easing) */
   --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-emphasized: 500ms cubic-bezier(0.2, 0, 0, 1);
+  --transition-emphasized-decelerate: 400ms cubic-bezier(0.05, 0.7, 0.1, 1);
+  --transition-emphasized-accelerate: 200ms cubic-bezier(0.3, 0, 0.8, 0.15);
 }
 
 /* ---------- Reset / Base ---------- */
@@ -110,9 +172,10 @@ body {
   padding: 0;
   font-family: var(--font-sans);
   color: var(--body);
-  background: radial-gradient(circle at top left, rgba(15, 111, 192, 0.12), transparent 18%),
-    radial-gradient(circle at bottom right, rgba(15, 158, 142, 0.08), transparent 18%),
-    linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+  background-color: var(--surface);
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(30, 91, 168, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(15, 158, 142, 0.04) 0%, transparent 50%);
   min-height: 100vh;
   font-size: 1rem;
   line-height: 1.6;
@@ -216,15 +279,132 @@ a:hover {
   color: var(--brand-600);
 }
 
+/* MD3 Button System */
 button {
   font-family: var(--font-sans);
   border: none;
   cursor: pointer;
   transition: all var(--transition-fast);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--md-sys-shape-corner-full);
+  font-size: 0.875rem;
 }
 
 button:active {
   transform: scale(0.98);
+}
+
+/* Filled Button (Primary) */
+.btn-primary, 
+button.btn-primary,
+.btn-filled {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  box-shadow: var(--elevation-0);
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover,
+button.btn-primary:hover,
+.btn-filled:hover {
+  background-color: #1a4a90;
+  box-shadow: var(--elevation-1);
+}
+
+.btn-primary:focus-visible,
+button.btn-primary:focus-visible,
+.btn-filled:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Outlined Button (Secondary) */
+.btn-secondary,
+button.btn-secondary,
+.btn-outlined {
+  background-color: transparent;
+  color: var(--md-sys-color-primary);
+  border: 1.5px solid var(--md-sys-color-outline);
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover,
+button.btn-secondary:hover,
+.btn-outlined:hover {
+  background-color: rgba(30, 91, 168, 0.08);
+  border-color: var(--md-sys-color-primary);
+}
+
+.btn-secondary:focus-visible,
+button.btn-secondary:focus-visible,
+.btn-outlined:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* Tonal Button */
+.btn-tonal,
+button.btn-tonal {
+  background-color: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  box-shadow: var(--elevation-0);
+  transition: all var(--transition-fast);
+}
+
+.btn-tonal:hover,
+button.btn-tonal:hover {
+  background-color: #c5daf7;
+  box-shadow: var(--elevation-1);
+}
+
+.btn-tonal:focus-visible,
+button.btn-tonal:focus-visible {
+  outline: 2px solid var(--md-sys-color-primary);
+  outline-offset: 2px;
+}
+
+/* MD3 Card System */
+.card,
+.md3-card {
+  background-color: var(--surface);
+  border-radius: var(--md-sys-shape-corner-medium);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  box-shadow: var(--elevation-0);
+  transition: all var(--transition-emphasized-decelerate);
+  overflow: hidden;
+}
+
+.card:hover,
+.md3-card:hover {
+  box-shadow: var(--elevation-1);
+  border-color: var(--md-sys-color-outline);
+}
+
+.card.elevated,
+.md3-card.elevated {
+  box-shadow: var(--elevation-1);
+  border: none;
+}
+
+.card.elevated:hover,
+.md3-card.elevated:hover {
+  box-shadow: var(--elevation-2);
+}
+
+/* Surface Container */
+.surface-container,
+.md3-surface-container {
+  background-color: var(--md-sys-color-surface-container);
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: var(--spacing-6);
+}
+
+.surface-container-high,
+.md3-surface-container-high {
+  background-color: var(--md-sys-color-surface-container-high);
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: var(--spacing-6);
 }
 
 img, video {
