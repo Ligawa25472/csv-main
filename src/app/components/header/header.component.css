@@ -1,16 +1,19 @@
 .header {
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid rgba(15, 28, 46, 0.08);
-  box-shadow: 0 12px 40px rgba(15, 28, 46, 0.08);
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+  box-shadow: var(--elevation-1);
   position: sticky;
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(14px);
-  transition: transform var(--transition-base), background-color var(--transition-base), box-shadow var(--transition-base);
+  transition: 
+    transform var(--transition-base), 
+    background-color var(--transition-base), 
+    box-shadow var(--transition-emphasized-decelerate);
 }
 
 .header:hover {
-  box-shadow: 0 16px 45px rgba(15, 28, 46, 0.1);
+  box-shadow: var(--elevation-2);
 }
 
 .container {
