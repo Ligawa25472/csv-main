@@ -99,33 +99,42 @@
 
     <div class="footer-bottom">
       <div class="footer-credentials">
+        <h4 class="credentials-title">Professional Accreditations</h4>
         <div class="credentials-badges">
-          <div class="credential-item">
-            <strong>Company Registration:</strong> {{ site.companyNumber }}
+          <div class="credential-badge">
+            <span class="badge-label">Company Registration</span>
+            <span class="badge-value">{{ site.companyNumber }}</span>
           </div>
-          <div class="credential-item">
-            <strong>AAT Licensed Accountancy Practice</strong>
+          <div class="credential-badge">
+            <span class="badge-icon">✓</span>
+            <span class="badge-label">AAT Licensed Accountancy Practice</span>
           </div>
-          <div class="credential-item">
-            <strong>AAT Org Number:</strong> {{ site.aatOrgNumber }}
+          <div class="credential-badge">
+            <span class="badge-label">AAT Org Number</span>
+            <span class="badge-value">{{ site.aatOrgNumber }}</span>
           </div>
-          <div class="credential-item">
-            <strong>AML Supervised</strong>
+          <div class="credential-badge">
+            <span class="badge-icon">✓</span>
+            <span class="badge-label">AML Supervised</span>
           </div>
-          <div class="credential-item">
-            <strong>Professional Indemnity Insured</strong>
+          <div class="credential-badge">
+            <span class="badge-icon">✓</span>
+            <span class="badge-label">Professional Indemnity Insured</span>
           </div>
-          <div class="credential-item">
-            <strong>Authorised Director Verification Provider</strong>
+          <div class="credential-badge">
+            <span class="badge-icon">✓</span>
+            <span class="badge-label">Authorised Director Verification Provider</span>
           </div>
         </div>
       </div>
-      <p>&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
-      <p class="footer-legal-links">
-        <a routerLink="/privacy-policy">Privacy</a>
-        <span aria-hidden="true">·</span>
-        <a routerLink="/terms">Terms</a>
-      </p>
+      <div class="footer-copyright-section">
+        <p class="footer-copyright">&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
+        <p class="footer-legal-links">
+          <a routerLink="/privacy-policy">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a routerLink="/terms">Terms</a>
+        </p>
+      </div>
     </div>
   </div>
 </footer>
