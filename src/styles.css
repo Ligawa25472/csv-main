@@ -1,90 +1,90 @@
 /* ============================================================
    MNA Accounting — Global Design System
-   Material Design 3 Enhanced
+   Modern Minimalist Professional
    ============================================================ */
 
-/* ---------- Design Tokens (MD3-Aligned) ---------- */
+/* ---------- Design Tokens (Modern Palette) ---------- */
 :root {
-  /* Primary - Professional Blue (MD3 Tonal System) */
-  --md-sys-color-primary: #1e5ba8;
+  /* Primary - Deep Charcoal (Modern Professional) */
+  --md-sys-color-primary: #1a1a1a;
   --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-primary-container: #d4e4ff;
-  --md-sys-color-on-primary-container: #001d47;
+  --md-sys-color-primary-container: #f5f5f5;
+  --md-sys-color-on-primary-container: #1a1a1a;
   
-  /* Secondary - Teal Accent */
-  --md-sys-color-secondary: #0f9e8e;
+  /* Secondary - Elegant Slate */
+  --md-sys-color-secondary: #6b7280;
   --md-sys-color-on-secondary: #ffffff;
-  --md-sys-color-secondary-container: #a5efe7;
-  --md-sys-color-on-secondary-container: #002825;
+  --md-sys-color-secondary-container: #f3f4f6;
+  --md-sys-color-on-secondary-container: #1f2937;
   
-  /* Tertiary - Complementary */
-  --md-sys-color-tertiary: #0f7f72;
+  /* Tertiary - Accent Teal (Refined) */
+  --md-sys-color-tertiary: #0d9488;
   --md-sys-color-on-tertiary: #ffffff;
-  --md-sys-color-tertiary-container: #a5efe7;
-  --md-sys-color-on-tertiary-container: #002825;
+  --md-sys-color-tertiary-container: #d1faf7;
+  --md-sys-color-on-tertiary-container: #0d4a42;
   
   /* Error */
-  --md-sys-color-error: #b42318;
+  --md-sys-color-error: #dc2626;
   --md-sys-color-on-error: #ffffff;
-  --md-sys-color-error-container: #f9dedc;
-  --md-sys-color-on-error-container: #410e0b;
+  --md-sys-color-error-container: #fee2e2;
+  --md-sys-color-on-error-container: #7f1d1d;
   
-  /* Surfaces with Tonal System */
-  --md-sys-color-surface: #fffbfe;
-  --md-sys-color-on-surface: #1d1b20;
-  --md-sys-color-surface-variant: #ece0ec;
-  --md-sys-color-on-surface-variant: #49454e;
+  /* Surfaces - Light and Clean */
+  --md-sys-color-surface: #ffffff;
+  --md-sys-color-on-surface: #1f2937;
+  --md-sys-color-surface-variant: #f9fafb;
+  --md-sys-color-on-surface-variant: #6b7280;
   
   /* Surface Containers (for elevation hierarchy) */
-  --md-sys-color-surface-dim: #ded8e0;
-  --md-sys-color-surface-bright: #fffbfe;
+  --md-sys-color-surface-dim: #f3f4f6;
+  --md-sys-color-surface-bright: #ffffff;
   --md-sys-color-surface-container-lowest: #ffffff;
-  --md-sys-color-surface-container-low: #f7f2fa;
-  --md-sys-color-surface-container: #f3eef7;
-  --md-sys-color-surface-container-high: #ede8f0;
-  --md-sys-color-surface-container-highest: #e8e3eb;
+  --md-sys-color-surface-container-low: #f9fafb;
+  --md-sys-color-surface-container: #f3f4f6;
+  --md-sys-color-surface-container-high: #e5e7eb;
+  --md-sys-color-surface-container-highest: #d1d5db;
   
   /* Outline */
-  --md-sys-color-outline: #79747e;
-  --md-sys-color-outline-variant: #cac4d0;
+  --md-sys-color-outline: #d1d5db;
+  --md-sys-color-outline-variant: #e5e7eb;
   
-  /* Legacy Brand Colors */
-  --brand: #1e5ba8;
-  --brand-dark: #0f4287;
-  --brand-light: #4a7ba7;
-  --brand-50: #f0f7ff;
-  --brand-100: #d7e9f5;
-  --brand-200: #b1d5eb;
-  --brand-300: #8ac1e1;
-  --brand-400: #5da8d8;
-  --brand-500: #3a8fd0;
-  --brand-600: #1e76c7;
-  --brand-700: #155cb0;
-  --brand-800: #0f4287;
-  --brand-900: #082a5e;
+  /* Legacy Brand Colors (Updated) */
+  --brand: #1a1a1a;
+  --brand-dark: #0f0f0f;
+  --brand-light: #4b5563;
+  --brand-50: #f9fafb;
+  --brand-100: #f3f4f6;
+  --brand-200: #e5e7eb;
+  --brand-300: #d1d5db;
+  --brand-400: #9ca3af;
+  --brand-500: #6b7280;
+  --brand-600: #4b5563;
+  --brand-700: #374151;
+  --brand-800: #1f2937;
+  --brand-900: #111827;
 
-  --accent: #0f9e8e;
-  --accent-dark: #0c7f72;
-  --accent-light: #20b8a0;
-  --accent-50: #e6f6f4;
+  --accent: #0d9488;
+  --accent-dark: #0a5f52;
+  --accent-light: #14b8a6;
+  --accent-50: #f0fdfa;
 
-  --success: #15803d;
+  --success: #059669;
   --success-bg: #ecfdf3;
-  --warning: #d97706;
+  --warning: #f59e0b;
   --warning-bg: #fffbeb;
-  --danger: #b42318;
-  --danger-bg: #fef3f2;
+  --danger: #dc2626;
+  --danger-bg: #fee2e2;
 
-  --ink: #1d1b20;
-  --ink-secondary: #49454e;
-  --body: #49454e;
-  --body-light: #79747e;
-  --muted: #9ca3af;
-  --muted-light: #cac4d0;
+  --ink: #1f2937;
+  --ink-secondary: #6b7280;
+  --body: #6b7280;
+  --body-light: #9ca3af;
+  --muted: #d1d5db;
+  --muted-light: #e5e7eb;
   --line: #e5e7eb;
-  --line-strong: #cac4d0;
-  --surface: #fffbfe;
-  --surface-light: #f7f2fa;
+  --line-strong: #d1d5db;
+  --surface: #ffffff;
+  --surface-light: #f9fafb;
   --white: #ffffff;
 
   /* MD3 Shape System */
@@ -174,8 +174,8 @@ body {
   color: var(--body);
   background-color: var(--surface);
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(30, 91, 168, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(15, 158, 142, 0.04) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(13, 148, 136, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(107, 114, 128, 0.02) 0%, transparent 50%);
   min-height: 100vh;
   font-size: 1rem;
   line-height: 1.6;
@@ -424,8 +424,8 @@ img, video {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 10% 10%, rgba(58, 143, 208, 0.12), transparent 18%),
-    radial-gradient(circle at 90% 90%, rgba(15, 158, 142, 0.08), transparent 18%);
+  background: radial-gradient(circle at 10% 10%, rgba(13, 148, 136, 0.06), transparent 18%),
+    radial-gradient(circle at 90% 90%, rgba(107, 114, 128, 0.04), transparent 18%);
 }
 
 .hero.hero-contrast::before {
@@ -531,24 +531,25 @@ img, video {
   justify-content: center;
   border-radius: 50%;
   color: var(--white);
-  background: linear-gradient(135deg, var(--brand), var(--accent));
+  background: linear-gradient(135deg, #0d9488, #14b8a6);
   font-weight: 700;
 }
 
 .cta-section {
   padding: calc(var(--spacing-16) + 1rem) 0;
-  background: linear-gradient(180deg, rgba(15, 76, 117, 0.06), rgba(255, 255, 255, 0.96));
+  background: linear-gradient(180deg, rgba(13, 148, 136, 0.04), rgba(255, 255, 255, 0.98));
 }
 
 .cta-content {
   background: var(--white);
   border-radius: var(--radius-xl);
   padding: var(--spacing-12);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.12);
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   gap: var(--spacing-8);
   align-items: stretch;
+  border: 1px solid #e5e7eb;
 }
 
 .cta-section.cta-dark .cta-content {
@@ -561,7 +562,7 @@ img, video {
 }
 
 .cta-section.cta-dark {
-  background: linear-gradient(180deg, rgba(14, 22, 50, 0.95), rgba(20, 37, 70, 0.95));
+  background: linear-gradient(180deg, rgba(31, 41, 55, 0.97), rgba(17, 24, 39, 0.97));
 }
 
 .cta-section.cta-dark .cta-content h2,
@@ -701,7 +702,7 @@ img, video {
 
 .footer {
   padding: var(--spacing-20) 0;
-  background: linear-gradient(180deg, #0b3b67 0%, #0f4c75 100%);
+  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
   color: #fff;
 }
 
