@@ -18,7 +18,7 @@
 
 /* ========== HERO SECTION ========== */
 .hero {
-  background: linear-gradient(135deg, var(--brand-700) 0%, var(--brand-600) 100%),
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%),
               url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-941729686-612x612.jpg');
   background-attachment: fixed;
   background-size: cover;
@@ -47,14 +47,14 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.08) 0%, transparent 42%),
-    radial-gradient(circle at 80% 80%, rgba(15, 158, 142, 0.08) 0%, transparent 40%),
-    linear-gradient(180deg, rgba(1, 22, 53, 0.75) 0%, rgba(1, 22, 53, 0.85) 100%);
+  background: radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.06) 0%, transparent 42%),
+    radial-gradient(circle at 80% 80%, rgba(13, 148, 136, 0.08) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(17, 24, 39, 0.78) 0%, rgba(17, 24, 39, 0.88) 100%);
   pointer-events: none;
 }
 
 .hero .bg-overlay {
-  background: linear-gradient(180deg, rgba(6, 37, 79, 0.78) 0%, rgba(6, 37, 79, 0.86) 100%);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.80) 0%, rgba(17, 24, 39, 0.88) 100%);
 }
 
 .hero-content {
@@ -65,8 +65,8 @@
   animation: slideUp 0.6s ease-out;
   padding: var(--spacing-12);
   border-radius: var(--radius-xl);
-  background: rgba(5, 32, 64, 0.38);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+  background: rgba(17, 24, 39, 0.45);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
 }
 
 @keyframes slideUp {
@@ -353,7 +353,7 @@
   right: -20%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(15, 76, 117, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.03) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -365,7 +365,7 @@
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(15, 158, 142, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(107, 114, 128, 0.03) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -432,8 +432,8 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--brand-500), var(--accent));
+  height: 3px;
+  background: linear-gradient(90deg, #0d9488, #14b8a6);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition-base);
@@ -441,8 +441,8 @@
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--brand-200);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-color: #d1f5f0;
 }
 
 .service-card:hover::before {
@@ -487,7 +487,7 @@
 /* ========== BENEFITS SECTION ========== */
 .benefits {
   padding: var(--spacing-20) var(--spacing-6);
-  background: linear-gradient(135deg, var(--surface) 0%, #f5f8fa 100%);
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
   position: relative;
   overflow: hidden;
 }
@@ -499,7 +499,7 @@
   right: 0;
   width: 40%;
   height: 100%;
-  background: radial-gradient(ellipse 800px 600px at 100% 50%, rgba(15, 76, 117, 0.03) 0%, transparent 70%);
+  background: radial-gradient(ellipse 800px 600px at 100% 50%, rgba(13, 148, 136, 0.02) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -510,7 +510,7 @@
   left: 0;
   width: 50%;
   height: 100%;
-  background: radial-gradient(ellipse 600px 500px at 0% 100%, rgba(15, 158, 142, 0.03) 0%, transparent 70%);
+  background: radial-gradient(ellipse 600px 500px at 0% 100%, rgba(107, 114, 128, 0.02) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -547,8 +547,8 @@
 
 .benefit-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--brand-100);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+  border-color: #d1f5f0;
 }
 
 .benefit-icon {
@@ -583,7 +583,7 @@
 /* ========== CONSULTATION SECTION ========== */
 .consultation {
   padding: var(--spacing-20) var(--spacing-6);
-  background: linear-gradient(135deg, var(--brand-50) 0%, var(--brand-100) 100%);
+  background: linear-gradient(135deg, #e0f2fe 0%, #f0fdfa 100%);
   position: relative;
   overflow: hidden;
 }
@@ -595,7 +595,7 @@
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(15, 76, 117, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.06) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -607,7 +607,7 @@
   left: -15%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(15, 158, 142, 0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(107, 114, 128, 0.04) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -629,7 +629,7 @@
 
 .consultation-subtitle {
   font-size: clamp(1.125rem, 3vw, 1.3rem);
-  color: var(--brand-600);
+  color: #0d9488;
   font-weight: 600;
   margin-bottom: var(--spacing-4);
 }
@@ -660,13 +660,13 @@
   align-items: center;
   gap: var(--spacing-3);
   padding: var(--spacing-3) var(--spacing-4);
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(15, 76, 117, 0.1);
+  border: 1px solid rgba(13, 148, 136, 0.15);
 }
 
 .benefit-checkmark {
-  color: var(--brand-600);
+  color: #0d9488;
   font-weight: 700;
   font-size: 1.25rem;
   flex-shrink: 0;
@@ -693,7 +693,7 @@
 /* ========== AREAS SECTION ========== */
 .areas {
   padding: var(--spacing-20) var(--spacing-6);
-  background: linear-gradient(135deg, var(--white) 0%, #f9fbfc 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
   position: relative;
   overflow: hidden;
 }
@@ -705,7 +705,7 @@
   left: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(15, 76, 117, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.04) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -717,7 +717,7 @@
   right: -15%;
   width: 600px;
   height: 600px;
-  background: radial-gradient(circle, rgba(15, 158, 142, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(107, 114, 128, 0.03) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -759,21 +759,21 @@
 }
 
 .location {
-  background: var(--brand-50);
-  color: var(--brand-600);
+  background: #f0fdfa;
+  color: #0d9488;
   padding: var(--spacing-2) var(--spacing-6);
   border-radius: var(--radius-full);
   font-size: 0.875rem;
   font-weight: 600;
-  border: 1px solid var(--brand-200);
+  border: 1px solid #d1f5f0;
   transition: all var(--transition-fast);
   cursor: default;
 }
 
 .location:hover {
-  background: var(--brand-100);
+  background: #ccfbf1;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .areas-visual {
@@ -962,14 +962,14 @@
 }
 
 .cta-section .cta-primary {
-  background: var(--brand-600);
+  background: #0d9488;
   color: var(--white);
   min-width: 200px;
 }
 
 .cta-section .cta-primary:hover {
-  background: var(--brand-700);
-  box-shadow: 0 12px 25px rgba(15, 76, 117, 0.4);
+  background: #0a5f52;
+  box-shadow: 0 12px 25px rgba(13, 148, 136, 0.4);
 }
 
 .cta-section .cta-secondary {

@@ -62,7 +62,7 @@
 .logo {
   width: 52px;
   height: 52px;
-  background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 100%);
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -71,7 +71,7 @@
   font-weight: 700;
   font-size: 0.95rem;
   flex-shrink: 0;
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   object-fit: cover;
 }
@@ -119,29 +119,29 @@
 
 .phone-number {
   display: none;
-  color: var(--brand);
+  color: #0d9488;
   font-weight: 600;
   font-size: 0.875rem;
   padding: var(--spacing-2) var(--spacing-4);
   border-radius: var(--radius);
-  background: var(--brand-50);
+  background: #f0fdfa;
   white-space: nowrap;
   transition: all var(--transition-fast);
 }
 
 .phone-number:hover {
-  background: var(--brand);
+  background: #0d9488;
   color: var(--white);
 }
 
 .mobile-menu-btn {
-  background: var(--surface-light);
-  border: 1px solid var(--line);
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
   border-radius: var(--radius);
   font-size: 1.2rem;
   cursor: pointer;
   padding: var(--spacing-2);
-  color: var(--ink-secondary);
+  color: #6b7280;
   width: 40px;
   height: 40px;
   display: flex;
@@ -152,15 +152,15 @@
 
 .mobile-menu-btn:hover,
 .mobile-menu-btn[aria-expanded="true"] {
-  background: var(--brand);
+  background: #0d9488;
   color: var(--white);
-  border-color: var(--brand);
+  border-color: #0d9488;
 }
 
 .mobile-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 28, 46, 0.5);
+  background: rgba(17, 24, 39, 0.5);
   z-index: 999;
   animation: fadeIn var(--transition-base) ease;
 }
@@ -242,8 +242,8 @@
 .nav-mobile a:hover,
 .nav-mobile a:focus,
 .nav-mobile a.active {
-  background: var(--brand-50);
-  color: var(--brand);
+  background: #f0fdfa;
+  color: #0d9488;
   outline: none;
   padding-left: var(--spacing-6);
 }
@@ -256,11 +256,11 @@
   display: block;
   padding: var(--spacing-2) var(--spacing-4) var(--spacing-2);
   font-weight: 700;
-  color: var(--brand);
+  color: #0d9488;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: var(--surface-light);
+  background: #f9fafb;
 }
 
 .mobile-section a {
@@ -321,7 +321,7 @@
 
   .nav-desktop > a,
   .dropdown-toggle {
-    color: var(--ink-secondary);
+    color: #6b7280;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
@@ -340,7 +340,7 @@
     left: 0;
     right: 0;
     height: 2px;
-    background: var(--brand);
+    background: #0d9488;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform var(--transition-fast);
@@ -352,7 +352,7 @@
   .nav-desktop > a:hover::after,
   .dropdown-toggle:hover::after,
   .nav-desktop > a.active::after {
-    color: var(--brand);
+    color: #0d9488;
     transform: scaleX(1);
   }
 
@@ -367,9 +367,9 @@
     top: calc(100% + 0.5rem);
     left: 0;
     background: var(--white);
-    border: 1px solid var(--line);
+    border: 1px solid #e5e7eb;
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     padding: var(--spacing-2) 0;
     min-width: 200px;
     opacity: 0;
@@ -389,7 +389,7 @@
   .dropdown-menu a {
     display: block;
     padding: var(--spacing-4) var(--spacing-6);
-    color: var(--body);
+    color: #6b7280;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
@@ -399,8 +399,8 @@
   }
 
   .dropdown-menu a:hover {
-    background: var(--brand-50);
-    color: var(--brand);
+    background: #f0fdfa;
+    color: #0d9488;
     padding-left: var(--spacing-8);
   }
 
