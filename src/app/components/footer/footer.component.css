@@ -1,5 +1,5 @@
 .footer {
-  background: linear-gradient(135deg, #0f4287 0%, #1e5ba8 50%, #2b6fb8 100%);
+  background: linear-gradient(135deg, #0d3d6f 0%, #1b5399 50%, #246fb3 100%);
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -125,13 +125,15 @@
   border: 1px solid rgba(255, 255, 255, 0.12);
   color: rgba(255, 255, 255, 0.9);
   transition: all var(--transition-fast);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .footer-contact-row:hover,
 .footer-contact-row:focus-visible {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.22);
   transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
 }
 
 .footer-contact-row app-icon {
@@ -262,11 +264,12 @@
   gap: var(--spacing-6);
   padding: var(--spacing-8);
   background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: var(--radius-xl);
   margin-bottom: var(--spacing-8);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   animation: slideInUp 0.6s ease-out 0.4s backwards;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
 }
 
 .footer-support-cards {
@@ -282,12 +285,14 @@
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.12);
   transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .footer-support-card:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(255, 255, 255, 0.22);
   transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .footer-support-card h4 {

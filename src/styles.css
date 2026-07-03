@@ -232,36 +232,39 @@ main {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--ink);
-  line-height: 1.2;
+  line-height: 1.25;
   margin: 0 0 0.75rem;
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
 h1 {
   font-size: clamp(1.875rem, 5vw, 3.5rem);
-  font-weight: 700;
+  font-weight: 800;
+  letter-spacing: -0.025em;
 }
 
 h2 {
   font-size: clamp(1.5rem, 4vw, 2.5rem);
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 h3 {
   font-size: clamp(1.25rem, 3vw, 1.875rem);
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: -0.015em;
 }
 
 h4 {
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 h5, h6 {
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 p {
@@ -285,14 +288,15 @@ button {
   border: none;
   cursor: pointer;
   transition: all var(--transition-fast);
-  font-weight: 500;
-  padding: 0.625rem 1.5rem;
+  font-weight: 600;
+  padding: 0.675rem 1.5rem;
   border-radius: var(--md-sys-shape-corner-full);
   font-size: 0.875rem;
+  letter-spacing: 0.3px;
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.96);
 }
 
 /* Filled Button (Primary) */
@@ -370,14 +374,14 @@ button.btn-tonal:focus-visible {
   background-color: var(--surface);
   border-radius: var(--md-sys-shape-corner-medium);
   border: 1px solid var(--md-sys-color-outline-variant);
-  box-shadow: var(--elevation-0);
-  transition: all var(--transition-emphasized-decelerate);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all var(--transition-base);
   overflow: hidden;
 }
 
 .card:hover,
 .md3-card:hover {
-  box-shadow: var(--elevation-1);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
   border-color: var(--md-sys-color-outline);
 }
 

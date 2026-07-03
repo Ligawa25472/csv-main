@@ -1,19 +1,15 @@
 .header {
   background-color: var(--surface);
   border-bottom: 1px solid var(--md-sys-color-outline-variant);
-  box-shadow: var(--elevation-1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(8px);
   transition: 
     transform var(--transition-base), 
     background-color var(--transition-base), 
-    box-shadow var(--transition-emphasized-decelerate);
-}
-
-.header:hover {
-  box-shadow: var(--elevation-2);
+    box-shadow var(--transition-base);
 }
 
 .container {
@@ -369,12 +365,12 @@
     background: var(--white);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     padding: var(--spacing-2) 0;
     min-width: 200px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-8px);
+    transform: translateY(-6px);
     transition: all var(--transition-base);
     z-index: 100;
   }
