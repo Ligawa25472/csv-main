@@ -1,0 +1,15 @@
+{
+  "routes": [
+    "/about",
+    "/business",
+    "/business/bookkeeping",
+    "/business/corporation-tax",
+    "/business/management-accounts",
+    "/business/payroll-cis",
+    "/business/tax-planning",
+    "/business/vat-returns",
+    "/business/year-end-accounts",
+    "/contact",
+    "/home"
+  ]
+}

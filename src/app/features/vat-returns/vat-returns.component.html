@@ -1,0 +1,143 @@
+<!-- Hero Section -->
+<section class="hero hero-contrast">
+  <div class="container">
+    <div class="hero-content">
+      <nav class="breadcrumb">
+        <a routerLink="/business">Business Services</a>
+        <span class="separator">›</span>
+        <span>VAT Returns</span>
+      </nav>
+
+      <h1>
+        Accurate, Timely VAT Support for Businesses in Birmingham, Coventry,
+        Warwickshire, and remotely
+      </h1>
+      <p class="hero-subtitle">
+        VAT can be complex, but it doesn't have to be stressful. At MNA
+        Accounting LTD, we simplify the process by offering tailored VAT
+        services that ensure compliance, reduce errors, and help you manage cash
+        flow effectively. Whether you're on the Flat Rate Scheme or Standard
+        VAT, we handle your returns and advise on reclaim opportunities.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2><app-icon name="check"></app-icon> What We Offer</h2>
+      <p class="section-subtitle">
+        Comprehensive VAT services to keep your business compliant and cash flow
+        optimized
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <app-icon class="service-icon" [name]="service.icon"></app-icon>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VAT Schemes Section -->
+<section class="schemes-section">
+  <div class="container">
+    <h2>VAT Schemes We Handle</h2>
+    <p class="section-subtitle">
+      We work with all VAT schemes to find the best fit for your business
+    </p>
+
+    <div class="schemes-grid">
+      <div class="scheme-card">
+        <div class="scheme-icon"><app-icon name="barChart2" class="icon-large"></app-icon></div>
+        <h3>Standard VAT</h3>
+        <p>
+          Traditional VAT accounting with full input tax recovery on eligible
+          expenses
+        </p>
+        <div class="scheme-rate">20% VAT</div>
+      </div>
+
+      <div class="scheme-card">
+        <div class="scheme-icon"><app-icon name="trendingUp" class="icon-large"></app-icon></div>
+        <h3>Flat Rate Scheme</h3>
+        <p>
+          Simplified VAT accounting with a fixed percentage rate based on your
+          industry
+        </p>
+        <div class="scheme-rate">Various Rates</div>
+      </div>
+
+      <div class="scheme-card">
+        <div class="scheme-icon"><app-icon name="calendar" class="icon-large"></app-icon></div>
+        <h3>Annual Accounting</h3>
+        <p>Submit one VAT return per year with monthly or quarterly payments</p>
+        <div class="scheme-rate">Annual Return</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-content">
+      <div class="benefits-text">
+        <h2><app-icon name="briefcase" class="icon-small"></app-icon> Why Choose MNA Accounting?</h2>
+        <ul class="benefits-list">
+          <li *ngFor="let benefit of benefits">
+            <span class="benefit-check">•</span>
+            <span>{{ benefit }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="benefits-visual">
+        <div class="highlight-card">
+          <div class="highlight-icon">⚡</div>
+          <h3>Fast & Accurate</h3>
+          <p>
+            On-time VAT return submissions with expert advice on reclaim
+            opportunities
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section cta-dark">
+  <div class="container">
+    <div class="cta-content">
+      <h2><app-icon name="phone"></app-icon> Let's Simplify Your VAT Returns</h2>
+      <p>
+        Need help managing your VAT obligations?<br />
+        Book a free consultation or contact us today to get started.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary"
+          ><app-icon name="phone"></app-icon> Book Free Consultation</a
+        >
+        <a routerLink="/contact" class="cta-secondary"><app-icon name="mail" class="icon-small"></app-icon> Contact Us</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="phone"></app-icon></span>
+          <span>07551 551717</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="mail"></app-icon></span>
+          <span>info&#64;mnaaccounting.co.uk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

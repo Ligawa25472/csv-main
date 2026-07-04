@@ -1,0 +1,65 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Frequently Asked Questions</h1>
+      <p class="hero-subtitle">
+        Find answers to common questions about our accounting services, pricing, and support
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container">
+    <div class="faq-container">
+      <div class="faq-header">
+        <h2>We're here to help</h2>
+        <p>Browse our most commonly asked questions below, or <a routerLink="/contact">contact us</a> if you need more information.</p>
+      </div>
+
+      <div class="accordion-wrapper">
+        <div class="accordion-item" *ngFor="let faq of faqs" [class.open]="faq.isOpen">
+          <button
+            class="accordion-trigger"
+            (click)="toggleFaq(faq)"
+            [attr.aria-expanded]="faq.isOpen"
+            [attr.aria-controls]="'faq-' + faq.id"
+          >
+            <span class="accordion-question">{{ faq.question }}</span>
+            <div class="accordion-icon">
+              <app-icon name="chevronDown"></app-icon>
+            </div>
+          </button>
+
+          <div class="accordion-content" [id]="'faq-' + faq.id" role="region">
+            <div class="accordion-body">
+              <p>{{ faq.answer }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Still have questions?</h2>
+      <p>We're here to help. Get in touch with our team for a free consultation.</p>
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="cta-primary">
+          <app-icon name="mail" class="icon-small"></app-icon>
+          Book Free Consultation
+        </a>
+        <a href="tel:07551551717" class="cta-secondary">
+          <app-icon name="phone" class="icon-small"></app-icon>
+          Call Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

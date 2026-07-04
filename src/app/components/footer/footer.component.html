@@ -1,0 +1,159 @@
+<footer class="footer" role="contentinfo">
+  <div class="container footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="/images/mna-logo.png" alt="MNA Accounting Ltd logo" />
+          <span>{{ site.name }}</span>
+        </div>
+        <p class="footer-blurb">
+          Trusted accounting and advisory support for businesses and individuals across Birmingham, the West Midlands and UK-wide.
+        </p>
+
+        <div class="footer-contact-block" aria-label="Contact information">
+          <a [href]="site.phoneHref" class="footer-contact-row">
+            <app-icon name="phone" class="icon-small"></app-icon>
+            <span>{{ site.phone }}</span>
+          </a>
+          <a [href]="'mailto:' + site.email" class="footer-contact-row">
+            <app-icon name="mail" class="icon-small"></app-icon>
+            <span>{{ site.email }}</span>
+          </a>
+          <span class="footer-contact-row">
+            <app-icon name="mapPin" class="icon-small"></app-icon>
+            <span>
+              {{ site.address.street }}, {{ site.address.locality }}, {{ site.address.region }} {{ site.address.postalCode }}
+            </span>
+          </span>
+          <span class="footer-contact-row">
+            <app-icon name="clock" class="icon-small"></app-icon>
+            <span>{{ site.openingHours }}</span>
+          </span>
+        </div>
+
+        <div class="footer-social" aria-label="Follow us on social media">
+          <a [href]="site.social.linkedin" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="social-icon-link">
+            <img src="/images/social-linkedin.jpg" alt="LinkedIn" class="social-icon" />
+          </a>
+          <a [href]="site.social.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon-link">
+            <img src="/images/social-instagram.png" alt="Instagram" class="social-icon" />
+          </a>
+          <a [href]="site.social.facebook" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="social-icon-link">
+            <img src="/images/social-facebook.jpg" alt="Facebook" class="social-icon" />
+          </a>
+          <a [href]="site.social.whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="social-icon-link">
+            <img src="/images/social-whatsapp.png" alt="WhatsApp" class="social-icon" />
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-col" aria-label="Business services">
+        <h3>Business Services</h3>
+        <ul>
+          <li *ngFor="let s of businessServices">
+            <a [routerLink]="s.link">{{ s.name }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Personal services">
+        <h3>Personal Services</h3>
+        <ul>
+          <li *ngFor="let s of personalServices">
+            <a [routerLink]="s.link">{{ s.name }}</a>
+          </li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Company and policies">
+        <h3>Company</h3>
+        <ul>
+          <li><a routerLink="/about">About Us</a></li>
+          <li><a routerLink="/business">All Services</a></li>
+          <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/faq">FAQ</a></li>
+          <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
+          <li><a routerLink="/terms">Terms of Service</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-support">
+      <div class="footer-support-cards">
+        <div class="footer-support-card">
+          <h4>Phone support</h4>
+          <p>Speak directly with a qualified accountant for fast guidance.</p>
+          <a [href]="site.phoneHref">{{ site.phone }}</a>
+        </div>
+        <div class="footer-support-card">
+          <h4>Email enquiries</h4>
+          <p>Send us your questions and we will reply within one working day.</p>
+          <a [href]="'mailto:' + site.email">{{ site.email }}</a>
+        </div>
+      </div>
+
+      <a routerLink="/contact" class="btn btn-primary btn-block footer-support-button">
+        Request a free consultation
+        <app-icon name="arrowRight"></app-icon>
+      </a>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-credentials">
+        <h4 class="credentials-title">Professional Accreditations & Registrations</h4>
+        <div class="credentials-badges">
+          <div class="credential-badge">
+            <app-icon name="building2" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Company Registration Number</span>
+              <span class="badge-value">{{ site.companyNumber }}</span>
+            </div>
+          </div>
+          <div class="credential-badge">
+            <app-icon name="check" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">AAT Licensed Accountancy Practice</span>
+              <span class="badge-note">Association of Accounting Technicians</span>
+            </div>
+          </div>
+          <div class="credential-badge">
+            <app-icon name="id" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">AAT Organisation Number</span>
+              <span class="badge-value">{{ site.aatOrgNumber }}</span>
+            </div>
+          </div>
+          <div class="credential-badge">
+            <app-icon name="shield" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">AML Supervised</span>
+              <span class="badge-note">Anti-Money Laundering Compliance</span>
+            </div>
+          </div>
+          <div class="credential-badge">
+            <app-icon name="checkCircle" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Professional Indemnity Insured</span>
+              <span class="badge-note">Full Coverage Provided</span>
+            </div>
+          </div>
+          <div class="credential-badge">
+            <app-icon name="verified" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Authorised Director Verification Provider</span>
+              <span class="badge-note">Companies House Approved</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright-section">
+        <p class="footer-copyright">&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
+        <p class="footer-legal-links">
+          <a routerLink="/privacy-policy">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a routerLink="/terms">Terms</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>

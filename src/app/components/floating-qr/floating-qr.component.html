@@ -1,0 +1,33 @@
+<!-- Floating QR Code Widget -->
+<div class="floating-qr-container" [class.expanded]="isExpanded()">
+  <!-- QR Code Card -->
+  <div class="qr-card" [class.visible]="isExpanded()">
+    <button class="qr-close" (click)="closeQr()" aria-label="Close QR code">×</button>
+    <div class="qr-header">
+      <h3>Contact Us on WhatsApp</h3>
+      <p>Scan to reach us instantly</p>
+    </div>
+    <div class="qr-image-container">
+      <img 
+        src="https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/mna%20qr.jpeg" 
+        alt="WhatsApp QR Code - Scan to contact MNA Accounting" 
+        class="qr-image"
+      />
+    </div>
+    <p class="qr-instructions">Use your phone camera or WhatsApp to scan</p>
+  </div>
+
+  <!-- Floating Button -->
+  <button 
+    class="qr-toggle-btn" 
+    (click)="toggleQr()"
+    [attr.aria-expanded]="isExpanded()"
+    aria-label="Open WhatsApp QR code"
+    title="Scan to contact us on WhatsApp"
+  >
+    <img src="/images/social-whatsapp.png" alt="WhatsApp" class="qr-icon-img" />
+  </button>
+
+  <!-- Pulse Animation Indicator -->
+  <div class="qr-pulse"></div>
+</div>

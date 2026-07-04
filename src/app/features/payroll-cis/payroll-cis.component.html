@@ -1,0 +1,142 @@
+<!-- Hero Section -->
+<section class="hero hero-contrast">
+  <div class="container">
+    <div class="hero-content">
+      <nav class="breadcrumb">
+        <a routerLink="/business">Business Services</a>
+        <span class="separator">›</span>
+        <span>Payroll & CIS</span>
+      </nav>
+
+      <h1>Reliable Payroll Support for Small to Medium Businesses</h1>
+      <p class="hero-subtitle">
+        Managing payroll can be a drain on your time and resources. At MNA
+        Accounting LTD, we provide a complete solution that ensures your team is
+        paid accurately, your business stays compliant, and your operations run
+        smoothly — all with a personal touch.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What We Offer</h2>
+      <p class="section-subtitle">
+        Complete payroll and CIS services to keep your business running smoothly
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <app-icon class="service-icon" [name]="service.icon"></app-icon>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIS Information Section -->
+<section class="cis-info-section">
+  <div class="container">
+    <div class="cis-content">
+      <div class="cis-text">
+        <h2>Construction Industry Scheme (CIS)</h2>
+        <p>
+          If you work in construction, the CIS affects how you get paid and how
+          tax is deducted. We handle all CIS requirements for both contractors
+          and subcontractors.
+        </p>
+
+        <div class="cis-features">
+          <div class="feature-item">
+            <app-icon name="check" class="check-icon"></app-icon>
+            <span>CIS Registration & Setup</span>
+          </div>
+          <div class="feature-item">
+            <app-icon name="check" class="check-icon"></app-icon>
+            <span>Monthly CIS Returns</span>
+          </div>
+          <div class="feature-item">
+            <app-icon name="check" class="check-icon"></app-icon>
+            <span>Verification of Subcontractors</span>
+          </div>
+          <div class="feature-item">
+            <app-icon name="check" class="check-icon"></app-icon>
+            <span>Tax Deduction Statements</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cis-visual">
+        <div class="info-card">
+          <div class="info-icon"><app-icon name="hardHat" class="icon-large"></app-icon></div>
+          <h3>CIS Specialists</h3>
+          <p>Expert handling of Construction Industry Scheme requirements</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-content">
+      <div class="benefits-text">
+        <h2><app-icon name="briefcase" class="icon-small"></app-icon> Why Choose MNA Accounting?</h2>
+        <ul class="benefits-list">
+          <li *ngFor="let benefit of benefits">
+            <span class="benefit-check">•</span>
+            <span>{{ benefit }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="benefits-visual">
+        <div class="highlight-card">
+          <div class="highlight-icon">⚡</div>
+          <h3>Hassle-Free Payroll</h3>
+          <p>
+            Take the complexity out of payroll with our expert management
+            services
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section cta-dark">
+  <div class="container">
+    <div class="cta-content">
+      <h2><app-icon name="phone"></app-icon> Let Us Handle Your Payroll</h2>
+      <p>
+        Free up your time and reduce risk with our expert payroll services.<br />
+        Book a free consultation or contact us today to get started.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary"
+          ><app-icon name="phone"></app-icon> Book Free Consultation</a
+        >
+        <a routerLink="/contact" class="cta-secondary"><app-icon name="mail" class="icon-small"></app-icon> Contact Us</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="phone"></app-icon></span>
+          <span>07551 551717</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="mail"></app-icon></span>
+          <span>info&#64;mnaaccounting.co.uk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

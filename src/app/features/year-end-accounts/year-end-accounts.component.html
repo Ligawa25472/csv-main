@@ -1,0 +1,182 @@
+<!-- Hero Section -->
+<section class="hero hero-contrast">
+  <div class="container">
+    <div class="hero-content">
+      <nav class="breadcrumb">
+        <a routerLink="/business">Business Services</a>
+        <span class="separator">›</span>
+        <span>Year End Accounts</span>
+      </nav>
+
+      <h1>Accurate Year-End Accounts for Small to Medium Businesses</h1>
+      <p class="hero-subtitle">
+        Year-end accounts are essential for staying compliant with HMRC and
+        Companies House, but they also offer valuable insights into your
+        business's financial health. At MNA Accounting LTD, we prepare your
+        accounts with precision and clarity — whether you're local or working
+        with us online.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What We Offer</h2>
+      <p class="section-subtitle">
+        Professional year-end accounts preparation with full compliance support
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <app-icon class="service-icon" [name]="service.icon"></app-icon>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Account Types Section -->
+<section class="account-types-section">
+  <div class="container">
+    <h2>We Prepare Accounts For</h2>
+    <p class="section-subtitle">
+      Tailored services for different business structures
+    </p>
+
+    <div class="account-types-grid">
+      <div class="account-type-card" *ngFor="let type of accountTypes">
+        <div class="account-type-header">
+          <app-icon class="account-type-icon" [name]="type.icon"></app-icon>
+          <div>
+            <h3>{{ type.title }}</h3>
+            <p>{{ type.description }}</p>
+          </div>
+        </div>
+
+        <div class="requirements-list">
+          <div
+            class="requirement-item"
+            *ngFor="let requirement of type.requirements"
+          >
+            <app-icon name="check" class="check-icon"></app-icon>
+            <span>{{ requirement }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Timeline Section -->
+<section class="timeline-section">
+  <div class="container">
+    <h2>Year-End Process Timeline</h2>
+    <p class="section-subtitle">
+      Our structured approach to preparing your year-end accounts
+    </p>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-number">1</div>
+        <div class="timeline-content">
+          <h3>Information Gathering</h3>
+          <p>
+            We collect all necessary financial records and supporting
+            documentation
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-number">2</div>
+        <div class="timeline-content">
+          <h3>Accounts Preparation</h3>
+          <p>
+            We prepare your profit and loss, balance sheet, and supporting notes
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-number">3</div>
+        <div class="timeline-content">
+          <h3>Review & Approval</h3>
+          <p>
+            We review the accounts with you and explain key financial insights
+          </p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-number">4</div>
+        <div class="timeline-content">
+          <h3>Filing & Compliance</h3>
+          <p>We file with HMRC and Companies House before all deadlines</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-content">
+      <div class="benefits-text">
+        <h2>Why Choose MNA Accounting?</h2>
+        <ul class="benefits-list">
+          <li *ngFor="let benefit of benefits">
+            <span class="benefit-check">•</span>
+            <span>{{ benefit }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="benefits-visual">
+        <div class="highlight-card">
+          <div class="highlight-icon"><app-icon name="barChart2" class="icon-large"></app-icon></div>
+          <h3>Compliance Guaranteed</h3>
+          <p>
+            Professional year-end accounts filed on time with full HMRC and
+            Companies House compliance
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section cta-dark">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Get Your Year-End Accounts Sorted</h2>
+      <p>
+        Let us take care of your year-end accounts so you can focus on what you
+        do best.<br />
+        Book a free consultation or contact us today to get started.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Book Free Consultation</a>
+        <a routerLink="/contact" class="cta-secondary">Contact Us</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="phone"></app-icon></span>
+          <span>07551 551717</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="mail"></app-icon></span>
+          <span>info&#64;mnaaccounting.co.uk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

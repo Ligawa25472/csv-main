@@ -1,0 +1,119 @@
+<!-- Hero Section -->
+<section class="hero hero-contrast">
+  <div class="container">
+    <div class="hero-content">
+      <nav class="breadcrumb">
+        <a routerLink="/business">Business Services</a>
+        <span class="separator">›</span>
+        <span>Bookkeeping</span>
+      </nav>
+
+      <h1>Reliable Bookkeeping for Small to Medium Businesses</h1>
+      <p class="hero-subtitle">
+        Accurate bookkeeping is the foundation of good financial management. At
+        MNA Accounting LTD, we help small to medium businesses stay organised,
+        compliant, and ready for growth — whether you're local or working with
+        us online.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2><app-icon name="check"></app-icon> What We Offer</h2>
+      <p class="section-subtitle">
+        Comprehensive bookkeeping services to keep your business organised and
+        compliant
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <app-icon class="service-icon" [name]="service.icon"></app-icon>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Software Integration Section -->
+<section class="software-section">
+  <div class="container">
+    <h2>Software We Work With</h2>
+    <p class="section-subtitle">
+      We integrate with leading accounting platforms to streamline your
+      bookkeeping
+    </p>
+
+    <div class="software-grid">
+      <div class="software-card" *ngFor="let platform of softwarePlatforms">
+        <div class="software-icon">{{ platform.icon }}</div>
+        <h3>{{ platform.name }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-content">
+      <div class="benefits-text">
+        <h2><app-icon name="briefcase" class="icon-small"></app-icon> Why Choose MNA Accounting?</h2>
+        <ul class="benefits-list">
+          <li *ngFor="let benefit of benefits">
+            <span class="benefit-check">•</span>
+            <span>{{ benefit }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="benefits-visual">
+        <div class="highlight-card">
+          <div class="highlight-icon"><app-icon name="book" class="icon-large"></app-icon></div>
+          <h3>Expert Bookkeeping</h3>
+          <p>
+            Keep your records accurate and up-to-date with our professional
+            bookkeeping services
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section cta-dark">
+  <div class="container">
+    <div class="cta-content">
+      <h2><app-icon name="phone"></app-icon> Stay Organised with Our Bookkeeping Support</h2>
+      <p>
+        Let us take care of your books so you can focus on running your
+        business.<br />
+        Book a free consultation or contact us today to get started.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary"
+          ><app-icon name="phone"></app-icon> Book Free Consultation</a
+        >
+        <a routerLink="/contact" class="cta-secondary"><app-icon name="mail" class="icon-small"></app-icon> Contact Us</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="phone"></app-icon></span>
+          <span>07551 551717</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="mail"></app-icon></span>
+          <span>info&#64;mnaaccounting.co.uk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

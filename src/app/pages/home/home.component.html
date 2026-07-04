@@ -1,0 +1,169 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>AFFORDABLE ACCOUNTING FOR BUSINESSES</h1>
+      <p class="hero-subtitle">
+        Professional financial services tailored to your business needs with
+        expert qualified support across Birmingham, Coventry, Warwickshire and
+        beyond
+      </p>
+
+      <div class="value-prop">
+        <app-icon name="dollarSign" class="value-prop-icon"></app-icon>
+        On average, our clients save up to 40% on accounting fees compared with traditional accountancy firms
+      </div>
+
+      <div class="hero-buttons">
+        <button class="cta-primary" (click)="scrollToContact()">
+          Get Free Consultation
+        </button>
+        <a href="tel:07551551717" class="cta-secondary">
+          <app-icon name="phone" class="cta-icon"></app-icon>
+          Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services">
+  <div class="container">
+    <h2 class="section-title">OUR SERVICES</h2>
+    <p class="section-subtitle">
+      Expert support for your business — no matter the size or complexity
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <app-icon class="service-icon" [name]="service.icon"></app-icon>
+        <h3 class="service-name">{{ service.name }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+        <a [routerLink]="service.link" class="service-link">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits">
+  <div class="container">
+    <h2 class="section-title">Why Choose MNA Accounting?</h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card" *ngFor="let benefit of benefits">
+        <div class="benefit-icon">
+          <app-icon [name]="benefit.icon"></app-icon>
+        </div>
+        <h3 class="benefit-title">{{ benefit.title }}</h3>
+        <p class="benefit-description">{{ benefit.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Free Consultation Section -->
+<section class="consultation">
+  <div class="container">
+    <div class="consultation-content">
+      <h2>Free Initial Consultation</h2>
+      <p class="consultation-subtitle">Not sure what support you need?</p>
+      <p class="consultation-description">
+        Our expert accountants offer a free, no-obligation initial consultation to discuss your business needs and identify the best solutions for you.
+      </p>
+      <div class="consultation-benefits">
+        <div class="consultation-benefit">
+          <app-icon name="check" class="benefit-checkmark"></app-icon>
+          <span>Understand your tax obligations</span>
+        </div>
+        <div class="consultation-benefit">
+          <app-icon name="check" class="benefit-checkmark"></app-icon>
+          <span>Explore available tax-saving opportunities</span>
+        </div>
+        <div class="consultation-benefit">
+          <app-icon name="check" class="benefit-checkmark"></app-icon>
+          <span>Compare accounting software options</span>
+        </div>
+        <div class="consultation-benefit">
+          <app-icon name="check" class="benefit-checkmark"></app-icon>
+          <span>Review fixed fee pricing for your needs</span>
+        </div>
+      </div>
+      <p class="consultation-cta-text">No obligation. No pressure. Just helpful guidance.</p>
+      <button class="cta-primary consultation-button" (click)="scrollToContact()">
+        Book Your Free Consultation
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Areas We Serve Section -->
+<section class="areas">
+  <div class="container">
+    <div class="areas-content">
+      <div class="areas-text">
+        <h2>Serving Birmingham & Beyond</h2>
+        <p>
+          Based in Birmingham, we proudly serve clients across Coventry,
+          Warwickshire, and the wider West Midlands region. We also provide full
+          remote accounting services to businesses throughout the UK.
+        </p>
+        <div class="location-list">
+          <span class="location">Birmingham</span>
+          <span class="location">Coventry</span>
+          <span class="location">Warwickshire</span>
+          <span class="location">Solihull</span>
+          <span class="location">Wolverhampton</span>
+          <span class="location">West Midlands</span>
+          <span class="location">London</span>
+          <span class="location">Remote UK-wide</span>
+        </div>
+      </div>
+      <div class="areas-visual">
+        <div class="map-placeholder">
+          <app-icon name="mapPin" class="map-placeholder-icon"></app-icon>
+          <p>Local & Remote Services</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Credentials Section -->
+<section class="credentials-section">
+  <div class="container">
+    <h2 class="section-title">Qualified & Regulated</h2>
+    <p class="section-subtitle">Professional accreditations and regulatory compliance</p>
+    
+    <div class="credentials-grid">
+      <div class="credential-item">
+        <app-icon name="award" class="credential-icon"></app-icon>
+        <h3>AAT Licensed Accountancy Practice</h3>
+        <p>Fully licensed and regulated accounting practice with AAT accreditation</p>
+      </div>
+      
+      <div class="credential-item">
+        <app-icon name="shield" class="credential-icon"></app-icon>
+        <h3>AML Supervised</h3>
+        <p>Compliant with Anti-Money Laundering regulations and supervision</p>
+      </div>
+      
+      <div class="credential-item">
+        <app-icon name="check" class="credential-icon"></app-icon>
+        <h3>Professional Indemnity Insured</h3>
+        <p>Protected by comprehensive professional indemnity insurance coverage</p>
+      </div>
+      
+      <div class="credential-item">
+        <app-icon name="verified" class="credential-icon"></app-icon>
+        <h3>Authorised Director Verification Provider</h3>
+        <p>Authorised to verify and authenticate company director information</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews Section -->
+<app-reviews></app-reviews>
+

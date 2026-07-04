@@ -1,0 +1,232 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>About MNA Accounting LTD</h1>
+      <p class="hero-subtitle">
+        A small, dedicated team of professionals with a genuine passion for
+        helping businesses grow
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Main Content -->
+<section class="main-content">
+  <div class="container">
+    <div class="content-grid">
+      <div class="main-text">
+        <p class="intro-text">
+          At MNA Accounting LTD, we're a small, dedicated team of professionals
+          with a genuine passion for helping businesses grow. Based in
+          Birmingham, we proudly serve clients across Coventry, Warwickshire,
+          and the wider West Midlands & Warwickshire region, as well as offering
+          remote support.
+        </p>
+
+        <div class="aat-section">
+          <h3>AAT Licensed Accountancy Practice</h3>
+          <p>
+            MNA Accounting is an AAT Licensed Accountancy Practice providing professional, affordable accounting and tax services to small and medium businesses 
+            across Birmingham and throughout the UK.
+          </p>
+        </div>
+
+        <p>
+          We understand the challenges small businesses face — from staying
+          compliant with HMRC to managing cash flow and growth. That's why our
+          mission is simple: to save you money on accounting fees while helping
+          your business perform better.
+        </p>
+      </div>
+
+      <div class="mission-card">
+        <h3>Our Mission</h3>
+        <p>
+          To save you money on accounting fees while helping your business
+          perform better
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Story Section -->
+<section class="story-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-icon"><app-icon name="briefcase" class="icon-small"></app-icon></span>
+      <h2>Our Story</h2>
+    </div>
+
+    <div class="story-content">
+      <p>
+        MNA Accounting was born out of a desire to offer small to medium
+        businesses a more personal, affordable, and growth-focused accounting
+        service. We've helped startups, contractors, and established businesses
+        streamline their finances and unlock new opportunities.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Team Section -->
+<section class="team-section">
+  <div class="container">
+    <div class="section-header">
+      <app-icon name="users" class="section-icon"></app-icon>
+      <h2>Meet the Team</h2>
+    </div>
+
+    <div class="team-content">
+      <p>
+        We're a close-knit group of accountants and advisors who care deeply
+        about your success. Our team combines technical expertise with a
+        friendly, down-to-earth approach — so you always feel supported and
+        understood.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Values Section -->
+<section class="values-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-icon"><app-icon name="target" class="icon-small"></app-icon></span>
+      <h2>What We Stand For</h2>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-card" *ngFor="let value of values">
+        <div class="value-image">
+          <img [src]="value.imageUrl" [alt]="value.title" />
+        </div>
+        <h3 class="value-title">{{ value.title }}</h3>
+        <p class="value-description">{{ value.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who We Help Section -->
+<section class="clients-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-icon"></span>
+      <h2>Who We Help</h2>
+    </div>
+
+    <p class="section-subtitle">We specialize in supporting:</p>
+
+    <div class="clients-grid">
+      <div class="client-card" *ngFor="let client of clientTypes">
+        <div class="client-icon">{{ client.icon }}</div>
+        <h3 class="client-title">{{ client.title }}</h3>
+        <p class="client-description">{{ client.description }}</p>
+      </div>
+    </div>
+
+    <div class="location-info">
+      <h3>Serving Businesses In:</h3>
+      <div class="location-list">
+        <span class="location">Birmingham</span>
+        <span class="location">Coventry</span>
+        <span class="location">Warwickshire</span>
+        <span class="location">West Midlands</span>
+        <span class="location">Remote UK-wide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Qualifications Section -->
+<section class="qualifications-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-icon"><app-icon name="shield" class="icon-small"></app-icon></span>
+      <h2>Qualified & Regulated</h2>
+    </div>
+
+    <p class="section-subtitle">MNA Accounting is committed to professional standards and compliance</p>
+
+    <div class="qualifications-grid">
+      <div class="qualification-card">
+        <div class="qual-icon"><app-icon name="checkCircle"></app-icon></div>
+        <h3>AAT Licensed Accountancy Practice</h3>
+        <p>Officially licensed by the Association of Accounting Technicians (Org Number: {{ site.aatOrgNumber }})</p>
+      </div>
+      <div class="qualification-card">
+        <div class="qual-icon"><app-icon name="checkCircle"></app-icon></div>
+        <h3>AML Supervised</h3>
+        <p>Subject to Anti-Money Laundering supervision, ensuring compliance with financial regulations</p>
+      </div>
+      <div class="qualification-card">
+        <div class="qual-icon"><app-icon name="checkCircle"></app-icon></div>
+        <h3>Professional Indemnity Insured</h3>
+        <p>Fully insured to protect our clients' interests and provide peace of mind</p>
+      </div>
+      <div class="qualification-card">
+        <div class="qual-icon"><app-icon name="checkCircle"></app-icon></div>
+        <h3>Companies House Verification Provider</h3>
+        <p>Authorised to provide director identity verification services for Companies House filings</p>
+      </div>
+      <div class="qualification-card">
+        <div class="qual-icon"><app-icon name="checkCircle"></app-icon></div>
+        <h3>Company Registration</h3>
+        <p>Registered at Companies House (Company Number: {{ site.companyNumber }})</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials Section -->
+<!-- Testimonials Section -->
+<section class="testimonials-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-icon">⭐</span>
+      <h2>What Our Clients Say</h2>
+    </div>
+
+    <div
+      class="trustpilot-widget"
+      data-locale="en-US"
+      data-template-id="56278e9abfbbba0bdcd568bc"
+      [attr.data-businessunit-id]="businessUnitId"
+      data-style-height="52px"
+      data-style-width="100%"
+      [attr.data-token]="dataToken"
+    >
+      <a
+        href="https://www.trustpilot.com/review/mnaaccounting.co.uk"
+        target="_blank"
+        rel="noopener"
+      >
+        Trustpilot
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section cta-dark">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-icon"></span>
+      <h2>Let's Talk</h2>
+    </div>
+
+    <p class="cta-text">
+      Want to see how we can help your business thrive?<br />
+      Book a free consultation or contact us today — we'd love to help!
+    </p>
+
+    <div class="cta-buttons">
+      <a href="tel:07551551717" class="cta-primary"
+        >Call for Free Consultation</a
+      >
+      <a routerLink="/contact" class="cta-secondary">Contact Us</a>
+    </div>
+  </div>
+</section>

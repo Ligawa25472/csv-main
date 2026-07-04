@@ -1,0 +1,176 @@
+<!-- Hero Section -->
+<section class="hero hero-contrast">
+  <div class="container">
+    <div class="hero-content">
+      <nav class="breadcrumb">
+        <a routerLink="/business">Business Services</a>
+        <span class="separator">›</span>
+        <span>Management Accounts</span>
+      </nav>
+
+      <h1>Insightful Management Accounts for Smarter Business Decisions</h1>
+      <p class="hero-subtitle">
+        Management accounts give you a clear picture of your business
+        performance throughout the year — not just at year-end. At MNA
+        Accounting LTD, we provide timely, tailored reports that help small to
+        medium businesses make informed decisions, manage cash flow, and plan
+        for growth.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What We Offer</h2>
+      <p class="section-subtitle">
+        Comprehensive management accounting services to drive your business
+        forward
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <app-icon class="service-icon" [name]="service.icon"></app-icon>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reporting Frequency Section -->
+<section class="frequency-section">
+  <div class="container">
+    <h2>Choose Your Reporting Frequency</h2>
+    <p class="section-subtitle">
+      Flexible reporting schedules to match your business needs
+    </p>
+
+    <div class="frequency-grid">
+      <div class="frequency-card" *ngFor="let frequency of reportingFrequency">
+        <div class="frequency-header">
+          <app-icon class="frequency-icon" [name]="frequency.icon"></app-icon>
+          <div>
+            <h3>{{ frequency.title }}</h3>
+            <p>{{ frequency.description }}</p>
+          </div>
+        </div>
+
+        <div class="benefits-list">
+          <div class="benefit-item" *ngFor="let benefit of frequency.benefits">
+            <app-icon name="check" class="check-icon"></app-icon>
+            <span>{{ benefit }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Reports Section -->
+<section class="reports-section">
+  <div class="container">
+    <h2>Key Reports We Provide</h2>
+    <p class="section-subtitle">
+      Essential financial insights delivered when you need them
+    </p>
+
+    <div class="reports-grid">
+      <div class="report-card">
+        <div class="report-icon"><app-icon name="pound"></app-icon></div>
+        <h3>Profit & Loss</h3>
+        <p>Track revenue, expenses, and profitability trends over time</p>
+      </div>
+
+      <div class="report-card">
+        <div class="report-icon">⚖️</div>
+        <h3>Balance Sheet</h3>
+        <p>Monitor assets, liabilities, and equity position</p>
+      </div>
+
+      <div class="report-card">
+        <div class="report-icon">💧</div>
+        <h3>Cash Flow</h3>
+        <p>Understand cash movements and liquidity position</p>
+      </div>
+
+      <div class="report-card">
+        <div class="report-icon"><app-icon name="barChart2" class="icon-large"></app-icon></div>
+        <h3>Budget vs Actual</h3>
+        <p>Compare performance against planned targets</p>
+      </div>
+
+      <div class="report-card">
+        <div class="report-icon"><app-icon name="trendingUp" class="icon-large"></app-icon></div>
+        <h3>KPI Dashboard</h3>
+        <p>Key performance indicators specific to your business</p>
+      </div>
+
+      <div class="report-card">
+        <div class="report-icon"><app-icon name="lightbulb" class="icon-large"></app-icon></div>
+        <h3>Forecasting</h3>
+        <p>Future projections based on current trends</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-content">
+      <div class="benefits-text">
+        <h2>Why Choose MNA Accounting?</h2>
+        <ul class="benefits-list">
+          <li *ngFor="let benefit of benefits">
+            <span class="benefit-check">•</span>
+            <span>{{ benefit }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="benefits-visual">
+        <div class="highlight-card">
+          <div class="highlight-icon"><app-icon name="barChart3" class="icon-large"></app-icon></div>
+          <h3>Data-Driven Decisions</h3>
+          <p>
+            Make informed business decisions with regular, accurate management
+            accounts
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section cta-dark">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Get Clarity with Management Accounts</h2>
+      <p>
+        Make confident decisions with regular, reliable financial insights.<br />
+        Book a free consultation or contact us today to get started.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Book Free Consultation</a>
+        <a routerLink="/contact" class="cta-secondary">Contact Us</a>
+      </div>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="phone"></app-icon></span>
+          <span>07551 551717</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon"><app-icon name="mail"></app-icon></span>
+          <span>info&#64;mnaaccounting.co.uk</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

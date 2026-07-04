@@ -1,0 +1,96 @@
+<!-- Hero Section -->
+<section class="hero hero-contrast">
+  <div class="container">
+    <div class="hero-content">
+      <nav class="breadcrumb">
+        <a routerLink="/business">Business Services</a>
+        <span class="separator">›</span>
+        <span>Companies House Director Verification</span>
+      </nav>
+
+      <h1>Companies House Director Verification Services</h1>
+      <p class="hero-subtitle">
+        As an authorised Companies House Director Verification Provider, we offer professional identity verification and corporate compliance support. We streamline your director appointments and statutory obligations with expert guidance from qualified accountants.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- What We Offer Section -->
+<section class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <h2><app-icon name="check"></app-icon> Our Verification Services</h2>
+      <p class="section-subtitle">
+        Professional Companies House compliance and director verification support
+      </p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card" *ngFor="let service of services">
+        <app-icon class="service-icon" name="verified"></app-icon>
+        <h3 class="service-title">{{ service }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us Section -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-content">
+      <div class="benefits-text">
+        <h2><app-icon name="briefcase" class="icon-small"></app-icon> Why Choose MNA Accounting?</h2>
+        <ul class="benefits-list">
+          <li *ngFor="let benefit of benefits">
+            <span class="benefit-check">•</span>
+            <span>{{ benefit }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="benefits-visual">
+        <div class="highlight-card">
+          <div class="highlight-icon"><app-icon name="shield" class="icon-large"></app-icon></div>
+          <h3>Authorised Provider</h3>
+          <p>
+            Officially authorised by Companies House for director identity verification and corporate compliance support
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Professional Credentials Section -->
+<section class="credentials-section">
+  <div class="container">
+    <h2>What Sets Us Apart</h2>
+    <p class="section-subtitle">Our professional qualifications and regulatory compliance</p>
+    
+    <div class="credentials-grid">
+      <div class="credential-item" *ngFor="let credential of whyChoose">
+        <app-icon name="award" class="credential-icon"></app-icon>
+        <p>{{ credential }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section cta-dark">
+  <div class="container">
+    <div class="cta-content">
+      <h2><app-icon name="phone"></app-icon> Authorised Director Verification & Corporate Compliance</h2>
+      <p>
+        Streamline your Companies House compliance and director appointments with our professional verification services.<br />
+        Book a free consultation to discuss your requirements.
+      </p>
+
+      <div class="cta-buttons">
+        <a routerLink="/contact" class="cta-primary"><app-icon name="mail" class="icon-small"></app-icon> Book Free Consultation</a>
+        <a href="tel:07551551717" class="cta-secondary"><app-icon name="phone" class="icon-small"></app-icon> Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>

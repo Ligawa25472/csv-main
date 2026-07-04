@@ -1,0 +1,58 @@
+<section class="hero">
+  <div class="container">
+    <div class="bg-image bg-image--cover" style="background-image: url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1349661821-612x612.jpg');"></div>
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">CIS Refunds</p>
+      <h1>Recover CIS deductions quickly with expert refund support</h1>
+      <p class="hero-subtitle">
+        We work with subcontractors and sole traders to identify eligible CIS refunds, prepare the claim and ensure HMRC requirements are met without hassle.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">Claim your refund</a>
+        <a routerLink="/contact" class="cta-secondary">Speak with an adviser</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="page-body">
+  <div class="container">
+    <div class="page-grid">
+      <div>
+        <h2>CIS refunds made clear and dependable</h2>
+        <p>
+          If you are due a CIS refund, our team checks your deductions, prepares the claim and helps you keep paperwork accurate so you get the money you deserve.
+        </p>
+        <div class="feature-block">
+          <h3>What we cover</h3>
+          <ul>
+            <li *ngFor="let item of items">{{ item }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="page-aside">
+        <div class="aside-card">
+          <h3>Who this helps</h3>
+          <ul>
+            <li>Subcontractors claiming CIS refunds</li>
+            <li>Self-employed professionals with overpayments</li>
+            <li>Clients looking for HMRC reassurance</li>
+          </ul>
+          <a routerLink="/contact" class="btn btn-primary">Start your claim</a>
+        </div>
+      </aside>
+    </div>
+
+    <section class="feature-section">
+      <h3>Why choose our CIS service</h3>
+      <div class="feature-grid">
+        <article class="feature-card" *ngFor="let benefit of benefits">
+          <div class="feature-mark"><app-icon name="check"></app-icon></div>
+          <p>{{ benefit }}</p>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>
