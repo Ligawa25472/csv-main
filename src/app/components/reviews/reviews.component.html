@@ -1,0 +1,88 @@
+<!-- Reviews Section -->
+<section class="reviews-section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Trusted by Our Clients</h2>
+      <p class="section-subtitle">See what our clients say about working with MNA Accounting</p>
+    </div>
+
+    <!-- Rating Badges -->
+    <div class="rating-badges">
+      <!-- Google Reviews Badge -->
+      <div class="rating-badge google-badge">
+        <div class="badge-header">
+          <div class="badge-logo">
+            <app-icon name="star" class="badge-icon"></app-icon>
+            <span class="badge-name">Google</span>
+          </div>
+          <div class="rating-display">
+            <span class="rating-number">{{ googleRating }}</span>
+            <div class="rating-stars">
+              <app-icon name="star" class="star filled" *ngFor="let _ of getRatingStars(googleRating)"></app-icon>
+              <app-icon name="star" class="star partial" *ngIf="getPartialStar(googleRating)"></app-icon>
+            </div>
+          </div>
+        </div>
+        <p class="review-count">Based on {{ googleReviewCount }} verified reviews</p>
+        <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="badge-link">
+          View on Google
+          <app-icon name="externalLink" class="icon-small"></app-icon>
+        </a>
+      </div>
+
+      <!-- Trustpilot Reviews Badge -->
+      <div class="rating-badge trustpilot-badge">
+        <div class="badge-header">
+          <div class="badge-logo">
+            <app-icon name="award" class="badge-icon"></app-icon>
+            <span class="badge-name">Trustpilot</span>
+          </div>
+          <div class="rating-display">
+            <span class="rating-number">{{ trustpilotRating }}</span>
+            <div class="rating-stars">
+              <app-icon name="star" class="star filled" *ngFor="let _ of getRatingStars(trustpilotRating)"></app-icon>
+              <app-icon name="star" class="star partial" *ngIf="getPartialStar(trustpilotRating)"></app-icon>
+            </div>
+          </div>
+        </div>
+        <p class="review-count">Based on {{ trustpilotReviewCount }} verified reviews</p>
+        <a href="https://www.trustpilot.com" target="_blank" rel="noopener noreferrer" class="badge-link">
+          View on Trustpilot
+          <app-icon name="externalLink" class="icon-small"></app-icon>
+        </a>
+      </div>
+    </div>
+
+    <!-- Customer Testimonials Grid -->
+    <div class="testimonials-grid">
+      <div class="review-card" *ngFor="let review of reviews">
+        <div class="review-header">
+          <div class="review-meta">
+            <h3 class="reviewer-name">{{ review.author }}</h3>
+            <p class="review-service">{{ review.service }}</p>
+          </div>
+          <div class="review-source">
+            <app-icon [name]="getSourceIcon(review.source)" class="source-icon"></app-icon>
+            <span class="source-label">{{ getSourceLabel(review.source) }}</span>
+          </div>
+        </div>
+
+        <div class="review-rating">
+          <app-icon name="star" class="star filled" *ngFor="let _ of getRatingStars(review.rating)"></app-icon>
+          <app-icon name="star" class="star partial" *ngIf="getPartialStar(review.rating)"></app-icon>
+        </div>
+
+        <p class="review-text">{{ review.text }}</p>
+
+        <p class="review-date">{{ review.date | date: 'MMM d, y' }}</p>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="reviews-cta">
+      <h3>Ready to experience our professional accounting services?</h3>
+      <p>Join hundreds of satisfied clients across Birmingham and the UK</p>
+      <a routerLink="/contact" class="cta-button">Book a Free Consultation</a>
+    </div>
+  </div>
+</section>

@@ -99,31 +99,49 @@
 
     <div class="footer-bottom">
       <div class="footer-credentials">
-        <h4 class="credentials-title">Professional Accreditations</h4>
+        <h4 class="credentials-title">Professional Accreditations & Registrations</h4>
         <div class="credentials-badges">
           <div class="credential-badge">
-            <span class="badge-label">Company Registration</span>
-            <span class="badge-value">{{ site.companyNumber }}</span>
+            <app-icon name="building2" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Company Registration Number</span>
+              <span class="badge-value">{{ site.companyNumber }}</span>
+            </div>
           </div>
           <div class="credential-badge">
             <app-icon name="check" class="badge-icon-check"></app-icon>
-            <span class="badge-label">AAT Licensed Accountancy Practice</span>
+            <div class="badge-content">
+              <span class="badge-label">AAT Licensed Accountancy Practice</span>
+              <span class="badge-note">Association of Accounting Technicians</span>
+            </div>
           </div>
           <div class="credential-badge">
-            <span class="badge-label">AAT Org Number</span>
-            <span class="badge-value">{{ site.aatOrgNumber }}</span>
+            <app-icon name="id" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">AAT Organisation Number</span>
+              <span class="badge-value">{{ site.aatOrgNumber }}</span>
+            </div>
           </div>
           <div class="credential-badge">
-            <app-icon name="check" class="badge-icon-check"></app-icon>
-            <span class="badge-label">AML Supervised</span>
+            <app-icon name="shield" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">AML Supervised</span>
+              <span class="badge-note">Anti-Money Laundering Compliance</span>
+            </div>
           </div>
           <div class="credential-badge">
-            <app-icon name="check" class="badge-icon-check"></app-icon>
-            <span class="badge-label">Professional Indemnity Insured</span>
+            <app-icon name="checkCircle" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Professional Indemnity Insured</span>
+              <span class="badge-note">Full Coverage Provided</span>
+            </div>
           </div>
           <div class="credential-badge">
-            <app-icon name="check" class="badge-icon-check"></app-icon>
-            <span class="badge-label">Authorised Director Verification Provider</span>
+            <app-icon name="verified" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Authorised Director Verification Provider</span>
+              <span class="badge-note">Companies House Approved</span>
+            </div>
           </div>
         </div>
       </div>
