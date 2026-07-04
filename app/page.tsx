@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle, Star, Users, Shield, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star } from 'lucide-react';
 import { SITE } from '@/lib/site.config';
 
 export default function Home() {
