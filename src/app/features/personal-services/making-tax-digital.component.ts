@@ -12,21 +12,50 @@ import { IconComponent } from '../../components/icon/icon.component';
 })
 export class MakingTaxDigitalComponent {
   services = [
-    'MTD-compliant bookkeeping setup',
-    'Integration with approved software',
-    'Quarterly tax submissions to HMRC',
-    'Cloud-based financial records',
-    'Real-time reporting and analytics',
-    'Ongoing compliance support',
+    {
+      icon: 'fileCheck',
+      title: 'Making Tax Digital (MTD) Registration',
+      description: 'Expert guidance on registering your business with HMRC for Making Tax Digital compliance.',
+    },
+    {
+      icon: 'cloud',
+      title: 'Cloud Accounting',
+      description: 'We set up and configure cloud-based accounting systems to streamline your tax submissions.',
+    },
+    {
+      icon: 'book',
+      title: 'Digital Bookkeeping',
+      description: 'Keep accurate digital records that are ready for quarterly HMRC submissions.',
+    },
+    {
+      icon: 'calendar',
+      title: 'Quarterly HMRC Submissions',
+      description: 'We handle your quarterly submissions, ensuring timely compliance with MTD requirements.',
+    },
+    {
+      icon: 'checkCircle',
+      title: 'Tax Compliance Reviews',
+      description: 'Regular reviews of your records to ensure full compliance with MTD requirements.',
+    },
+    {
+      icon: 'messageCircle',
+      title: 'Ongoing Advice & Support',
+      description: 'Dedicated support to help you maintain compliance and optimize your tax position.',
+    },
+  ];
+
+  softwarePlatforms = [
+    { name: 'Xero', icon: '🔷' },
+    { name: 'QuickBooks', icon: '📊' },
   ];
 
   benefits = [
-    'Stay compliant with HMRC digital tax requirements',
-    'Automated quarterly submissions reduce penalties',
-    'Real-time financial visibility for your business',
-    'Reduced admin burden with cloud integration',
-    'Professional guidance from qualified accountants',
-    'Remote UK-wide support for all businesses',
+    'Expert guidance through Making Tax Digital registration and compliance',
+    'Streamlined quarterly submissions with no surprises',
+    'Full digital audit trail for your records',
+    'Reduced risk of penalties and errors',
+    'Trusted by self-employed professionals across the UK',
+    'Available nationwide with local support',
   ];
 
   whoNeeds = [
