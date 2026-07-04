@@ -4,6 +4,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './features/about/about.component';
 import { ContactComponent } from './features/contact/contact.component';
+import { FaqComponent } from './pages/faq/faq.component';
 import { BusinessServicesComponent } from './features/business-services/business-services.component';
 import { CorporationTaxComponent } from './features/corporation-tax/corporation-tax.component';
 import { VatReturnsComponent } from './features/vat-returns/vat-returns.component';
@@ -29,6 +30,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'faq', component: FaqComponent },
 
   // Business Services Routes
   { path: 'business', component: BusinessServicesComponent },

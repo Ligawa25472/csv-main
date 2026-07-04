@@ -1,19 +1,20 @@
 .header {
-  background-color: var(--surface);
-  border-bottom: 1px solid var(--md-sys-color-outline-variant);
-  box-shadow: var(--elevation-1);
+  background-color: rgba(255, 255, 255, 0.98);
+  border-bottom: 1px solid #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   position: sticky;
   top: 0;
   z-index: 1000;
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   transition: 
     transform var(--transition-base), 
     background-color var(--transition-base), 
-    box-shadow var(--transition-emphasized-decelerate);
+    box-shadow var(--transition-base);
 }
 
 .header:hover {
-  box-shadow: var(--elevation-2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .container {
@@ -60,20 +61,21 @@
 }
 
 .logo {
-  width: 52px;
-  height: 52px;
-  background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
-  border-radius: 16px;
+  width: 44px;
+  height: 44px;
+  background: var(--brand);
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--white);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   flex-shrink: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   object-fit: cover;
+  transition: all var(--transition-fast);
 }
 
 .logo img {
@@ -135,13 +137,13 @@
 }
 
 .mobile-menu-btn {
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
+  background: transparent;
+  border: none;
   border-radius: var(--radius);
   font-size: 1.2rem;
   cursor: pointer;
   padding: var(--spacing-2);
-  color: #6b7280;
+  color: var(--brand);
   width: 40px;
   height: 40px;
   display: flex;
@@ -152,9 +154,8 @@
 
 .mobile-menu-btn:hover,
 .mobile-menu-btn[aria-expanded="true"] {
-  background: #0d9488;
-  color: var(--white);
-  border-color: #0d9488;
+  background: #f0f0f0;
+  color: var(--brand);
 }
 
 .mobile-overlay {
@@ -321,7 +322,7 @@
 
   .nav-desktop > a,
   .dropdown-toggle {
-    color: #6b7280;
+    color: #666666;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.95rem;
@@ -336,11 +337,11 @@
   .dropdown-toggle::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -4px;
     left: 0;
     right: 0;
     height: 2px;
-    background: #0d9488;
+    background: var(--accent);
     transform: scaleX(0);
     transform-origin: right;
     transition: transform var(--transition-fast);
@@ -364,12 +365,12 @@
   .dropdown-menu {
     display: none;
     position: absolute;
-    top: calc(100% + 0.5rem);
+    top: calc(100% + 0.75rem);
     left: 0;
     background: var(--white);
-    border: 1px solid #e5e7eb;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     padding: var(--spacing-2) 0;
     min-width: 200px;
     opacity: 0;
@@ -389,7 +390,7 @@
   .dropdown-menu a {
     display: block;
     padding: var(--spacing-4) var(--spacing-6);
-    color: #6b7280;
+    color: #333333;
     text-decoration: none;
     font-weight: 500;
     font-size: 0.9rem;
@@ -399,9 +400,9 @@
   }
 
   .dropdown-menu a:hover {
-    background: #f0fdfa;
-    color: #0d9488;
-    padding-left: var(--spacing-8);
+    background: #f8f8f8;
+    color: var(--accent);
+    padding-left: calc(var(--spacing-6) + 4px);
   }
 
   /* Hide mobile elements on desktop */

@@ -6,7 +6,7 @@
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%),
+  background: linear-gradient(135deg, var(--brand) 0%, rgba(26, 42, 58, 0.95) 100%),
               url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1338373163-612x612.jpg');
   background-attachment: fixed;
   background-size: cover;
@@ -34,7 +34,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(1, 22, 53, 0.75) 0%, rgba(1, 22, 53, 0.85) 100%);
+  background: linear-gradient(180deg, rgba(26, 42, 58, 0.7) 0%, rgba(26, 42, 58, 0.8) 100%);
   pointer-events: none;
 }
 
@@ -47,21 +47,23 @@
 
 .hero h1 {
   font-size: 3rem;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 1.5rem;
   line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
   opacity: 0.9;
   line-height: 1.6;
+  font-weight: 400;
 }
 
 /* Contact Methods Section */
 .contact-methods-section {
   padding: 4rem 0;
-  background: linear-gradient(135deg, white 0%, #f5f9fc 100%);
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
   position: relative;
   overflow: hidden;
 }
@@ -73,7 +75,7 @@
   right: -10%;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, rgba(15, 76, 117, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(26, 42, 58, 0.02) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -85,7 +87,7 @@
   left: -15%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(15, 158, 142, 0.03) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(201, 125, 74, 0.02) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -307,7 +309,7 @@
 .form-input,
 .form-textarea {
   padding: 1rem;
-  border: 2px solid #e5e7eb;
+  border: 1.5px solid #d9d9d9;
   border-radius: 8px;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -317,8 +319,8 @@
 .form-input:focus,
 .form-textarea:focus {
   outline: none;
-  border-color: #1e40af;
-  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(201, 125, 74, 0.1);
 }
 
 .form-textarea {
@@ -327,11 +329,11 @@
 }
 
 .submit-btn {
-  background: #1e40af;
+  background: var(--accent);
   color: white;
   padding: 1rem 2rem;
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -340,12 +342,13 @@
 }
 
 .submit-btn:hover:not(:disabled) {
-  background: #1e3a8a;
+  background: #a85f35;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(201, 125, 74, 0.3);
 }
 
 .submit-btn:disabled {
-  background: #9ca3af;
+  background: #cccccc;
   cursor: not-allowed;
   transform: none;
 }

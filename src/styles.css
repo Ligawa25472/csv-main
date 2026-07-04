@@ -1,72 +1,72 @@
 /* ============================================================
    MNA Accounting — Global Design System
-   Modern Minimalist Professional
+   Modern Minimalist Design 2.0
    ============================================================ */
 
 /* ---------- Design Tokens (Modern Palette) ---------- */
 :root {
-  /* Primary - Deep Charcoal (Modern Professional) */
-  --md-sys-color-primary: #1a1a1a;
+  /* Primary - Sophisticated Navy (Modern) */
+  --md-sys-color-primary: #1a2a3a;
   --md-sys-color-on-primary: #ffffff;
-  --md-sys-color-primary-container: #f5f5f5;
-  --md-sys-color-on-primary-container: #1a1a1a;
+  --md-sys-color-primary-container: #e8eef5;
+  --md-sys-color-on-primary-container: #1a2a3a;
   
-  /* Secondary - Elegant Slate */
-  --md-sys-color-secondary: #6b7280;
+  /* Secondary - Warm Accent */
+  --md-sys-color-secondary: #c97d4a;
   --md-sys-color-on-secondary: #ffffff;
-  --md-sys-color-secondary-container: #f3f4f6;
-  --md-sys-color-on-secondary-container: #1f2937;
+  --md-sys-color-secondary-container: #ffe4d0;
+  --md-sys-color-on-secondary-container: #5f3420;
   
-  /* Tertiary - Accent Teal (Refined) */
-  --md-sys-color-tertiary: #0d9488;
+  /* Tertiary - Elegant Slate */
+  --md-sys-color-tertiary: #64748b;
   --md-sys-color-on-tertiary: #ffffff;
-  --md-sys-color-tertiary-container: #d1faf7;
-  --md-sys-color-on-tertiary-container: #0d4a42;
+  --md-sys-color-tertiary-container: #e2e8f0;
+  --md-sys-color-on-tertiary-container: #1e293b;
   
   /* Error */
-  --md-sys-color-error: #dc2626;
+  --md-sys-color-error: #d32f2f;
   --md-sys-color-on-error: #ffffff;
-  --md-sys-color-error-container: #fee2e2;
-  --md-sys-color-on-error-container: #7f1d1d;
+  --md-sys-color-error-container: #ffebee;
+  --md-sys-color-on-error-container: #b71c1c;
   
-  /* Surfaces - Light and Clean */
-  --md-sys-color-surface: #ffffff;
-  --md-sys-color-on-surface: #1f2937;
-  --md-sys-color-surface-variant: #f9fafb;
-  --md-sys-color-on-surface-variant: #6b7280;
+  /* Surfaces - Neutral and Clean */
+  --md-sys-color-surface: #fafafa;
+  --md-sys-color-on-surface: #1a1a1a;
+  --md-sys-color-surface-variant: #f5f5f5;
+  --md-sys-color-on-surface-variant: #666666;
   
-  /* Surface Containers (for elevation hierarchy) */
-  --md-sys-color-surface-dim: #f3f4f6;
+  /* Surface Containers */
+  --md-sys-color-surface-dim: #f0f0f0;
   --md-sys-color-surface-bright: #ffffff;
   --md-sys-color-surface-container-lowest: #ffffff;
-  --md-sys-color-surface-container-low: #f9fafb;
-  --md-sys-color-surface-container: #f3f4f6;
-  --md-sys-color-surface-container-high: #e5e7eb;
-  --md-sys-color-surface-container-highest: #d1d5db;
+  --md-sys-color-surface-container-low: #fafafa;
+  --md-sys-color-surface-container: #f5f5f5;
+  --md-sys-color-surface-container-high: #f0f0f0;
+  --md-sys-color-surface-container-highest: #eeeeee;
   
   /* Outline */
-  --md-sys-color-outline: #d1d5db;
-  --md-sys-color-outline-variant: #e5e7eb;
+  --md-sys-color-outline: #999999;
+  --md-sys-color-outline-variant: #d9d9d9;
   
-  /* Legacy Brand Colors (Updated) */
-  --brand: #1a1a1a;
-  --brand-dark: #0f0f0f;
-  --brand-light: #4b5563;
-  --brand-50: #f9fafb;
-  --brand-100: #f3f4f6;
-  --brand-200: #e5e7eb;
-  --brand-300: #d1d5db;
-  --brand-400: #9ca3af;
-  --brand-500: #6b7280;
-  --brand-600: #4b5563;
-  --brand-700: #374151;
-  --brand-800: #1f2937;
-  --brand-900: #111827;
+  /* Legacy Brand Colors - Updated */
+  --brand: #1a2a3a;
+  --brand-dark: #0f1419;
+  --brand-light: #3d4d5c;
+  --brand-50: #f5f8fa;
+  --brand-100: #eaeff5;
+  --brand-200: #d4dde8;
+  --brand-300: #becddb;
+  --brand-400: #a8bece;
+  --brand-500: #92afc1;
+  --brand-600: #7c9fb4;
+  --brand-700: #668fa7;
+  --brand-800: #4a758f;
+  --brand-900: #2e5a77;
 
-  --accent: #0d9488;
-  --accent-dark: #0a5f52;
-  --accent-light: #14b8a6;
-  --accent-50: #f0fdfa;
+  --accent: #c97d4a;
+  --accent-dark: #a85f35;
+  --accent-light: #d99460;
+  --accent-50: #fdf8f5;
 
   --success: #059669;
   --success-bg: #ecfdf3;
@@ -174,8 +174,8 @@ body {
   color: var(--body);
   background-color: var(--surface);
   background-image: 
-    radial-gradient(circle at 20% 50%, rgba(13, 148, 136, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(107, 114, 128, 0.02) 0%, transparent 50%);
+    radial-gradient(circle at 85% 15%, rgba(201, 125, 74, 0.02) 0%, transparent 40%),
+    radial-gradient(circle at 10% 85%, rgba(26, 42, 58, 0.01) 0%, transparent 40%);
   min-height: 100vh;
   font-size: 1rem;
   line-height: 1.6;
@@ -233,7 +233,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
   color: var(--ink);
   line-height: 1.2;
-  margin: 0 0 0.75rem;
+  margin: 0 0 1.25rem;
   font-weight: 600;
   letter-spacing: -0.015em;
   text-wrap: balance;
@@ -265,8 +265,10 @@ h5, h6 {
 }
 
 p {
-  margin: 0 0 1rem;
+  margin: 0 0 1.25rem;
   color: var(--body);
+  line-height: 1.7;
+  letter-spacing: 0.2px;
 }
 
 a {
@@ -286,13 +288,25 @@ button {
   cursor: pointer;
   transition: all var(--transition-fast);
   font-weight: 500;
-  padding: 0.625rem 1.5rem;
+  padding: 0.75rem 1.75rem;
   border-radius: var(--md-sys-shape-corner-full);
-  font-size: 0.875rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
 }
 
 button:active {
   transform: scale(0.98);
+}
+
+.btn-block {
+  width: 100%;
+  display: flex;
 }
 
 /* Filled Button (Primary) */
@@ -373,12 +387,14 @@ button.btn-tonal:focus-visible {
   box-shadow: var(--elevation-0);
   transition: all var(--transition-emphasized-decelerate);
   overflow: hidden;
+  padding: var(--spacing-6);
 }
 
 .card:hover,
 .md3-card:hover {
   box-shadow: var(--elevation-1);
   border-color: var(--md-sys-color-outline);
+  transform: translateY(-2px);
 }
 
 .card.elevated,
@@ -702,7 +718,7 @@ img, video {
 
 .footer {
   padding: var(--spacing-20) 0;
-  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+  background: linear-gradient(180deg, var(--brand) 0%, rgba(26, 42, 58, 0.95) 100%);
   color: #fff;
 }
 

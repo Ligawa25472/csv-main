@@ -71,6 +71,7 @@
           <li><a routerLink="/about">About Us</a></li>
           <li><a routerLink="/business">All Services</a></li>
           <li><a routerLink="/contact">Contact</a></li>
+          <li><a routerLink="/faq">FAQ</a></li>
           <li><a routerLink="/privacy-policy">Privacy Policy</a></li>
           <li><a routerLink="/terms">Terms of Service</a></li>
         </ul>
@@ -99,33 +100,60 @@
 
     <div class="footer-bottom">
       <div class="footer-credentials">
+        <h4 class="credentials-title">Professional Accreditations & Registrations</h4>
         <div class="credentials-badges">
-          <div class="credential-item">
-            <strong>Company Registration:</strong> {{ site.companyNumber }}
+          <div class="credential-badge">
+            <app-icon name="building2" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Company Registration Number</span>
+              <span class="badge-value">{{ site.companyNumber }}</span>
+            </div>
           </div>
-          <div class="credential-item">
-            <strong>AAT Licensed Accountancy Practice</strong>
+          <div class="credential-badge">
+            <app-icon name="check" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">AAT Licensed Accountancy Practice</span>
+              <span class="badge-note">Association of Accounting Technicians</span>
+            </div>
           </div>
-          <div class="credential-item">
-            <strong>AAT Org Number:</strong> {{ site.aatOrgNumber }}
+          <div class="credential-badge">
+            <app-icon name="id" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">AAT Organisation Number</span>
+              <span class="badge-value">{{ site.aatOrgNumber }}</span>
+            </div>
           </div>
-          <div class="credential-item">
-            <strong>AML Supervised</strong>
+          <div class="credential-badge">
+            <app-icon name="shield" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">AML Supervised</span>
+              <span class="badge-note">Anti-Money Laundering Compliance</span>
+            </div>
           </div>
-          <div class="credential-item">
-            <strong>Professional Indemnity Insured</strong>
+          <div class="credential-badge">
+            <app-icon name="checkCircle" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Professional Indemnity Insured</span>
+              <span class="badge-note">Full Coverage Provided</span>
+            </div>
           </div>
-          <div class="credential-item">
-            <strong>Authorised Director Verification Provider</strong>
+          <div class="credential-badge">
+            <app-icon name="verified" class="badge-icon-check"></app-icon>
+            <div class="badge-content">
+              <span class="badge-label">Authorised Director Verification Provider</span>
+              <span class="badge-note">Companies House Approved</span>
+            </div>
           </div>
         </div>
       </div>
-      <p>&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
-      <p class="footer-legal-links">
-        <a routerLink="/privacy-policy">Privacy</a>
-        <span aria-hidden="true">·</span>
-        <a routerLink="/terms">Terms</a>
-      </p>
+      <div class="footer-copyright-section">
+        <p class="footer-copyright">&copy; {{ year }} {{ site.legalName }}. All rights reserved.</p>
+        <p class="footer-legal-links">
+          <a routerLink="/privacy-policy">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a routerLink="/terms">Terms</a>
+        </p>
+      </div>
     </div>
   </div>
 </footer>

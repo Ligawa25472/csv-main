@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { IconComponent } from '../../components/icon/icon.component';
+import { ReviewsComponent } from '../../components/reviews/reviews.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterModule, IconComponent],
+  imports: [CommonModule, RouterModule, IconComponent, ReviewsComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
