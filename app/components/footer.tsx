@@ -4,30 +4,35 @@ import { Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="container mx-auto px-6 py-16">
+    <footer className="bg-[#0f172a] text-white border-t border-gray-800">
+      <div className="container mx-auto px-6 py-20">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-6">{SITE.name}</h3>
-            <p className="text-gray-300 mb-6">{SITE.tagline}</p>
-            <div className="space-y-3">
+            <div className="flex items-center gap-2 mb-6">
+              <div className="w-8 h-8 rounded-md bg-gradient-to-br from-white to-[#0d9488] flex items-center justify-center">
+                <span className="text-[#0f172a] font-bold text-sm">MNA</span>
+              </div>
+              <h3 className="text-lg font-700">{SITE.name}</h3>
+            </div>
+            <p className="text-gray-400 mb-6 text-sm leading-relaxed">{SITE.tagline}</p>
+            <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <Phone size={18} className="text-teal-400" />
-                <a href={SITE.phoneHref} className="hover:text-teal-400 transition">
+                <Phone size={18} className="text-[#0d9488] flex-shrink-0" />
+                <a href={SITE.phoneHref} className="hover:text-[#0d9488] transition text-gray-300 text-sm">
                   {SITE.phone}
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail size={18} className="text-teal-400" />
-                <a href={`mailto:${SITE.email}`} className="hover:text-teal-400 transition">
+                <Mail size={18} className="text-[#0d9488] flex-shrink-0" />
+                <a href={`mailto:${SITE.email}`} className="hover:text-[#0d9488] transition text-gray-300 text-sm">
                   {SITE.email}
                 </a>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-teal-400 flex-shrink-0 mt-1" />
-                <div className="text-sm">
+                <MapPin size={18} className="text-[#0d9488] flex-shrink-0 mt-0.5" />
+                <div className="text-sm text-gray-400">
                   {SITE.address.street}, {SITE.address.locality}, {SITE.address.region} {SITE.address.postalCode}
                 </div>
               </div>
@@ -36,11 +41,11 @@ export default function Footer() {
 
           {/* Business Services */}
           <div>
-            <h4 className="font-bold mb-6 text-lg">Business Services</h4>
-            <ul className="space-y-3">
+            <h4 className="font-700 mb-6 text-base text-white">Business Services</h4>
+            <ul className="space-y-2.5">
               {BUSINESS_SERVICES.slice(0, 5).map((service) => (
                 <li key={service.link}>
-                  <Link href={service.link} className="text-gray-300 hover:text-teal-400 transition">
+                  <Link href={service.link} className="text-gray-400 hover:text-[#0d9488] transition text-sm">
                     {service.name}
                   </Link>
                 </li>
@@ -50,11 +55,11 @@ export default function Footer() {
 
           {/* Personal Services */}
           <div>
-            <h4 className="font-bold mb-6 text-lg">Personal Services</h4>
-            <ul className="space-y-3">
+            <h4 className="font-700 mb-6 text-base text-white">Personal Services</h4>
+            <ul className="space-y-2.5">
               {PERSONAL_SERVICES.map((service) => (
                 <li key={service.link}>
-                  <Link href={service.link} className="text-gray-300 hover:text-teal-400 transition">
+                  <Link href={service.link} className="text-gray-400 hover:text-[#0d9488] transition text-sm">
                     {service.name}
                   </Link>
                 </li>
@@ -64,15 +69,15 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-bold mb-6 text-lg">Company</h4>
-            <ul className="space-y-3">
+            <h4 className="font-700 mb-6 text-base text-white">Company</h4>
+            <ul className="space-y-2.5">
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-teal-400 transition">
+                <Link href="/about" className="text-gray-400 hover:text-[#0d9488] transition text-sm">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-teal-400 transition">
+                <Link href="/contact" className="text-gray-400 hover:text-[#0d9488] transition text-sm">
                   Contact
                 </Link>
               </li>

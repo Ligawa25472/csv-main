@@ -42,39 +42,42 @@ export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-slate-900 to-slate-800 text-white py-16 md:py-24">
-        <div className="container mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Frequently Asked Questions</h1>
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0d9488]/20 text-white py-20 md:py-28">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-[#0d9488]/20 rounded-full blur-3xl" />
+        </div>
+        <div className="container mx-auto relative z-10 text-center">
+          <h1 className="text-4xl md:text-5xl font-800 mb-4">Frequently Asked Questions</h1>
           <p className="text-xl text-gray-300">Find answers to common questions about our services and pricing.</p>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-6 max-w-3xl">
-          <div className="space-y-4">
+      <section className="py-20 md:py-28 bg-white">
+        <div className="container mx-auto max-w-3xl">
+          <div className="space-y-3">
             {faqs.map((faq, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
+                className="bg-white rounded-lg border border-gray-200 hover:border-[#0d9488] hover:shadow-md transition-all duration-300 overflow-hidden"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition"
+                  className="w-full px-8 py-5 flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
                 >
-                  <h3 className="text-left font-semibold text-lg text-gray-900">{faq.question}</h3>
+                  <h3 className="text-left font-700 text-lg text-[#0f172a]">{faq.question}</h3>
                   <ChevronDown
                     size={24}
-                    className={`text-teal-600 flex-shrink-0 transition-transform ${
+                    className={`text-[#0d9488] flex-shrink-0 transition-transform duration-300 ${
                       openIndex === index ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
 
                 {openIndex === index && (
-                  <div className="px-6 py-4 border-t border-gray-200 bg-gray-50">
+                  <div className="px-8 py-5 border-t border-gray-200 bg-gray-50">
                     <p className="text-gray-700 leading-relaxed">{faq.answer}</p>
                   </div>
                 )}
@@ -83,14 +86,14 @@ export default function FAQPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 bg-teal-50 border border-teal-200 rounded-lg p-8 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Didn't find your answer?</h3>
-            <p className="text-gray-700 mb-6">
+          <div className="mt-16 bg-gradient-to-br from-[#f0fdfa] to-gray-50 border border-[#0d9488]/30 rounded-xl p-10 text-center">
+            <h3 className="text-2xl font-800 text-[#0f172a] mb-3">Didn't find your answer?</h3>
+            <p className="text-gray-700 mb-6 leading-relaxed">
               Get in touch with our team for a free consultation and we'll answer any questions you have.
             </p>
             <a
               href="/contact"
-              className="bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg font-semibold inline-block transition"
+              className="inline-block bg-[#0d9488] hover:bg-[#0f766e] text-white px-8 py-3 rounded-lg font-700 transition-all duration-300"
             >
               Contact Us
             </a>
