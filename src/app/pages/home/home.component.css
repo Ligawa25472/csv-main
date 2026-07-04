@@ -983,6 +983,86 @@
   border-color: var(--white);
 }
 
+/* ========== CREDENTIALS SECTION ========== */
+.credentials-section {
+  padding: var(--spacing-20) var(--spacing-6);
+  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.credentials-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.credentials-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-6);
+  margin-top: var(--spacing-10);
+  position: relative;
+  z-index: 1;
+}
+
+.credential-item {
+  background: var(--white);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  text-align: center;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.credential-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(13, 148, 136, 0.12);
+  border-color: rgba(13, 148, 136, 0.3);
+}
+
+.credential-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto var(--spacing-4);
+  color: #0d9488;
+  display: block;
+  flex-shrink: 0;
+}
+
+.credential-item h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: var(--spacing-3);
+}
+
+.credential-item p {
+  font-size: 0.95rem;
+  color: var(--body);
+  line-height: 1.6;
+  margin: 0;
+}
+
 /* ========== RESPONSIVE ADJUSTMENTS ========== */
 @media (max-width: 640px) {
   .services {
@@ -999,6 +1079,15 @@
 
   .cta-section {
     padding: var(--spacing-16) var(--spacing-4);
+  }
+
+  .credentials-section {
+    padding: var(--spacing-16) var(--spacing-4);
+  }
+
+  .credentials-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
   }
 }
 
@@ -1017,6 +1106,21 @@
 
   .cta-section {
     padding: var(--spacing-20) var(--spacing-8);
+  }
+
+  .credentials-section {
+    padding: var(--spacing-20) var(--spacing-8);
+  }
+
+  .credentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .credentials-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
