@@ -474,17 +474,13 @@
   opacity: 1;
 }
 
-.badge-icon {
+.badge-icon-check {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 24px;
   height: 24px;
-  background: rgba(13, 148, 136, 0.25);
-  border-radius: 50%;
   color: #0d9488;
-  font-weight: 700;
-  font-size: 0.9rem;
   flex-shrink: 0;
 }
 
