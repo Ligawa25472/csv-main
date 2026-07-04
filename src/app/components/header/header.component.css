@@ -121,18 +121,18 @@
 
 .phone-number {
   display: none;
-  color: var(--brand);
+  color: #0d9488;
   font-weight: 600;
   font-size: 0.875rem;
   padding: var(--spacing-2) var(--spacing-4);
   border-radius: var(--radius);
-  background: var(--brand-50);
+  background: #f0fdfa;
   white-space: nowrap;
   transition: all var(--transition-fast);
 }
 
 .phone-number:hover {
-  background: var(--brand);
+  background: #0d9488;
   color: var(--white);
 }
 
@@ -161,7 +161,7 @@
 .mobile-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(15, 28, 46, 0.5);
+  background: rgba(17, 24, 39, 0.5);
   z-index: 999;
   animation: fadeIn var(--transition-base) ease;
 }
@@ -243,8 +243,8 @@
 .nav-mobile a:hover,
 .nav-mobile a:focus,
 .nav-mobile a.active {
-  background: var(--brand-50);
-  color: var(--brand);
+  background: #f0fdfa;
+  color: #0d9488;
   outline: none;
   padding-left: var(--spacing-6);
 }
@@ -257,11 +257,11 @@
   display: block;
   padding: var(--spacing-2) var(--spacing-4) var(--spacing-2);
   font-weight: 700;
-  color: var(--brand);
+  color: #0d9488;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: var(--surface-light);
+  background: #f9fafb;
 }
 
 .mobile-section a {
@@ -353,7 +353,7 @@
   .nav-desktop > a:hover::after,
   .dropdown-toggle:hover::after,
   .nav-desktop > a.active::after {
-    color: var(--brand);
+    color: #0d9488;
     transform: scaleX(1);
   }
 
