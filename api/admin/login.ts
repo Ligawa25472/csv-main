@@ -39,12 +39,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       .single();
 
     if (queryError || !users) {
+      console.error('[v0] Admin user query error:', queryError);
+      console.error('[v0] User not found for email:', emailLower);
       res.status(401).json({ error: 'Invalid email or password.' });
       return;
     }
 
     // Verify password
     const passwordMatch = await bcrypt.compare(String(password), users.password_hash);
+    console.error('[v0] Password match result:', passwordMatch);
     if (!passwordMatch) {
       res.status(401).json({ error: 'Invalid email or password.' });
       return;

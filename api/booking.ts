@@ -129,7 +129,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   // Send emails in background without blocking response
   if (resendKey) {
+    console.log('[v0] RESEND_API_KEY is set, sending booking emails');
     sendBookingEmails();
+  } else {
+    console.error('[v0] RESEND_API_KEY is not set, booking emails will not be sent');
   }
 
   res.status(200).json({ success: true, message: 'Your booking request has been submitted. We will confirm your appointment within 24 hours.' });

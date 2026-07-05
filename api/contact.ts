@@ -108,7 +108,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   // Send emails in background without blocking response
   if (resendKey) {
+    console.log('[v0] RESEND_API_KEY is set, sending emails');
     sendEmails();
+  } else {
+    console.error('[v0] RESEND_API_KEY is not set, emails will not be sent');
   }
 
   res.status(200).json({ success: true, message: 'Your message has been received. We will get back to you within 24 hours.' });
