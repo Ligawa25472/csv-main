@@ -41,17 +41,14 @@ export class ContactComponent {
         body: JSON.stringify(this.contactForm),
       })
         .then((response) => {
-          console.log('[v0] Contact API response status:', response.status);
           if (!response.ok) {
             return response.json().then((data) => {
-              console.log('[v0] Contact API error response:', data);
-              throw new Error(data.details || 'Failed to send message');
+              throw new Error(data.error || 'Failed to send message');
             });
           }
           return response.json();
         })
-        .then((data) => {
-          console.log('[v0] Contact form success:', data);
+        .then(() => {
           this.isSubmitting = false;
           this.isSubmitted = true;
           this.resetForm();
@@ -62,7 +59,7 @@ export class ContactComponent {
           }, 5000);
         })
         .catch((error) => {
-          console.error('[v0] Contact form error:', error);
+          console.error('Contact form error:', error);
           this.isSubmitting = false;
           this.isError = true;
           this.errorMessage =

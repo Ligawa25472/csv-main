@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
 import { Resend } from 'resend';
+import { createClient } from '@supabase/supabase-js';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -21,34 +22,68 @@ export function app(): express.Express {
   // Initialize Resend for email sending
   const resend = new Resend(process.env['RESEND_API_KEY']);
 
+  // Initialize Supabase for database operations
+  const supabase = createClient(
+    process.env['NEXT_PUBLIC_SUPABASE_URL'] || '',
+    process.env['SUPABASE_SERVICE_ROLE_KEY'] || ''
+  );
+
   // Email API endpoint for contact form
-  server.post('/api/contact', express.json(), (req, res): void => {
-    console.log('[v0] Contact endpoint called');
-    console.log('[v0] RESEND_API_KEY available:', !!process.env['RESEND_API_KEY']);
-    
+  server.post('/api/contact', express.json(), async (req, res): Promise<void> => {
     const { name, email, phone, message } = req.body;
-    console.log('[v0] Request body:', { name, email, phone, hasMessage: !!message });
 
     // Validate input
     if (!name || !email || !phone || !message) {
-      console.log('[v0] Missing required fields');
-      res.status(400).json({ error: 'Missing required fields' });
+      res.status(400).json({ 
+        error: 'Missing required fields. Please provide name, email, phone, and message.' 
+      });
       return;
     }
 
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      console.log('[v0] Invalid email format');
-      res.status(400).json({ error: 'Invalid email address' });
+      res.status(400).json({ 
+        error: 'Invalid email address. Please enter a valid email.' 
+      });
       return;
     }
 
-    console.log('[v0] Calling Resend API...');
-    
-    // Send email using Resend
-    resend.emails
-      .send({
+    // Validate phone
+    if (phone.length < 10) {
+      res.status(400).json({ 
+        error: 'Invalid phone number. Please enter a valid phone number.' 
+      });
+      return;
+    }
+
+    try {
+      // First, save to database
+      const { data: dbData, error: dbError } = await supabase
+        .from('contact_messages')
+        .insert([
+          {
+            name,
+            email,
+            phone,
+            message,
+            email_sent: false,
+          },
+        ])
+        .select();
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        res.status(500).json({ 
+          error: 'Failed to save your message to our database. Please try again later.' 
+        });
+        return;
+      }
+
+      const messageId = dbData?.[0]?.id;
+
+      // Send email using Resend
+      const emailResult = await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
         to: 'info@mnaaccounting.co.ke',
         cc: 'info@alghahim.co.ke',
@@ -62,44 +97,107 @@ export function app(): express.Express {
           <p><strong>Message:</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
         `,
-      })
-      .then((result) => {
-        console.log('[v0] Resend response received:', { hasError: !!result.error, id: result.data?.id });
-        if (result.error) {
-          console.error('[v0] Resend error:', result.error);
-          res.status(500).json({ error: 'Failed to send email', details: result.error.message });
-          return;
+      });
+
+      if (emailResult.error) {
+        console.error('Email error:', emailResult.error);
+        
+        // Update database to record email failure
+        if (messageId) {
+          await supabase
+            .from('contact_messages')
+            .update({ email_error: emailResult.error.message })
+            .eq('id', messageId);
         }
 
-        console.log('[v0] Email sent successfully');
-        res.status(200).json({ success: true, message: 'Email sent successfully', id: result.data?.id });
-      })
-      .catch((error) => {
-        console.error('[v0] Contact form error:', error);
-        res.status(500).json({ error: 'An error occurred while processing your request', details: error.message });
+        res.status(500).json({ 
+          error: `Failed to send email: ${emailResult.error.message}. Your message has been saved and we will contact you soon.` 
+        });
+        return;
+      }
+
+      // Update database to mark email as sent
+      if (messageId) {
+        await supabase
+          .from('contact_messages')
+          .update({ email_sent: true })
+          .eq('id', messageId);
+      }
+
+      res.status(200).json({ 
+        success: true, 
+        message: 'Your message has been sent successfully. We will get back to you within 24 hours.' 
       });
+    } catch (error) {
+      console.error('Contact form error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      res.status(500).json({ 
+        error: `An error occurred while processing your request: ${errorMessage}. Please try again later.` 
+      });
+    }
   });
 
   // Email API endpoint for booking form
-  server.post('/api/booking', express.json(), (req, res): void => {
+  server.post('/api/booking', express.json(), async (req, res): Promise<void> => {
     const { name, email, phone, businessType, topic, preferredDate, preferredTime, format, notes } = req.body;
 
     // Validate input
     if (!name || !email || !phone) {
-      res.status(400).json({ error: 'Missing required fields' });
+      res.status(400).json({ 
+        error: 'Missing required fields. Please provide name, email, and phone number.' 
+      });
       return;
     }
 
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      res.status(400).json({ error: 'Invalid email address' });
+      res.status(400).json({ 
+        error: 'Invalid email address. Please enter a valid email.' 
+      });
       return;
     }
 
-    // Send email using Resend
-    resend.emails
-      .send({
+    // Validate phone
+    if (phone.length < 10) {
+      res.status(400).json({ 
+        error: 'Invalid phone number. Please enter a valid phone number.' 
+      });
+      return;
+    }
+
+    try {
+      // First, save to database
+      const { data: dbData, error: dbError } = await supabase
+        .from('appointment_bookings')
+        .insert([
+          {
+            name,
+            email,
+            phone,
+            business_type: businessType,
+            topic,
+            preferred_date: preferredDate,
+            preferred_time: preferredTime,
+            format,
+            notes,
+            email_sent: false,
+          },
+        ])
+        .select();
+
+      if (dbError) {
+        console.error('Database error:', dbError);
+        res.status(500).json({ 
+          error: 'Failed to save your booking request to our database. Please try again later.' 
+        });
+        return;
+      }
+
+      const bookingId = dbData?.[0]?.id;
+
+      // Send email using Resend
+      const emailResult = await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
         to: 'info@mnaaccounting.co.ke',
         cc: 'info@alghahim.co.ke',
@@ -118,20 +216,44 @@ export function app(): express.Express {
           <p><strong>Additional Notes:</strong></p>
           <p>${notes ? notes.replace(/\n/g, '<br>') : 'None'}</p>
         `,
-      })
-      .then((result) => {
-        if (result.error) {
-          console.error('[v0] Resend booking error:', result.error);
-          res.status(500).json({ error: 'Failed to send booking request', details: result.error.message });
-          return;
+      });
+
+      if (emailResult.error) {
+        console.error('Email error:', emailResult.error);
+        
+        // Update database to record email failure
+        if (bookingId) {
+          await supabase
+            .from('appointment_bookings')
+            .update({ email_error: emailResult.error.message })
+            .eq('id', bookingId);
         }
 
-        res.status(200).json({ success: true, message: 'Booking request sent successfully', id: result.data?.id });
-      })
-      .catch((error) => {
-        console.error('[v0] Booking form error:', error);
-        res.status(500).json({ error: 'An error occurred while processing your request' });
+        res.status(500).json({ 
+          error: `Failed to send confirmation email: ${emailResult.error.message}. Your booking has been saved and we will contact you soon.` 
+        });
+        return;
+      }
+
+      // Update database to mark email as sent
+      if (bookingId) {
+        await supabase
+          .from('appointment_bookings')
+          .update({ email_sent: true })
+          .eq('id', bookingId);
+      }
+
+      res.status(200).json({ 
+        success: true, 
+        message: 'Your booking request has been submitted successfully. We will confirm your appointment within 24 hours.' 
       });
+    } catch (error) {
+      console.error('Booking form error:', error);
+      const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      res.status(500).json({ 
+        error: `An error occurred while processing your booking: ${errorMessage}. Please try again later.` 
+      });
+    }
   });
 
   // Example Express Rest API endpoints
