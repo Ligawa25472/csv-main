@@ -29,20 +29,12 @@ CREATE INDEX IF NOT EXISTS idx_admin_sessions_expires_at ON admin_sessions(expir
 ALTER TABLE admin_users ENABLE ROW LEVEL SECURITY;
 ALTER TABLE admin_sessions ENABLE ROW LEVEL SECURITY;
 
--- Contact messages - allow authenticated admins to read
-ALTER TABLE contact_messages ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "allow_admin_read_contacts" ON contact_messages
-  FOR SELECT USING (
-    EXISTS (
-      SELECT 1 FROM admin_users WHERE admin_users.id::text = current_user_id()
-    )
-  );
+-- Admin users - deny all by default (authorization handled in API)
+CREATE POLICY "deny_admin_users_access" ON admin_users
+  FOR ALL USING (false);
 
--- Appointment bookings - allow authenticated admins to read
-ALTER TABLE appointment_bookings ENABLE ROW LEVEL SECURITY;
-CREATE POLICY "allow_admin_read_bookings" ON appointment_bookings
-  FOR SELECT USING (
-    EXISTS (
-      SELECT 1 FROM admin_users WHERE admin_users.id::text = current_user_id()
-    )
-  );
+-- Admin sessions - deny all by default (authorization handled in API)
+CREATE POLICY "deny_admin_sessions_access" ON admin_sessions
+  FOR ALL USING (false);
+
+-- Contact messages and bookings - no RLS needed, authorization handled in API layer
