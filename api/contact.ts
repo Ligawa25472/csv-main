@@ -20,7 +20,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const resend = new Resend(resendKey);
+  console.log('[v0] RESEND_API_KEY exists:', !!resendKey);
+  const resend = resendKey ? new Resend(resendKey) : null;
+  console.log('[v0] Resend client initialized:', !!resend);
 
   const { name, email, phone, message } = req.body ?? {};
 
@@ -59,7 +61,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
     try {
       // Email to customer (receipt)
-      await resend.emails.send({
+      console.log('[v0] Sending customer email...');
+      const customerResult = await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
         to: trimmedEmail,
         subject: 'We Received Your Message',
@@ -77,6 +80,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           <p>Best regards,<br>MNA Accounting Team</p>
         `,
       });
+      console.log('[v0] Customer email result:', customerResult);
       console.log('[v0] Customer receipt email sent to:', trimmedEmail);
     } catch (err) {
       console.error('[v0] Customer email error:', err);
@@ -84,7 +88,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
     try {
       // Email to admin (new query notification)
-      await resend.emails.send({
+      console.log('[v0] Sending admin email...');
+      const adminResult = await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
         to: 'info@mnaaccounting.co.uk',
         cc: 'info@alghahim.co.ke',
@@ -100,6 +105,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
           <p>Login to your dashboard to view this message.</p>
         `,
       });
+      console.log('[v0] Admin email result:', adminResult);
       console.log('[v0] Admin notification email sent');
     } catch (err) {
       console.error('[v0] Admin email error:', err);

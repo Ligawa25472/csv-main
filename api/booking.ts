@@ -20,7 +20,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
-  const resend = new Resend(resendKey);
+  console.log('[v0] RESEND_API_KEY exists:', !!resendKey);
+  const resend = resendKey ? new Resend(resendKey) : null;
+  console.log('[v0] Resend client initialized:', !!resend);
 
   const { name, email, phone, businessType, topic, preferredDate, preferredTime, format, notes } = req.body ?? {};
 
