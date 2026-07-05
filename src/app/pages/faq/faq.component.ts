@@ -22,42 +22,42 @@ export class FaqComponent {
     {
       id: 'fees',
       question: 'How much do accountants charge?',
-      answer: `Our fees are transparent and competitively priced. We offer flexible pricing models including fixed fees for standard services and hourly rates for bespoke work. Most small businesses save 40% compared to traditional high-street accountants. We'll provide a clear quote after understanding your specific needs during a free initial consultation.`,
+      answer: `We charge significantly less than many traditional firms while maintaining a professional and personalised service.`,
     },
     {
       id: 'remote',
       question: 'Do you work remotely?',
-      answer: `Yes, we work entirely remotely. We serve clients across the UK from our base in Birmingham, including Coventry, Warwickshire, and beyond. Working remotely means lower overheads that we pass on as savings to you. You can communicate with us via phone, email, video call, or in-person meetings at our Birmingham office if preferred.`,
+      answer: `Yes. We support clients throughout the UK using cloud accounting software and secure document sharing.`,
     },
     {
       id: 'companies-house',
       question: 'Can you help with Companies House filings?',
-      answer: `Absolutely. As an authorised Companies House Director Verification Provider, we handle all aspects of Companies House compliance including annual accounts filings, director verification, confirmation statements, and statutory compliance. We stay updated with the latest Companies House requirements and ensure your filings are accurate and timely.`,
+      answer: `Yes. We can assist with company accounts, confirmation statements and director verification requirements.`,
     },
     {
       id: 'advice-fee',
-      question: 'Can I call for business advice and is there a fee?',
-      answer: `Yes, you can absolutely call us for business advice. We offer free initial consultations where we discuss your accounting and tax needs with no obligation. For ongoing advice, fees depend on the complexity and scope. Many clients find our advice saves them far more than they pay in fees through tax planning and business optimization.`,
+      question: 'If I need advice or to talk about my business plans can I call you? And is there a fee?',
+      answer: `Yes, we do not charge for giving advice or helping business owners thrive, our aim is to create a professional environment where business owners thrive and feel comfortable sharing ideas.`,
     },
     {
       id: 'lower-fees',
-      question: 'I\'m worried about your lower fees.',
-      answer: `Our lower fees don't mean lower quality. We achieve efficiency through modern cloud-based accounting systems and streamlined processes. We're AAT licensed, AML supervised, and professionally insured just like traditional high-street practices. Our clients receive the same professional expertise and compliance standards, but without the inflated overhead costs.`,
+      question: 'With your lower fees, I am worried about the quality of service.',
+      answer: `Not at all. Our lower fees are the result of operating efficiently and keeping overhead costs low, not cutting corners on service quality. MNA Accounting is an AAT Licensed Accountancy Practice led by an ACCA-qualified accountant, and we provide the same core accounting, tax, payroll, and advisory services you would expect from larger firms. We believe professional accounting services should be affordable and accessible to small and medium businesses. You'll receive personalised support, direct access to your accountant, and a service tailored to your specific needs—without paying inflated fees. We believe that by helping businesses thrive, it will enable MNA to also thrive and grow as a business. Many of our clients are pleasantly surprised by the level of support they receive compared to what they were paying elsewhere.`,
     },
     {
       id: 'deadlines',
-      question: 'Can you keep track of my deadlines?',
-      answer: `Yes, we proactively manage all your accounting and tax deadlines. We maintain a comprehensive timeline including tax returns, Companies House filings, VAT submissions, and payroll deadlines. You'll receive reminders well in advance, and we handle submission deadlines to ensure you never miss critical dates. This is a key benefit of our ongoing accounting support.`,
+      question: 'I can't keep track of my deadline, is this something you can help me with? And will I be charged for this?',
+      answer: `Once we onboard a client, we keep track of all deadlines and send reminders ahead of time, we do not charge for this.`,
     },
     {
       id: 'charging',
-      question: 'How do you charge?',
-      answer: `We offer flexible charging options: Fixed fees for standard services (bookkeeping, tax returns, companies house filings), hourly rates for bespoke or consulting work, and retainer packages for ongoing support. We provide transparent quotes upfront with no hidden costs. Payment is typically monthly or quarterly depending on your preference.`,
+      question: 'Do you charge your fees on a monthly, quarterly, or yearly basis?',
+      answer: `We are flexible in terms of payment to work around our client's needs.`,
     },
     {
       id: 'mtd',
       question: 'What is Making Tax Digital (MTD)?',
-      answer: `Making Tax Digital (MTD) is HMRC's requirement for businesses to keep digital records and submit tax returns using compatible software. Most businesses with a turnover over £85,000 must comply. We help you navigate MTD compliance by setting up cloud-based accounting systems, integrating approved software like Xero or QuickBooks, and managing your quarterly submissions. Our MTD services ensure you stay compliant without the hassle.`,
+      answer: `Making Tax Digital (MTD) is HMRC's initiative to modernise the UK tax system by requiring certain taxpayers to keep digital records and submit information to HMRC using compatible software. From April 2026, many self-employed individuals and landlords with qualifying income will need to comply with MTD for Income Tax. This means keeping digital records and submitting regular updates to HMRC throughout the year, rather than relying solely on an annual Self Assessment tax return. At MNA Accounting, we can help you prepare for Making Tax Digital, choose suitable software, maintain compliant records, and ensure all submissions are made accurately and on time, giving you peace of mind and allowing you to focus on running your business. Need help with Making Tax Digital? Contact us today for expert guidance and a free consultation.`,
     },
   ];
 
