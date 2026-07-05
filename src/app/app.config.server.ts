@@ -1,11 +1,18 @@
-import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideServerRendering } from '@angular/platform-server';
-import { appConfig } from './app.config';
+import { routes } from './app.routes';
 
-const serverConfig: ApplicationConfig = {
+export const config: ApplicationConfig = {
   providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(
+      routes,
+      withInMemoryScrolling({
+        scrollPositionRestoration: 'enabled',
+        anchorScrolling: 'enabled',
+      })
+    ),
     provideServerRendering()
   ]
 };
-
-export const config = mergeApplicationConfig(appConfig, serverConfig);

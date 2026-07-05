@@ -26,6 +26,10 @@ import { MakingTaxDigitalComponent } from './features/personal-services/making-t
 import { CompaniesHouseComponent } from './features/business-services/companies-house.component';
 import { BookConsultationComponent } from './pages/book-consultation/book-consultation.component';
 
+// Admin components
+import { LoginComponent } from './features/admin/login/login.component';
+import { DashboardComponent } from './features/admin/dashboard/dashboard.component';
+
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -33,6 +37,10 @@ export const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'book-consultation', component: BookConsultationComponent },
   { path: 'faq', component: FaqComponent },
+
+  // Admin Routes
+  { path: 'admin/login', component: LoginComponent },
+  { path: 'admin/dashboard', component: DashboardComponent },
 
   // Business Services Routes
   { path: 'business', component: BusinessServicesComponent },

@@ -8,28 +8,6 @@
 
     <!-- Rating Badges -->
     <div class="rating-badges">
-      <!-- Google Reviews Badge -->
-      <div class="rating-badge google-badge">
-        <div class="badge-header">
-          <div class="badge-logo">
-            <app-icon name="star" class="badge-icon"></app-icon>
-            <span class="badge-name">Google</span>
-          </div>
-          <div class="rating-display">
-            <span class="rating-number">{{ googleRating }}</span>
-            <div class="rating-stars">
-              <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(googleRating)"></app-icon>
-              <app-icon name="starFilled" class="star partial" *ngIf="getPartialStar(googleRating)"></app-icon>
-            </div>
-          </div>
-        </div>
-        <p class="review-count">Based on {{ googleReviewCount }} verified reviews</p>
-        <a href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer" class="badge-link">
-          View on Google
-          <app-icon name="externalLink" class="icon-small"></app-icon>
-        </a>
-      </div>
-
       <!-- Trustpilot Reviews Badge -->
       <div class="rating-badge trustpilot-badge">
         <div class="badge-header">
@@ -46,8 +24,29 @@
           </div>
         </div>
         <p class="review-count">Based on {{ trustpilotReviewCount }} verified reviews</p>
-        <a href="https://www.trustpilot.com" target="_blank" rel="noopener noreferrer" class="badge-link">
+        <a [href]="trustpilotUrl" target="_blank" rel="noopener noreferrer" class="badge-link">
           View on Trustpilot
+          <app-icon name="externalLink" class="icon-small"></app-icon>
+        </a>
+      </div>
+
+      <!-- Google Reviews Badge -->
+      <div class="rating-badge google-badge">
+        <div class="badge-header">
+          <div class="badge-logo">
+            <app-icon name="star" class="badge-icon"></app-icon>
+            <span class="badge-name">Google</span>
+          </div>
+          <div class="rating-display">
+            <span class="rating-number">{{ googleRating }}</span>
+            <div class="rating-stars">
+              <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(googleRating)"></app-icon>
+            </div>
+          </div>
+        </div>
+        <p class="review-count">Google verified reviews</p>
+        <a [href]="googleUrl" target="_blank" rel="noopener noreferrer" class="badge-link">
+          View on Google Maps
           <app-icon name="externalLink" class="icon-small"></app-icon>
         </a>
       </div>
@@ -62,14 +61,13 @@
             <p class="review-service">{{ review.service }}</p>
           </div>
           <div class="review-source">
-            <app-icon [name]="getSourceIcon(review.source)" class="source-icon"></app-icon>
-            <span class="source-label">{{ getSourceLabel(review.source) }}</span>
+            <app-icon name="award" class="source-icon"></app-icon>
+            <span class="source-label">Trustpilot</span>
           </div>
         </div>
 
         <div class="review-rating">
           <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(review.rating)"></app-icon>
-          <app-icon name="starFilled" class="star partial" *ngIf="getPartialStar(review.rating)"></app-icon>
         </div>
 
         <p class="review-text">{{ review.text }}</p>

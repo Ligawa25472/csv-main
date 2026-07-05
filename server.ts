@@ -30,10 +30,12 @@ export function app(): express.Express {
 
   // Email API endpoint for contact form
   server.post('/api/contact', express.json(), async (req, res): Promise<void> => {
+    console.log('[v0] Contact API called with body:', req.body);
     const { name, email, phone, message } = req.body;
 
     // Validate input
     if (!name || !email || !phone || !message) {
+      console.log('[v0] Validation failed - missing fields');
       res.status(400).json({ 
         error: 'Missing required fields. Please provide name, email, phone, and message.' 
       });
@@ -58,6 +60,17 @@ export function app(): express.Express {
     }
 
     try {
+      // Check if Supabase is initialized
+      if (!process.env['NEXT_PUBLIC_SUPABASE_URL'] || !process.env['SUPABASE_SERVICE_ROLE_KEY']) {
+        console.error('[v0] Supabase not configured - missing environment variables');
+        res.status(500).json({ 
+          error: 'Database service is not configured. Please contact support.' 
+        });
+        return;
+      }
+
+      console.log('[v0] Attempting to save to Supabase...');
+      
       // First, save to database
       const { data: dbData, error: dbError } = await supabase
         .from('contact_messages')
@@ -73,12 +86,14 @@ export function app(): express.Express {
         .select();
 
       if (dbError) {
-        console.error('Database error:', dbError);
+        console.error('[v0] Database error details:', dbError);
         res.status(500).json({ 
-          error: 'Failed to save your message to our database. Please try again later.' 
+          error: `Failed to save your message to our database: ${dbError.message}` 
         });
         return;
       }
+
+      console.log('[v0] Message saved to database with ID:', dbData?.[0]?.id);
 
       const messageId = dbData?.[0]?.id;
 
@@ -129,8 +144,10 @@ export function app(): express.Express {
         message: 'Your message has been sent successfully. We will get back to you within 24 hours.' 
       });
     } catch (error) {
-      console.error('Contact form error:', error);
+      console.error('[v0] Contact form error:', error);
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+      console.error('[v0] Error type:', error instanceof Error ? 'Error' : typeof error);
+      console.error('[v0] Full error:', JSON.stringify(error));
       res.status(500).json({ 
         error: `An error occurred while processing your request: ${errorMessage}. Please try again later.` 
       });
