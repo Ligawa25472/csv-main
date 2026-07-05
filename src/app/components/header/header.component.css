@@ -320,6 +320,10 @@
     gap: var(--spacing-6);
   }
 
+  .dropdown {
+    position: relative;
+  }
+
   .nav-desktop > a,
   .dropdown-toggle {
     color: #666666;
