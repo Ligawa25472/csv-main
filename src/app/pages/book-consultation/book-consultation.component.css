@@ -461,9 +461,13 @@
     font-size: 2.2rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
+.hero-subtitle {
+  font-size: 1.3rem;
+  opacity: 1;
+  line-height: 1.6;
+  font-weight: 400;
+  color: #ffffff;
+}
 
   .booking-layout {
     grid-template-columns: 1fr;
