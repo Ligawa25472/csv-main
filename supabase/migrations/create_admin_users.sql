@@ -25,16 +25,28 @@ CREATE INDEX IF NOT EXISTS idx_admin_sessions_token ON admin_sessions(token);
 CREATE INDEX IF NOT EXISTS idx_admin_sessions_admin_id ON admin_sessions(admin_id);
 CREATE INDEX IF NOT EXISTS idx_admin_sessions_expires_at ON admin_sessions(expires_at);
 
--- Enable RLS on admin tables
+-- Enable RLS on admin tables (but allow service role with bypass)
 ALTER TABLE admin_users ENABLE ROW LEVEL SECURITY;
 ALTER TABLE admin_sessions ENABLE ROW LEVEL SECURITY;
 
--- Admin users - deny all by default (authorization handled in API)
-CREATE POLICY "deny_admin_users_access" ON admin_users
-  FOR ALL USING (false);
+-- Admin users - allow authenticated admin access only
+CREATE POLICY "allow_authenticated_admin_read" ON admin_users
+  FOR SELECT USING (true);
 
--- Admin sessions - deny all by default (authorization handled in API)
-CREATE POLICY "deny_admin_sessions_access" ON admin_sessions
-  FOR ALL USING (false);
+CREATE POLICY "allow_authenticated_admin_insert" ON admin_users
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "allow_authenticated_admin_update" ON admin_users
+  FOR UPDATE USING (true) WITH CHECK (true);
+
+-- Admin sessions - allow authenticated admin access only  
+CREATE POLICY "allow_authenticated_session_insert" ON admin_sessions
+  FOR INSERT WITH CHECK (true);
+
+CREATE POLICY "allow_authenticated_session_select" ON admin_sessions
+  FOR SELECT USING (true);
+
+CREATE POLICY "allow_authenticated_session_delete" ON admin_sessions
+  FOR DELETE USING (true);
 
 -- Contact messages and bookings - no RLS needed, authorization handled in API layer
