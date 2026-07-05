@@ -65,7 +65,7 @@
 /* FAQ Section */
 .faq-section {
   padding: var(--spacing-20) var(--spacing-6);
-  background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
   position: relative;
   overflow: hidden;
 }
@@ -109,14 +109,14 @@
 .faq-header h2 {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1a1a1a;
+  color: #0f172a;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
 }
 
 .faq-header p {
   font-size: 1.1rem;
-  color: #6b7280;
+  color: #334155;
   line-height: 1.7;
   margin: 0;
 }
@@ -193,7 +193,7 @@
 .accordion-question {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #1a1a1a;
+  color: #0f172a;
   line-height: 1.5;
   letter-spacing: -0.01em;
 }
@@ -231,7 +231,7 @@
 
 .accordion-body {
   padding: 0 1.75rem 1.75rem;
-  color: #4b5563;
+  color: #475569;
   line-height: 1.8;
   font-size: 1rem;
   margin: 0;
@@ -242,7 +242,7 @@
 }
 
 .accordion-body strong {
-  color: #1a1a1a;
+  color: #0f172a;
   font-weight: 700;
 }
 
