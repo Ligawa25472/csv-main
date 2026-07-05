@@ -2,13 +2,6 @@ import { VercelRequest, VercelResponse } from '@vercel/node';
 import { createClient } from '@supabase/supabase-js';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-  process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-);
-
 export default async function handler(
   req: VercelRequest,
   res: VercelResponse
@@ -20,6 +13,13 @@ export default async function handler(
   }
 
   try {
+    // Initialize clients inside handler to ensure env vars are available
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL || '',
+      process.env.SUPABASE_SERVICE_ROLE_KEY || ''
+    );
+
     const { name, email, phone, message } = req.body;
 
     console.log('[v0] Contact API called with:', { name, email, phone, hasMessage: !!message });
