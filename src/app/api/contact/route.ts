@@ -49,9 +49,11 @@ export async function POST(request: NextRequest) {
       { status: 200 }
     );
   } catch (error) {
-    console.error('Contact form error:', error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error('[v0] Contact form error:', errorMessage);
+    console.error('[v0] Full error:', error);
     return NextResponse.json(
-      { error: 'Failed to send email' },
+      { error: 'Failed to send email', details: errorMessage },
       { status: 500 }
     );
   }
