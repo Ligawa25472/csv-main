@@ -54,6 +54,9 @@ const ICONS: IconPaths = {
     '<rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6"/><line x1="15" y1="6" x2="15" y2="6"/><line x1="9" y1="10" x2="9" y2="10"/><line x1="15" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="9" y2="14"/><line x1="15" y1="14" x2="15" y2="14"/><path d="M10 22v-4h4v4"/>',
   hardHat:
     '<path d="M2 18h20"/><path d="M10 4v4"/><path d="M14 4v4"/><path d="M4 18a8 8 0 0 1 16 0"/><path d="M9 4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4H9z"/>',
+  user: '<path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+  wrench: '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 1 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
+  trendingUp: '<polyline points="23 6 13.5 15.5 8.5 10.5 2 17"/><polyline points="17 6 23 6 23 12"/>',
   // Benefits / trust
   pound:
     '<path d="M18 7c0-2.2-1.8-4-4-4S10 4.8 10 7v3"/><path d="M7 13h7"/><path d="M7 21h11a4 4 0 0 0-3-6 4 4 0 0 0 1-3"/><path d="M7 21V10"/>',
