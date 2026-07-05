@@ -286,6 +286,20 @@
 }
 
 .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: var(--spacing-2) 0;
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--transition-base), visibility var(--transition-base);
+  z-index: 100;
   display: none;
 }
 
@@ -318,6 +332,10 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-6);
+  }
+
+  .dropdown {
+    position: relative;
   }
 
   .nav-desktop > a,
@@ -362,7 +380,25 @@
     transform: scaleX(1);
   }
 
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+
+  .dropdown-toggle app-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-fast);
+  }
+
+  .dropdown.active .dropdown-toggle app-icon {
+    transform: rotate(180deg);
+  }
+
   .dropdown-menu {
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
@@ -377,10 +413,11 @@
     pointer-events: none;
     transition: opacity var(--transition-base), visibility var(--transition-base);
     z-index: 100;
-    margin-top: -1px;
+    margin-top: 8px;
   }
 
-  .dropdown:hover .dropdown-menu {
+  .dropdown:hover .dropdown-menu,
+  .dropdown.active .dropdown-menu {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

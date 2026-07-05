@@ -8,27 +8,27 @@
       <nav class="nav-desktop">
         <a routerLink="/home" routerLinkActive="active">Home</a>
         <a routerLink="/about" routerLinkActive="active">About Us</a>
-        <div class="dropdown">
-          <a class="dropdown-toggle">Business Services</a>
+        <div class="dropdown" [class.active]="isDropdownOpen('business')">
+          <a class="dropdown-toggle" (click)="toggleDropdown('business', $event)">Business Services <app-icon name="chevronDown"></app-icon></a>
           <div class="dropdown-menu">
-            <a routerLink="/business/corporation-tax">Corporation Tax</a>
-            <a routerLink="/business/vat-returns">VAT Returns</a>
-            <a routerLink="/business/payroll-cis">Payroll & CIS</a>
-            <a routerLink="/business/bookkeeping">Bookkeeping</a>
-            <a routerLink="/business/year-end-accounts">Year End Accounts</a>
-            <a routerLink="/business/management-accounts"
+            <a routerLink="/business/corporation-tax" (click)="closeDropdown()">Corporation Tax</a>
+            <a routerLink="/business/vat-returns" (click)="closeDropdown()">VAT Returns</a>
+            <a routerLink="/business/payroll-cis" (click)="closeDropdown()">Payroll & CIS</a>
+            <a routerLink="/business/bookkeeping" (click)="closeDropdown()">Bookkeeping</a>
+            <a routerLink="/business/year-end-accounts" (click)="closeDropdown()">Year End Accounts</a>
+            <a routerLink="/business/management-accounts" (click)="closeDropdown()"
               >Management Accounts</a
             >
-            <a routerLink="/business/tax-planning">Tax Planning</a>
+            <a routerLink="/business/tax-planning" (click)="closeDropdown()">Tax Planning</a>
           </div>
         </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle">Personal Services</a>
+        <div class="dropdown" [class.active]="isDropdownOpen('personal')">
+          <a class="dropdown-toggle" (click)="toggleDropdown('personal', $event)">Personal Services <app-icon name="chevronDown"></app-icon></a>
           <div class="dropdown-menu">
-              <a routerLink="/personal/self-assessment">Self Assessment</a>
-            <a routerLink="/personal/capital-gains-tax">Capital Gains Tax</a>
-            <a routerLink="/personal/tax-planning">Personal Tax Planning</a>
-            <a routerLink="/personal/cis">CIS Refunds</a>
+              <a routerLink="/personal/self-assessment" (click)="closeDropdown()">Self Assessment</a>
+            <a routerLink="/personal/capital-gains-tax" (click)="closeDropdown()">Capital Gains Tax</a>
+            <a routerLink="/personal/tax-planning" (click)="closeDropdown()">Personal Tax Planning</a>
+            <a routerLink="/personal/cis" (click)="closeDropdown()">CIS Refunds</a>
           </div>
         </div>
         <a routerLink="/contact" routerLinkActive="active">Contact</a>

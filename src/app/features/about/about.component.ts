@@ -57,17 +57,17 @@ export class AboutComponent implements AfterViewInit {
       description: 'Complete accounting solutions for growing companies',
     },
     {
-      icon: 'tie',
+      icon: 'user',
       title: 'Sole Traders',
       description: 'Tailored services for individual business owners',
     },
     {
-      icon: 'hammer',
+      icon: 'wrench',
       title: 'Contractors & Freelancers',
       description: 'Specialist support for independent professionals',
     },
     {
-      icon: 'rocket',
+      icon: 'trendingUp',
       title: 'Startups & Growing Companies',
       description: 'Flexible services that scale with your business',
     },

@@ -121,7 +121,9 @@
 
     <div class="clients-grid">
       <div class="client-card" *ngFor="let client of clientTypes">
-        <div class="client-icon">{{ client.icon }}</div>
+        <div class="client-icon">
+          <app-icon [name]="client.icon"></app-icon>
+        </div>
         <h3 class="client-title">{{ client.title }}</h3>
         <p class="client-description">{{ client.description }}</p>
       </div>
