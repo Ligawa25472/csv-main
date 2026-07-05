@@ -8,8 +8,8 @@
       <nav class="nav-desktop">
         <a routerLink="/home" routerLinkActive="active">Home</a>
         <a routerLink="/about" routerLinkActive="active">About Us</a>
-        <div class="dropdown">
-          <a class="dropdown-toggle">Business Services</a>
+        <div class="dropdown" [class.active]="isDropdownOpen('business')">
+          <a class="dropdown-toggle" (click)="toggleDropdown('business', $event)">Business Services</a>
           <div class="dropdown-menu">
             <a routerLink="/business/corporation-tax">Corporation Tax</a>
             <a routerLink="/business/vat-returns">VAT Returns</a>
@@ -22,8 +22,8 @@
             <a routerLink="/business/tax-planning">Tax Planning</a>
           </div>
         </div>
-        <div class="dropdown">
-          <a class="dropdown-toggle">Personal Services</a>
+        <div class="dropdown" [class.active]="isDropdownOpen('personal')">
+          <a class="dropdown-toggle" (click)="toggleDropdown('personal', $event)">Personal Services</a>
           <div class="dropdown-menu">
               <a routerLink="/personal/self-assessment">Self Assessment</a>
             <a routerLink="/personal/capital-gains-tax">Capital Gains Tax</a>

@@ -12,6 +12,7 @@ import { IconComponent } from '../icon/icon.component';
 })
 export class HeaderComponent implements OnDestroy {
   isMenuOpen = false;
+  activeDropdown: string | null = null;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -22,6 +23,15 @@ export class HeaderComponent implements OnDestroy {
         document.body.classList.remove('no-scroll');
       }
     }
+  }
+
+  toggleDropdown(menu: string, event: Event) {
+    event.preventDefault();
+    this.activeDropdown = this.activeDropdown === menu ? null : menu;
+  }
+
+  isDropdownOpen(menu: string): boolean {
+    return this.activeDropdown === menu;
   }
 
   closeMenu() {
