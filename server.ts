@@ -345,9 +345,11 @@ export function app(): express.Express {
           is_active: users.is_active,
         },
       });
-    } catch (error) {
-      console.error('[v0] Login error:', error);
-      res.status(500).json({ error: 'An error occurred during login.' });
+    } catch (error: any) {
+      console.error('[v0] Login error - Full error object:', error);
+      console.error('[v0] Error message:', error?.message);
+      console.error('[v0] Error stack:', error?.stack);
+      res.status(500).json({ error: 'An error occurred during login.', details: error?.message });
     }
   });
 
@@ -358,6 +360,12 @@ export function app(): express.Express {
     maxAge: '1y',
     index: 'index.html',
   }));
+
+  // Skip SSR for admin routes - serve client-side only
+  server.get('/admin/**', (req, res) => {
+    const indexPath = join(browserDistFolder, 'index.html');
+    res.sendFile(indexPath);
+  });
 
   // All regular routes use the Angular engine
   server.get('**', (req, res, next) => {
