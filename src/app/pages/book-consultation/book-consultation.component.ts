@@ -80,12 +80,30 @@ export class BookConsultationComponent {
     this.isSubmitting = true;
     this.isError = false;
 
-    // Simulate form submission
-    setTimeout(() => {
-      try {
-        // Here you would normally send the form data to your backend
-        console.log('Booking submitted:', this.bookingForm);
-        
+    fetch('/api/booking', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: this.bookingForm.name,
+        email: this.bookingForm.email,
+        phone: this.bookingForm.phone,
+        businessType: this.bookingForm.businessType,
+        topic: this.bookingForm.consultationType,
+        preferredDate: this.bookingForm.preferredDate,
+        preferredTime: this.bookingForm.preferredTime,
+        format: 'Not specified',
+        notes: this.bookingForm.message,
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to submit booking');
+        }
+        return response.json();
+      })
+      .then(() => {
         this.isSubmitted = true;
         this.isSubmitting = false;
 
@@ -93,12 +111,19 @@ export class BookConsultationComponent {
         setTimeout(() => {
           this.resetForm();
         }, 3000);
-      } catch (error: any) {
+      })
+      .catch((error) => {
+        console.error('Booking form error:', error);
         this.isError = true;
-        this.errorMessage = error.message || 'Failed to submit booking. Please try again.';
+        this.errorMessage =
+          'Sorry, we could not submit your booking. Please try again or call us at 07551 551717.';
         this.isSubmitting = false;
-      }
-    }, 1500);
+
+        // Hide error message after 5 seconds
+        setTimeout(() => {
+          this.isError = false;
+        }, 5000);
+      });
   }
 
   resetForm(): void {
