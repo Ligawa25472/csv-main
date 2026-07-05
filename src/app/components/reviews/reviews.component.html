@@ -37,8 +37,14 @@
             <app-icon name="star" class="badge-icon"></app-icon>
             <span class="badge-name">Google</span>
           </div>
+          <div class="rating-display">
+            <span class="rating-number">{{ googleRating }}</span>
+            <div class="rating-stars">
+              <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(googleRating)"></app-icon>
+            </div>
+          </div>
         </div>
-        <p class="review-count">See our Google reviews</p>
+        <p class="review-count">Google verified reviews</p>
         <a [href]="googleUrl" target="_blank" rel="noopener noreferrer" class="badge-link">
           View on Google Maps
           <app-icon name="externalLink" class="icon-small"></app-icon>

@@ -19,8 +19,9 @@ interface Review {
   styleUrls: ['./reviews.component.css'],
 })
 export class ReviewsComponent {
-  trustpilotRating = 4.3;
-  trustpilotReviewCount = 9;
+  trustpilotRating = 4.5;
+  trustpilotReviewCount = 15;
+  googleRating = 5.0;
   trustpilotUrl = 'https://uk.trustpilot.com/review/mnaaccounting.co.uk';
   googleUrl = 'https://maps.app.goo.gl/pjHKFXqY649DnPFv5';
 
