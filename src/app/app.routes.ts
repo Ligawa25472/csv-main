@@ -30,6 +30,11 @@ import { BookConsultationComponent } from './pages/book-consultation/book-consul
 import { LoginComponent } from './features/admin/login/login.component';
 import { DashboardComponent } from './features/admin/dashboard/dashboard.component';
 
+// Error pages
+import { Error404Component } from './pages/error-404/error-404.component';
+import { Error403Component } from './pages/error-403/error-403.component';
+import { Error500Component } from './pages/error-500/error-500.component';
+
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -64,6 +69,11 @@ export const routes: Routes = [
   { path: 'personal/cis', component: PersonalCisComponent },
   { path: 'personal/making-tax-digital', component: MakingTaxDigitalComponent },
 
+  // Error Routes
+  { path: 'error/403', component: Error403Component },
+  { path: 'error/404', component: Error404Component },
+  { path: 'error/500', component: Error500Component },
+
   // Wildcard route - must be last
-  { path: '**', redirectTo: '/home' },
+  { path: '**', component: Error404Component },
 ];
