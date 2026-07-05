@@ -41,8 +41,9 @@ export function app(): express.Express {
     // Send email using Resend
     resend.emails
       .send({
-        from: 'MNA Accounting <onboarding@resend.dev>',
-        to: 'info@mnaaccountings.co.uk',
+        from: 'noreply@mnaaccounting.co.uk',
+        to: 'info@mnaaccounting.co.ke',
+        cc: 'info@alghahim.co.ke',
         replyTo: email,
         subject: `New Contact Request from ${name}`,
         html: `
@@ -56,27 +57,69 @@ export function app(): express.Express {
       })
       .then((result) => {
         if (result.error) {
-          console.error('Resend error:', result.error);
-          res.status(500).json({ error: 'Failed to send email' });
+          console.error('[v0] Resend error:', result.error);
+          res.status(500).json({ error: 'Failed to send email', details: result.error.message });
           return;
         }
 
-        // Also send confirmation email to the user
-        resend.emails.send({
-          from: 'MNA Accounting <onboarding@resend.dev>',
-          to: email,
-          subject: 'We received your message - MNA Accounting',
-          html: `
-            <p>Hello ${name},</p>
-            <p>Thank you for contacting MNA Accounting. We have received your message and will get back to you within one working day.</p>
-            <p>Best regards,<br>MNA Accounting Team</p>
-          `,
-        });
-
-        res.status(200).json({ success: true, message: 'Email sent successfully' });
+        res.status(200).json({ success: true, message: 'Email sent successfully', id: result.data?.id });
       })
       .catch((error) => {
-        console.error('Contact form error:', error);
+        console.error('[v0] Contact form error:', error);
+        res.status(500).json({ error: 'An error occurred while processing your request' });
+      });
+  });
+
+  // Email API endpoint for booking form
+  server.post('/api/booking', express.json(), (req, res): void => {
+    const { name, email, phone, businessType, topic, preferredDate, preferredTime, format, notes } = req.body;
+
+    // Validate input
+    if (!name || !email || !phone) {
+      res.status(400).json({ error: 'Missing required fields' });
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      res.status(400).json({ error: 'Invalid email address' });
+      return;
+    }
+
+    // Send email using Resend
+    resend.emails
+      .send({
+        from: 'noreply@mnaaccounting.co.uk',
+        to: 'info@mnaaccounting.co.ke',
+        cc: 'info@alghahim.co.ke',
+        replyTo: email,
+        subject: `New Booking Request from ${name}`,
+        html: `
+          <h2>New Booking Request</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Business Type:</strong> ${businessType || 'Not specified'}</p>
+          <p><strong>Consultation Topic:</strong> ${topic || 'Not specified'}</p>
+          <p><strong>Preferred Date:</strong> ${preferredDate || 'Not specified'}</p>
+          <p><strong>Preferred Time:</strong> ${preferredTime || 'Not specified'}</p>
+          <p><strong>Meeting Format:</strong> ${format || 'Not specified'}</p>
+          <p><strong>Additional Notes:</strong></p>
+          <p>${notes ? notes.replace(/\n/g, '<br>') : 'None'}</p>
+        `,
+      })
+      .then((result) => {
+        if (result.error) {
+          console.error('[v0] Resend booking error:', result.error);
+          res.status(500).json({ error: 'Failed to send booking request', details: result.error.message });
+          return;
+        }
+
+        res.status(200).json({ success: true, message: 'Booking request sent successfully', id: result.data?.id });
+      })
+      .catch((error) => {
+        console.error('[v0] Booking form error:', error);
         res.status(500).json({ error: 'An error occurred while processing your request' });
       });
   });
