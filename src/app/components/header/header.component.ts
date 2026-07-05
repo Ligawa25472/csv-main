@@ -34,6 +34,10 @@ export class HeaderComponent implements OnDestroy {
     return this.activeDropdown === menu;
   }
 
+  closeDropdown() {
+    this.activeDropdown = null;
+  }
+
   closeMenu() {
     this.isMenuOpen = false;
     if (typeof document !== 'undefined' && document && document.body) {
