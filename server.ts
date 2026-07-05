@@ -23,10 +23,15 @@ export function app(): express.Express {
 
   // Email API endpoint for contact form
   server.post('/api/contact', express.json(), (req, res): void => {
+    console.log('[v0] Contact endpoint called');
+    console.log('[v0] RESEND_API_KEY available:', !!process.env['RESEND_API_KEY']);
+    
     const { name, email, phone, message } = req.body;
+    console.log('[v0] Request body:', { name, email, phone, hasMessage: !!message });
 
     // Validate input
     if (!name || !email || !phone || !message) {
+      console.log('[v0] Missing required fields');
       res.status(400).json({ error: 'Missing required fields' });
       return;
     }
@@ -34,10 +39,13 @@ export function app(): express.Express {
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
+      console.log('[v0] Invalid email format');
       res.status(400).json({ error: 'Invalid email address' });
       return;
     }
 
+    console.log('[v0] Calling Resend API...');
+    
     // Send email using Resend
     resend.emails
       .send({
@@ -56,17 +64,19 @@ export function app(): express.Express {
         `,
       })
       .then((result) => {
+        console.log('[v0] Resend response received:', { hasError: !!result.error, id: result.data?.id });
         if (result.error) {
           console.error('[v0] Resend error:', result.error);
           res.status(500).json({ error: 'Failed to send email', details: result.error.message });
           return;
         }
 
+        console.log('[v0] Email sent successfully');
         res.status(200).json({ success: true, message: 'Email sent successfully', id: result.data?.id });
       })
       .catch((error) => {
         console.error('[v0] Contact form error:', error);
-        res.status(500).json({ error: 'An error occurred while processing your request' });
+        res.status(500).json({ error: 'An error occurred while processing your request', details: error.message });
       });
   });
 
