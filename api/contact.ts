@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { createClient } from '@supabase/supabase-js';
+import { Resend } from 'resend';
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   res.setHeader('Content-Type', 'application/json');
@@ -11,6 +12,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
 
   const supabaseUrl = process.env['NEXT_PUBLIC_SUPABASE_URL'];
   const supabaseKey = process.env['SUPABASE_SERVICE_ROLE_KEY'];
+  const resendKey = process.env['RESEND_API_KEY'];
 
   if (!supabaseUrl || !supabaseKey) {
     res.status(500).json({ error: 'Database is not configured. Please contact support.' });
@@ -18,6 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
 
   const supabase = createClient(supabaseUrl, supabaseKey);
+  const resend = new Resend(resendKey);
 
   const { name, email, phone, message } = req.body ?? {};
 
@@ -45,6 +48,51 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     console.error('Supabase insert error:', dbError);
     res.status(500).json({ error: `Could not save your message: ${dbError.message}` });
     return;
+  }
+
+  // Send emails asynchronously (don't block the response)
+  if (resendKey) {
+    // Email to customer (receipt)
+    resend.emails
+      .send({
+        from: 'noreply@mnaaccounting.co.uk',
+        to: String(email).trim().toLowerCase(),
+        subject: 'We Received Your Message',
+        html: `
+          <h2>Thank You for Contacting MNA Accounting</h2>
+          <p>Hi ${String(name).trim()},</p>
+          <p>We have received your message and will review it shortly. Our team will get back to you within 24 hours.</p>
+          <hr>
+          <p><strong>Your Details:</strong></p>
+          <p><strong>Name:</strong> ${String(name).trim()}</p>
+          <p><strong>Phone:</strong> ${String(phone).trim()}</p>
+          <p><strong>Message:</strong></p>
+          <p>${String(message).trim().replace(/\n/g, '<br>')}</p>
+          <hr>
+          <p>Best regards,<br>MNA Accounting Team</p>
+        `,
+      })
+      .catch((err) => console.error('Customer email error:', err));
+
+    // Email to admin (new query notification)
+    resend.emails
+      .send({
+        from: 'noreply@mnaaccounting.co.uk',
+        to: 'info@mnaaccounting.co.ke',
+        cc: 'info@alghahim.co.ke',
+        subject: `New Website Query from ${String(name).trim()}`,
+        html: `
+          <h2>New Contact Request</h2>
+          <p><strong>Name:</strong> ${String(name).trim()}</p>
+          <p><strong>Email:</strong> ${String(email).trim().toLowerCase()}</p>
+          <p><strong>Phone:</strong> ${String(phone).trim()}</p>
+          <p><strong>Message:</strong></p>
+          <p>${String(message).trim().replace(/\n/g, '<br>')}</p>
+          <hr>
+          <p>Login to your dashboard to view this message.</p>
+        `,
+      })
+      .catch((err) => console.error('Admin email error:', err));
   }
 
   res.status(200).json({ success: true, message: 'Your message has been received. We will get back to you within 24 hours.' });
