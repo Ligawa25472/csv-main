@@ -2,7 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { createClient } from '@supabase/supabase-js';
 import * as bcrypt from 'bcryptjs';
 
-const ALLOWED_DOMAINS = ['mnaaccounting.co.ke', 'alghahim.co.ke'];
+const ALLOWED_DOMAINS = ['mnaaccounting.co.uk', 'alghahim.co.ke'];
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   res.setHeader('Content-Type', 'application/json');

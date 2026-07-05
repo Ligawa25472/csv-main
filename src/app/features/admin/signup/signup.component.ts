@@ -43,8 +43,8 @@ export class SignupComponent {
     }
 
     // Validate email domain
-    if (!this.email.endsWith('@mnaaccounting.co.ke') && !this.email.endsWith('@alghahim.co.ke')) {
-      this.errorMessage = 'Only @mnaaccounting.co.ke and @alghahim.co.ke email addresses are allowed.';
+    if (!this.email.endsWith('@mnaaccounting.co.uk') && !this.email.endsWith('@alghahim.co.ke')) {
+      this.errorMessage = 'Only @mnaaccounting.co.uk and @alghahim.co.ke email addresses are allowed.';
       return;
     }
 
