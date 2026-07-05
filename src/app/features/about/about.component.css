@@ -124,14 +124,14 @@
 .main-text {
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   line-height: 1.85;
-  color: var(--body);
+  color: #334155;
   animation: slideLeft 0.8s ease-out;
 }
 
 .intro-text {
   font-size: clamp(1.1rem, 3vw, 1.3rem);
   font-weight: 600;
-  color: var(--ink);
+  color: #0F4C75;
   margin-bottom: var(--spacing-8);
   animation: slideUp 0.8s ease-out 0.1s backwards;
 }
@@ -210,7 +210,7 @@
 .section-subtitle {
   text-align: center;
   font-size: clamp(1.025rem, 3vw, 1.2rem);
-  color: var(--body-light);
+  color: #64748b;
   margin-bottom: var(--spacing-12);
   animation: slideUp 0.8s ease-out 0.2s backwards;
   line-height: 1.6;
@@ -259,7 +259,7 @@
 .story-content p {
   font-size: clamp(1.1rem, 3vw, 1.3rem);
   line-height: 1.85;
-  color: var(--body);
+  color: #334155;
   margin-bottom: var(--spacing-8);
   animation: slideUp 0.8s ease-out backwards;
 }
@@ -283,7 +283,7 @@
 .team-content p {
   font-size: clamp(1.1rem, 3vw, 1.3rem);
   line-height: 1.85;
-  color: var(--body);
+  color: #334155;
   margin-bottom: var(--spacing-8);
   animation: slideUp 0.8s ease-out backwards;
 }
@@ -376,12 +376,12 @@
 .value-title {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   font-weight: 700;
-  color: var(--ink);
+  color: #1a1a1a;
   margin-bottom: var(--spacing-4);
 }
 
 .value-description {
-  color: var(--body-light);
+  color: #475569;
   line-height: 1.65;
   font-size: 0.95rem;
 }
@@ -465,12 +465,12 @@
 .client-title {
   font-size: clamp(1.1rem, 2.5vw, 1.3rem);
   font-weight: 700;
-  color: var(--ink);
+  color: #1a1a1a;
   margin-bottom: var(--spacing-4);
 }
 
 .client-description {
-  color: var(--body-light);
+  color: #475569;
   line-height: 1.65;
   font-size: 0.95rem;
 }
@@ -496,8 +496,8 @@
 }
 
 .location {
-  background: #f0f9ff;
-  color: #1e40af;
+  background: #e0f0fe;
+  color: #0F4C75;
   padding: 0.5rem 1rem;
   border-radius: 25px;
   font-size: 0.9rem;
@@ -568,14 +568,15 @@
 
 /* CTA Section */
 .cta-section {
-  padding: 4rem 0;
-  background: var(--brand);
+  padding: 4rem var(--spacing-6);
+  background: linear-gradient(135deg, #0F4C75 0%, #1a2a3a 100%);
   color: white;
   text-align: center;
 }
 
 .cta-section .section-header h2 {
   color: white;
+  text-shadow: none;
 }
 
 .cta-text {
@@ -585,6 +586,7 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  color: #f0f4f8;
 }
 
 .cta-buttons {
@@ -690,23 +692,24 @@
 
 /* AAT Section */
 .aat-section {
-  background: rgba(15, 76, 117, 0.08);
-  border-left: 4px solid var(--brand-600);
-  padding: var(--spacing-6);
+  background: linear-gradient(135deg, rgba(15, 76, 117, 0.15) 0%, rgba(15, 76, 117, 0.08) 100%);
+  border-left: 4px solid var(--brand);
+  padding: var(--spacing-8);
   border-radius: var(--radius-lg);
   margin: var(--spacing-8) 0;
 }
 
 .aat-section h3 {
-  color: var(--brand-600);
+  color: #0F4C75;
   margin-top: 0;
   margin-bottom: var(--spacing-3);
   font-size: 1.15rem;
+  font-weight: 700;
 }
 
 .aat-section p {
   margin: 0;
-  color: var(--body-light);
+  color: #334155;
   line-height: 1.75;
 }
 
@@ -777,12 +780,12 @@
 .qualification-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--ink);
+  color: #0F4C75;
   margin: 0;
 }
 
 .qualification-card p {
-  color: var(--body-light);
+  color: #475569;
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0;
