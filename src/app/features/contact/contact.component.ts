@@ -41,34 +41,27 @@ export class ContactComponent {
         body: JSON.stringify(this.contactForm),
       })
         .then((response) => {
-          console.log('[v0] Contact API response status:', response.status);
           if (!response.ok) {
-            return response.json().then((data) => {
-              console.log('[v0] API error response:', data);
-              throw new Error(data.error || 'Failed to send message');
+            return response.json().then((data: { error?: string }) => {
+              throw new Error(data.error || 'Failed to submit your message.');
             });
           }
           return response.json();
         })
-        .then((data) => {
-          console.log('[v0] Contact form success:', data);
+        .then(() => {
           this.isSubmitting = false;
           this.isSubmitted = true;
           this.resetForm();
 
-          // Hide success message after 5 seconds
           setTimeout(() => {
             this.isSubmitted = false;
           }, 5000);
         })
-        .catch((error) => {
-          console.error('[v0] Contact form error caught:', error.message);
+        .catch((error: Error) => {
           this.isSubmitting = false;
           this.isError = true;
-          // Display the actual error from API or fallback message
           this.errorMessage = error.message || 'Sorry, we could not send your message. Please try again or call us directly at 07551 551717.';
 
-          // Hide error message after 5 seconds
           setTimeout(() => {
             this.isError = false;
           }, 5000);

@@ -1,94 +1,51 @@
-import { VercelRequest, VercelResponse } from '@vercel/node';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { createClient } from '@supabase/supabase-js';
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-): Promise<void> {
-  // Only allow POST requests
+export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
+  res.setHeader('Content-Type', 'application/json');
+
   if (req.method !== 'POST') {
-    res.status(405).json({ error: 'Method not allowed' });
+    res.status(405).json({ error: 'Method not allowed. Use POST.' });
     return;
   }
 
-  try {
-    // Initialize Supabase
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL || '',
-      process.env.SUPABASE_SERVICE_ROLE_KEY || ''
-    );
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-    const { name, email, phone, message } = req.body;
-
-    // Validate input
-    if (!name || !email || !phone || !message) {
-      res.status(400).json({
-        error: 'Missing required fields. Please provide name, email, phone, and message.'
-      });
-      return;
-    }
-
-    // Basic email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      res.status(400).json({
-        error: 'Invalid email address. Please enter a valid email.'
-      });
-      return;
-    }
-
-    // Validate phone
-    if (phone.length < 10) {
-      res.status(400).json({
-        error: 'Invalid phone number. Please enter a valid phone number.'
-      });
-      return;
-    }
-
-    // Check if Supabase is configured
-    if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      res.status(500).json({
-        error: 'Database service is not configured. Please contact support.'
-      });
-      return;
-    }
-
-    // Save to database
-    const { data: dbData, error: dbError } = await supabase
-      .from('contact_messages')
-      .insert([
-        {
-          name,
-          email,
-          phone,
-          message,
-        },
-      ])
-      .select();
-
-    if (dbError) {
-      console.error('Database error:', dbError);
-      res.status(500).json({
-        error: `Failed to save your message: ${dbError.message}`
-      });
-      return;
-    }
-
-    res.status(200).json({
-      success: true,
-      message: 'Your message has been received successfully. Thank you for contacting us.'
-    });
-  } catch (error) {
-    console.error('Contact API error:', error);
-    
-    if (res.headersSent) {
-      return;
-    }
-
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    
-    res.status(500).json({
-      error: `An error occurred while processing your request: ${errorMessage}`
-    });
+  if (!supabaseUrl || !supabaseKey) {
+    res.status(500).json({ error: 'Database is not configured. Please contact support.' });
+    return;
   }
+
+  const supabase = createClient(supabaseUrl, supabaseKey);
+
+  const { name, email, phone, message } = req.body ?? {};
+
+  if (!name || !email || !phone || !message) {
+    res.status(400).json({ error: 'Please fill in all required fields: name, email, phone, and message.' });
+    return;
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    res.status(400).json({ error: 'Please enter a valid email address.' });
+    return;
+  }
+
+  if (String(phone).trim().length < 10) {
+    res.status(400).json({ error: 'Please enter a valid phone number (at least 10 digits).' });
+    return;
+  }
+
+  const { error: dbError } = await supabase
+    .from('contact_messages')
+    .insert([{ name: String(name).trim(), email: String(email).trim().toLowerCase(), phone: String(phone).trim(), message: String(message).trim(), status: 'new' }]);
+
+  if (dbError) {
+    console.error('Supabase insert error:', dbError);
+    res.status(500).json({ error: `Could not save your message: ${dbError.message}` });
+    return;
+  }
+
+  res.status(200).json({ success: true, message: 'Your message has been received. We will get back to you within 24 hours.' });
 }
