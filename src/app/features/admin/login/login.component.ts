@@ -30,13 +30,16 @@ export class LoginComponent {
     this.isLoading = true;
 
     try {
+      console.log('[v0] Login attempt for:', this.email);
       const response = await fetch('/api/admin/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: this.email, password: this.password }),
       });
 
+      console.log('[v0] API response status:', response.status);
       const data = await response.json();
+      console.log('[v0] API response data:', data);
 
       if (!response.ok) {
         this.errorMessage = data.error || 'Login failed.';
@@ -50,6 +53,7 @@ export class LoginComponent {
       // Redirect to dashboard
       this.router.navigate(['/admin/dashboard']);
     } catch (error) {
+      console.error('[v0] Login error:', error);
       this.errorMessage = 'An error occurred. Please try again.';
     } finally {
       this.isLoading = false;

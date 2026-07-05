@@ -6,6 +6,8 @@ import { dirname, join, resolve } from 'node:path';
 import bootstrap from './src/main.server';
 import { Resend } from 'resend';
 import { createClient } from '@supabase/supabase-js';
+import { compare } from 'bcryptjs';
+import { randomBytes } from 'node:crypto';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -270,6 +272,82 @@ export function app(): express.Express {
       res.status(500).json({ 
         error: `An error occurred while processing your booking: ${errorMessage}. Please try again later.` 
       });
+    }
+  });
+
+  // Admin login endpoint
+  server.post('/api/admin/login', express.json(), async (req, res): Promise<void> => {
+    console.log('[v0] Admin login attempt');
+    const { email, password } = req.body;
+
+    if (!email || !password) {
+      res.status(400).json({ error: 'Email and password are required.' });
+      return;
+    }
+
+    try {
+      const emailLower = String(email).trim().toLowerCase();
+      
+      // Get user by email
+      const { data: users, error: queryError } = await supabase
+        .from('admin_users')
+        .select('id, email, password_hash, full_name, is_active')
+        .eq('email', emailLower)
+        .single();
+
+      if (queryError) {
+        console.error('[v0] Admin user query error:', queryError);
+        if (queryError.code === 'PGRST116') {
+          res.status(401).json({ error: 'Invalid email or password.' });
+          return;
+        }
+        res.status(500).json({ error: 'Database error.' });
+        return;
+      }
+
+      if (!users) {
+        console.log('[v0] User not found for email:', emailLower);
+        res.status(401).json({ error: 'Invalid email or password.' });
+        return;
+      }
+
+      // Verify password
+      const passwordMatch = await compare(String(password), users.password_hash);
+      console.log('[v0] Password match result:', passwordMatch);
+      if (!passwordMatch) {
+        res.status(401).json({ error: 'Invalid email or password.' });
+        return;
+      }
+
+      // Generate session token
+      const token = randomBytes(32).toString('hex');
+      const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000);
+
+      // Store session in database
+      const { error: sessionError } = await supabase
+        .from('admin_sessions')
+        .insert([{ user_id: users.id, token, expires_at: expiresAt.toISOString() }]);
+
+      if (sessionError) {
+        console.error('[v0] Session creation error:', sessionError);
+        res.status(500).json({ error: 'Failed to create session.' });
+        return;
+      }
+
+      console.log('[v0] Admin login successful for:', emailLower);
+      res.status(200).json({
+        success: true,
+        token,
+        user: {
+          id: users.id,
+          email: users.email,
+          full_name: users.full_name,
+          is_active: users.is_active,
+        },
+      });
+    } catch (error) {
+      console.error('[v0] Login error:', error);
+      res.status(500).json({ error: 'An error occurred during login.' });
     }
   });
 
