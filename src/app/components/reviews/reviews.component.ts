@@ -24,6 +24,23 @@ export class ReviewsComponent {
   trustpilotRating = 4.9;
   trustpilotReviewCount = 52;
 
+  getRatingStars(rating: number): number[] {
+    const fullStars = Math.floor(rating);
+    return Array(fullStars).fill(0);
+  }
+
+  getPartialStar(rating: number): boolean {
+    return rating % 1 !== 0;
+  }
+
+  getSourceIcon(source: 'google' | 'trustpilot'): string {
+    return source === 'google' ? 'star' : 'award';
+  }
+
+  getSourceLabel(source: 'google' | 'trustpilot'): string {
+    return source === 'google' ? 'Google Reviews' : 'Trustpilot';
+  }
+
   reviews: Review[] = [
     {
       author: 'Sarah Mitchell',

@@ -134,14 +134,17 @@
 .star {
   width: 18px;
   height: 18px;
-  color: #fbbf24;
+  color: #d4af37;
 }
 
 .star.filled {
   color: #fbbf24;
+  fill: #fbbf24;
 }
 
 .star.partial {
+  color: #fbbf24;
+  fill: #fbbf24;
   opacity: 0.5;
 }
 
