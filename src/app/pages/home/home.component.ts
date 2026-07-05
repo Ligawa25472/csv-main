@@ -94,13 +94,4 @@ export class HomeComponent implements OnInit {
       description: 'You always deal with someone who knows your business',
     },
   ];
-
-  scrollToContact() {
-    if (typeof document !== 'undefined') {
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }
 }

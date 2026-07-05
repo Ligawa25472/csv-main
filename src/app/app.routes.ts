@@ -24,12 +24,14 @@ import { MakingTaxDigitalComponent } from './features/personal-services/making-t
 
 // Additional business services
 import { CompaniesHouseComponent } from './features/business-services/companies-house.component';
+import { BookConsultationComponent } from './pages/book-consultation/book-consultation.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'book-consultation', component: BookConsultationComponent },
   { path: 'faq', component: FaqComponent },
 
   // Business Services Routes
