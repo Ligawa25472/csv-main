@@ -27,6 +27,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
 
   const emailLower = String(email).trim().toLowerCase();
+  console.log('[v0] Login attempt for email:', emailLower);
 
   try {
     const supabase = createClient(supabaseUrl, supabaseKey);
@@ -38,16 +39,27 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       .eq('email', emailLower)
       .single();
 
-    if (queryError || !users) {
+    if (queryError) {
       console.error('[v0] Admin user query error:', queryError);
-      console.error('[v0] User not found for email:', emailLower);
+      if (queryError.code === 'PGRST116') {
+        // No rows returned
+        console.log('[v0] User not found for email:', emailLower);
+        res.status(401).json({ error: 'Invalid email or password.' });
+        return;
+      }
+      res.status(500).json({ error: 'Database error.' });
+      return;
+    }
+
+    if (!users) {
+      console.log('[v0] User not found for email:', emailLower);
       res.status(401).json({ error: 'Invalid email or password.' });
       return;
     }
 
     // Verify password
     const passwordMatch = await bcrypt.compare(String(password), users.password_hash);
-    console.error('[v0] Password match result:', passwordMatch);
+    console.log('[v0] Password match result:', passwordMatch);
     if (!passwordMatch) {
       res.status(401).json({ error: 'Invalid email or password.' });
       return;
