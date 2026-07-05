@@ -18,8 +18,8 @@
           <div class="rating-display">
             <span class="rating-number">{{ googleRating }}</span>
             <div class="rating-stars">
-              <app-icon name="star" class="star filled" *ngFor="let _ of getRatingStars(googleRating)"></app-icon>
-              <app-icon name="star" class="star partial" *ngIf="getPartialStar(googleRating)"></app-icon>
+              <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(googleRating)"></app-icon>
+              <app-icon name="starFilled" class="star partial" *ngIf="getPartialStar(googleRating)"></app-icon>
             </div>
           </div>
         </div>
@@ -40,8 +40,8 @@
           <div class="rating-display">
             <span class="rating-number">{{ trustpilotRating }}</span>
             <div class="rating-stars">
-              <app-icon name="star" class="star filled" *ngFor="let _ of getRatingStars(trustpilotRating)"></app-icon>
-              <app-icon name="star" class="star partial" *ngIf="getPartialStar(trustpilotRating)"></app-icon>
+              <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(trustpilotRating)"></app-icon>
+              <app-icon name="starFilled" class="star partial" *ngIf="getPartialStar(trustpilotRating)"></app-icon>
             </div>
           </div>
         </div>
@@ -68,8 +68,8 @@
         </div>
 
         <div class="review-rating">
-          <app-icon name="star" class="star filled" *ngFor="let _ of getRatingStars(review.rating)"></app-icon>
-          <app-icon name="star" class="star partial" *ngIf="getPartialStar(review.rating)"></app-icon>
+          <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(review.rating)"></app-icon>
+          <app-icon name="starFilled" class="star partial" *ngIf="getPartialStar(review.rating)"></app-icon>
         </div>
 
         <p class="review-text">{{ review.text }}</p>
@@ -82,7 +82,7 @@
     <div class="reviews-cta">
       <h3>Ready to experience our professional accounting services?</h3>
       <p>Join hundreds of satisfied clients across Birmingham and the UK</p>
-      <a routerLink="/contact" class="cta-button">Book a Free Consultation</a>
+      <a routerLink="/book-consultation" class="cta-button">Book a Free Consultation</a>
     </div>
   </div>
 </section>

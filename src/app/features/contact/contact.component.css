@@ -6,12 +6,7 @@
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, var(--brand) 0%, rgba(26, 42, 58, 0.95) 100%),
-              url('https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/istockphoto-1338373163-612x612.jpg');
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: overlay;
+  background: linear-gradient(135deg, var(--brand) 0%, rgba(26, 42, 58, 0.95) 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -51,13 +46,15 @@
   margin-bottom: 1.5rem;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  color: white;
 }
 
 .hero-subtitle {
   font-size: 1.3rem;
-  opacity: 0.9;
+  opacity: 1;
   line-height: 1.6;
   font-weight: 400;
+  color: #f0f4f8;
 }
 
 /* Contact Methods Section */
@@ -473,45 +470,33 @@
 }
 
 .social-link {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
   text-decoration: none;
   color: inherit;
   transition: all 0.3s ease;
-  min-width: 200px;
+  min-width: auto;
 }
 
 .social-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-  border-color: #1e40af;
+  transform: translateY(-4px);
+  box-shadow: none;
+  border-color: transparent;
 }
 
-.social-icon {
-  width: 72px;
-  height: 72px;
-  min-width: 72px;
-  border-radius: 18px;
-  overflow: hidden;
-  flex-shrink: 0;
-  background: #f8fafc;
-  display: grid;
-  place-items: center;
-}
-
-.social-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.social-icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
 }
 
 .social-info {
-  text-align: left;
+  display: none;
 }
 
 .social-info strong {

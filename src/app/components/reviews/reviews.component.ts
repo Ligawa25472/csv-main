@@ -24,6 +24,23 @@ export class ReviewsComponent {
   trustpilotRating = 4.9;
   trustpilotReviewCount = 52;
 
+  getRatingStars(rating: number): number[] {
+    const fullStars = Math.floor(rating);
+    return Array(fullStars).fill(0);
+  }
+
+  getPartialStar(rating: number): boolean {
+    return rating % 1 !== 0;
+  }
+
+  getSourceIcon(source: 'google' | 'trustpilot'): string {
+    return source === 'google' ? 'star' : 'award';
+  }
+
+  getSourceLabel(source: 'google' | 'trustpilot'): string {
+    return source === 'google' ? 'Google Reviews' : 'Trustpilot';
+  }
+
   reviews: Review[] = [
     {
       author: 'Sarah Mitchell',
@@ -73,23 +90,23 @@ export class ReviewsComponent {
       date: '2024-01-15',
       source: 'trustpilot',
     },
+    {
+      author: 'Lisa Anderson',
+      rating: 5,
+      text: 'Brilliant service for our director verification process. They made it stress-free and efficient. Highly knowledgeable about Companies House requirements and very professional.',
+      service: 'Companies House Director Verification',
+      date: '2024-02-12',
+      source: 'google',
+    },
+    {
+      author: 'Robert Turner',
+      rating: 5,
+      text: 'Excellent guidance through the director verification process. MNA Accounting handled everything smoothly and ensured we met all Companies House compliance requirements without any delays.',
+      service: 'Companies House Compliance',
+      date: '2024-02-08',
+      source: 'trustpilot',
+    },
   ];
-
-  getRatingStars(rating: number): number[] {
-    return Array(Math.floor(rating)).fill(0);
-  }
-
-  getPartialStar(rating: number): boolean {
-    return rating % 1 !== 0;
-  }
-
-  getSourceIcon(source: 'google' | 'trustpilot'): string {
-    return source === 'google' ? 'star' : 'award';
-  }
-
-  getSourceLabel(source: 'google' | 'trustpilot'): string {
-    return source === 'google' ? 'Google Reviews' : 'Trustpilot';
-  }
 
   getFilteredReviews(source?: 'google' | 'trustpilot'): Review[] {
     return source ? this.reviews.filter((r) => r.source === source) : this.reviews;

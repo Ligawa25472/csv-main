@@ -103,6 +103,19 @@ export class BusinessServicesComponent {
       ],
       link: '/business/tax-planning',
     },
+    {
+      icon: 'shield',
+      title: 'Companies House Director Verification',
+      description:
+        'Director Identity Verification services in accordance with Companies House requirements. We help company directors complete the verification process quickly and correctly, ensuring full compliance.',
+      features: [
+        'Director Identity Verification',
+        'Companies House Compliance Guidance',
+        'Verification Assistance for Appointments',
+        'Statutory Filing Support',
+      ],
+      link: '/business/companies-house',
+    },
   ];
 
   benefits = [

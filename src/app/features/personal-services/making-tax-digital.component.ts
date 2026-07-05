@@ -50,12 +50,11 @@ export class MakingTaxDigitalComponent {
   ];
 
   benefits = [
-    'Expert guidance through Making Tax Digital registration and compliance',
-    'Streamlined quarterly submissions with no surprises',
-    'Full digital audit trail for your records',
-    'Reduced risk of penalties and errors',
-    'Trusted by self-employed professionals across the UK',
-    'Available nationwide with local support',
+    'Affordable fixed-fee packages',
+    'AAT Licensed Accountancy Practice',
+    'ACCA-Qualified Accountant',
+    'Expert support throughout the year',
+    'Full remote service available across the UK',
   ];
 
   whoNeeds = [

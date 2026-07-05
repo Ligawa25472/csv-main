@@ -101,24 +101,21 @@ export class ContactComponent {
 
   contactMethods = [
     {
-      imageUrl:
-        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/alexander-shatov-_qsuER9xYOY-unsplash.jpg',
+      imageUrl: '/images/call-icon.png',
       label: 'Call Us',
       value: '07551 551717',
       action: 'tel:07551551717',
       description: 'Speak directly with our team',
     },
     {
-      imageUrl:
-        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/mariia-shalabaieva-HyyHIYz_l0A-unsplash.jpg',
+      imageUrl: '/images/email-icon.png',
       label: 'Email Us',
-      value: 'info@mnaaccountings.co.uk',
-      action: 'mailto:info@mnaaccountings.co.uk',
+      value: 'info@mnaaccounting.co.uk',
+      action: 'mailto:info@mnaaccounting.co.uk',
       description: 'Send us a message anytime',
     },
     {
-      imageUrl:
-        'https://s7nje1ay02rvfkep.public.blob.vercel-storage.com/geojango-maps-Z8UgB80_46w-unsplash.jpg',
+      imageUrl: '/images/location-icon.png',
       label: 'Location',
       value: 'Birmingham, UK',
       action: '',
@@ -129,27 +126,27 @@ export class ContactComponent {
   socialLinks = [
     {
       name: 'LinkedIn',
-      handle: 'MNA Accounting LTD',
+      handle: '',
       url: 'https://www.linkedin.com/in/mna-accounting-ltd-406b7936b?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
-      imageUrl: '/images/social-linkedin.jpg',
+      imageUrl: '/images/linkedin-icon.png',
     },
     {
       name: 'Instagram',
-      handle: '@mnaaccountingltd',
+      handle: '',
       url: 'https://www.instagram.com/mnaaccountingltd?igsh=MTB4cm9ucWQxbHBhag%3D%3D&utm_source=qr',
-      imageUrl: '/images/social-instagram.png',
+      imageUrl: '/images/instagram-icon.png',
     },
     {
       name: 'Facebook',
-      handle: 'MNA Accounting LTD',
+      handle: '',
       url: 'https://www.facebook.com/share/14hwqqGV56W/?mibextid=wwXIfr',
-      imageUrl: '/images/social-facebook.jpg',
+      imageUrl: '/images/facebook-icon.png',
     },
     {
       name: 'WhatsApp',
-      handle: 'Message us',
+      handle: '',
       url: 'https://wa.me/447551551717',
-      imageUrl: '/images/social-whatsapp.png',
+      imageUrl: '/images/whatsapp-social.png',
     },
   ];
 }

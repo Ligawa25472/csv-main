@@ -1,0 +1,254 @@
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Book Your Free Consultation</h1>
+      <p class="hero-subtitle">
+        Schedule a no-obligation consultation with our expert accountants. We&apos;ll discuss your business needs and help you find the perfect solution.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits Section -->
+<section class="benefits-section">
+  <div class="container">
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <app-icon name="clock"></app-icon>
+        </div>
+        <h3>30-Minute Session</h3>
+        <p>Focused consultation tailored to your specific needs</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <app-icon name="users"></app-icon>
+        </div>
+        <h3>Expert Advisors</h3>
+        <p>Speak with qualified accountants with years of experience</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <app-icon name="zap"></app-icon>
+        </div>
+        <h3>No Obligation</h3>
+        <p>Completely free with no pressure to commit</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <app-icon name="checkCircle"></app-icon>
+        </div>
+        <h3>Actionable Advice</h3>
+        <p>Leave with clear next steps for your business</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Booking Form Section -->
+<section class="booking-section">
+  <div class="container">
+    <div class="booking-layout">
+      <div class="booking-info">
+        <h2>Schedule Your Consultation</h2>
+        <p>
+          Fill out the form below to check availability and book your slot. We'll confirm your appointment via email.
+        </p>
+
+        <div class="info-box">
+          <div class="info-icon">
+            <app-icon name="info"></app-icon>
+          </div>
+          <div>
+            <strong>Quick Tip</strong>
+            <p>Have any documents or questions ready to discuss during your consultation</p>
+          </div>
+        </div>
+
+        <div class="meeting-details">
+          <h3>Meeting Format</h3>
+          <p>We offer consultations via:</p>
+          <ul>
+            <li><app-icon name="video"></app-icon> Video Call (Zoom/Teams)</li>
+            <li><app-icon name="phone"></app-icon> Phone Call</li>
+            <li><app-icon name="mapPin"></app-icon> In-Person (Birmingham office)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <form
+          (ngSubmit)="onSubmit()"
+          #bookingFormRef="ngForm"
+          class="booking-form"
+        >
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                [(ngModel)]="bookingForm.name"
+                required
+                placeholder="Your full name"
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                [(ngModel)]="bookingForm.email"
+                required
+                placeholder="your@email.com"
+                class="form-input"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              [(ngModel)]="bookingForm.phone"
+              required
+              placeholder="+44 7xxx xxx xxx"
+              class="form-input"
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="businessType">Business Type *</label>
+              <select
+                id="businessType"
+                name="businessType"
+                [(ngModel)]="bookingForm.businessType"
+                required
+                class="form-select"
+              >
+                <option value="">Select business type</option>
+                <option *ngFor="let type of businessTypes" [value]="type">
+                  {{ type }}
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="consultationType">Consultation Type *</label>
+              <select
+                id="consultationType"
+                name="consultationType"
+                [(ngModel)]="bookingForm.consultationType"
+                required
+                class="form-select"
+              >
+                <option value="">Select topic</option>
+                <option *ngFor="let type of consultationTypes" [value]="type">
+                  {{ type }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="preferredDate">Preferred Date *</label>
+              <input
+                type="date"
+                id="preferredDate"
+                name="preferredDate"
+                [(ngModel)]="bookingForm.preferredDate"
+                required
+                class="form-input"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="preferredTime">Preferred Time</label>
+              <select
+                id="preferredTime"
+                name="preferredTime"
+                [(ngModel)]="bookingForm.preferredTime"
+                class="form-select"
+              >
+                <option value="">Select time slot</option>
+                <option *ngFor="let time of timeSlots" [value]="time">
+                  {{ time }}
+                </option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Additional Notes</label>
+            <textarea
+              id="message"
+              name="message"
+              [(ngModel)]="bookingForm.message"
+              placeholder="Tell us a bit more about your business and needs (optional)"
+              rows="4"
+              class="form-textarea"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="submit-btn"
+            [disabled]="!isFormValid() || isSubmitting"
+            [class.loading]="isSubmitting"
+          >
+            <span *ngIf="!isSubmitting">Book Consultation</span>
+            <span *ngIf="isSubmitting">Booking...</span>
+          </button>
+
+          <div *ngIf="isSubmitted" class="success-message">
+            <div class="success-icon"><app-icon name="check"></app-icon></div>
+            <div>
+              <strong>Booking Confirmed!</strong>
+              <p>Check your email for confirmation and meeting details. We look forward to speaking with you!</p>
+            </div>
+          </div>
+
+          <div *ngIf="isError" class="error-message">
+            <div class="error-icon"><app-icon name="alertCircle"></app-icon></div>
+            <div>
+              <strong>Error Booking Consultation</strong>
+              <p>{{ errorMessage }}</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Can&apos;t Find a Suitable Time?</h2>
+      <p>
+        No problem! Give us a call and we&apos;ll work around your schedule.
+      </p>
+
+      <div class="cta-buttons">
+        <a href="tel:07551551717" class="cta-primary">
+          <app-icon name="phone"></app-icon>
+          Call Us: 07551 551717
+        </a>
+        <a href="mailto:info@mnaaccounting.co.uk" class="cta-secondary">
+          <app-icon name="mail"></app-icon>
+          Email Us
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

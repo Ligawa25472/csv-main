@@ -177,7 +177,7 @@ body {
     radial-gradient(circle at 85% 15%, rgba(201, 125, 74, 0.02) 0%, transparent 40%),
     radial-gradient(circle at 10% 85%, rgba(26, 42, 58, 0.01) 0%, transparent 40%);
   min-height: 100vh;
-  font-size: 1rem;
+  font-size: clamp(0.9375rem, 1vw, 1rem);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -240,27 +240,27 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: clamp(1.875rem, 5vw, 3.5rem);
+  font-size: clamp(1.5rem, 5vw, 3.5rem);
   font-weight: 700;
 }
 
 h2 {
-  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-size: clamp(1.25rem, 4vw, 2.5rem);
   font-weight: 700;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 3vw, 1.875rem);
+  font-size: clamp(1rem, 3vw, 1.875rem);
   font-weight: 600;
 }
 
 h4 {
-  font-size: 1.125rem;
+  font-size: clamp(0.95rem, 2vw, 1.125rem);
   font-weight: 600;
 }
 
 h5, h6 {
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
   font-weight: 600;
 }
 
@@ -290,7 +290,7 @@ button {
   font-weight: 500;
   padding: 0.75rem 1.75rem;
   border-radius: var(--md-sys-shape-corner-full);
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 1vw, 0.95rem);
   line-height: 1.4;
   letter-spacing: 0.3px;
   display: inline-flex;
@@ -479,7 +479,7 @@ img, video {
 
 .section-header h2,
 .section-header .section-title {
-  font-size: clamp(1.75rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.5rem, 3.5vw, 2.4rem);
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
@@ -491,6 +491,7 @@ img, video {
   line-height: 1.85;
   margin: 0 auto;
   max-width: 700px;
+  font-size: clamp(0.9375rem, 1.5vw, 1.125rem);
 }
 
 .services-grid,
@@ -645,7 +646,7 @@ img, video {
 
 .cta-content h2 {
   margin: 0;
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-size: clamp(1.5rem, 3vw, 2.8rem);
   line-height: 1.05;
   color: var(--ink);
 }
@@ -899,7 +900,7 @@ img, video {
 
 .footer-cta-title {
   margin: 0;
-  font-size: clamp(1.8rem, 2.4vw, 2.5rem);
+  font-size: clamp(1.3rem, 2.4vw, 2.5rem);
   color: #fff;
 }
 
