@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection, DOCUMENT } from '@angular/core';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { provideServerRendering } from '@angular/platform-server';
 import { routes } from './app.routes';
@@ -13,10 +13,6 @@ export const config: ApplicationConfig = {
         anchorScrolling: 'enabled',
       })
     ),
-    provideServerRendering(),
-    {
-      provide: DOCUMENT,
-      useValue: typeof document !== 'undefined' ? document : undefined,
-    }
+    provideServerRendering()
   ]
 };
