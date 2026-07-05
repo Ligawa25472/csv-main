@@ -46,7 +46,7 @@ export class FaqComponent {
     },
     {
       id: 'deadlines',
-      question: 'I can't keep track of my deadline, is this something you can help me with? And will I be charged for this?',
+      question: 'I can&apos;t keep track of my deadline, is this something you can help me with? And will I be charged for this?',
       answer: `Once we onboard a client, we keep track of all deadlines and send reminders ahead of time, we do not charge for this.`,
     },
     {
