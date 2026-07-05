@@ -20,7 +20,7 @@
               >Management Accounts</a
             >
             <a routerLink="/business/tax-planning" (click)="closeDropdown()">Tax Planning</a>
-            <a routerLink="/business/director-verification" (click)="closeDropdown()">Company House Director Verification</a>
+            <a routerLink="/business/companies-house" (click)="closeDropdown()">Company House Director Verification</a>
           </div>
         </div>
         <div class="dropdown" [class.active]="isDropdownOpen('personal')">
@@ -30,7 +30,7 @@
             <a routerLink="/personal/capital-gains-tax" (click)="closeDropdown()">Capital Gains Tax</a>
             <a routerLink="/personal/tax-planning" (click)="closeDropdown()">Personal Tax Planning</a>
             <a routerLink="/personal/cis" (click)="closeDropdown()">CIS Refunds</a>
-            <a routerLink="/personal/mtd" (click)="closeDropdown()">Making Tax Digital MTD</a>
+            <a routerLink="/personal/making-tax-digital" (click)="closeDropdown()">Making Tax Digital MTD</a>
           </div>
         </div>
         <a routerLink="/contact" routerLinkActive="active">Contact</a>
@@ -74,7 +74,7 @@
         <a routerLink="/business/tax-planning" (click)="closeMenu()"
           >Tax Planning</a
         >
-        <a routerLink="/business/director-verification" (click)="closeMenu()"
+        <a routerLink="/business/companies-house" (click)="closeMenu()"
           >Company House Director Verification</a
         >
       </div>
@@ -90,7 +90,7 @@
           >Personal Tax Planning</a
         >
         <a routerLink="/personal/cis" (click)="closeMenu()">CIS Refunds</a>
-        <a routerLink="/personal/mtd" (click)="closeMenu()">Making Tax Digital MTD</a>
+        <a routerLink="/personal/making-tax-digital" (click)="closeMenu()">Making Tax Digital MTD</a>
       </div>
       <a routerLink="/contact" (click)="closeMenu()">Contact</a>
     </nav>
