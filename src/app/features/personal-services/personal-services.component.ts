@@ -64,6 +64,21 @@ export class PersonalServicesComponent {
       ],
       link: '/personal/cis',
     },
+    {
+      icon: 'cloud',
+      title: 'Making Tax Digital (MTD)',
+      description:
+        'Stay compliant with HMRC&apos;s digital tax requirements. We make the transition to Making Tax Digital simple with expert guidance on software selection, digital record-keeping and quarterly submissions.',
+      features: [
+        'MTD registration and setup',
+        'Cloud accounting software support',
+        'Digital bookkeeping and record keeping',
+        'Quarterly HMRC submissions',
+        'Tax compliance reviews',
+        'Xero, QuickBooks and cloud accounting assistance',
+      ],
+      link: '/personal/making-tax-digital',
+    },
   ];
 
   highlights = [
