@@ -139,9 +139,9 @@
 /* Toggle Button */
 .qr-toggle-btn {
   position: relative;
-  width: 60px;
-  height: 60px;
-  border-radius: 12px;
+  width: auto;
+  height: auto;
+  border-radius: 0;
   background: transparent;
   color: white;
   border: none;
@@ -172,10 +172,10 @@
 
 /* QR Icon Image */
 .qr-icon-img {
-  width: 32px;
-  height: 32px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
-  margin-bottom: -4px;
+  margin-bottom: 0;
 }
 
 /* Pulse Animation */
