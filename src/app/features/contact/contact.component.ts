@@ -129,27 +129,27 @@ export class ContactComponent {
   socialLinks = [
     {
       name: 'LinkedIn',
-      handle: 'MNA Accounting LTD',
+      handle: '',
       url: 'https://www.linkedin.com/in/mna-accounting-ltd-406b7936b?utm_source=share_via&utm_content=profile&utm_medium=member_ios',
-      imageUrl: '/images/social-linkedin.jpg',
+      imageUrl: '/images/linkedin-icon.png',
     },
     {
       name: 'Instagram',
-      handle: '@mnaaccountingltd',
+      handle: '',
       url: 'https://www.instagram.com/mnaaccountingltd?igsh=MTB4cm9ucWQxbHBhag%3D%3D&utm_source=qr',
-      imageUrl: '/images/social-instagram.png',
+      imageUrl: '/images/instagram-icon.png',
     },
     {
       name: 'Facebook',
-      handle: 'MNA Accounting LTD',
+      handle: '',
       url: 'https://www.facebook.com/share/14hwqqGV56W/?mibextid=wwXIfr',
-      imageUrl: '/images/social-facebook.jpg',
+      imageUrl: '/images/facebook-icon.png',
     },
     {
       name: 'WhatsApp',
-      handle: 'Message us',
+      handle: '',
       url: 'https://wa.me/447551551717',
-      imageUrl: '/images/social-whatsapp.png',
+      imageUrl: '/images/whatsapp-social.png',
     },
   ];
 }

@@ -156,15 +156,10 @@
         [href]="social.url"
         target="_blank"
         rel="noopener noreferrer"
+        [attr.aria-label]="social.name"
         class="social-link"
       >
-        <div class="social-icon">
-          <img [src]="social.imageUrl" [alt]="social.name + ' icon'" />
-        </div>
-        <div class="social-info">
-          <strong>{{ social.name }}</strong>
-          <span>{{ social.handle }}</span>
-        </div>
+        <img [src]="social.imageUrl" [alt]="social.name" class="social-icon-img" />
       </a>
     </div>
   </div>
