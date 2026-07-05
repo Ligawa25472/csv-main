@@ -86,7 +86,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
       // Email to admin (new query notification)
       await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
-        to: 'info@mnaaccounting.co.ke',
+        to: 'info@mnaaccounting.co.uk',
         cc: 'info@alghahim.co.ke',
         subject: `New Website Query from ${trimmedName}`,
         html: `
