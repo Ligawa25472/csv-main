@@ -51,48 +51,64 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
 
   // Send emails asynchronously (don't block the response)
-  if (resendKey) {
-    // Email to customer (receipt)
-    resend.emails
-      .send({
+  const sendEmails = async () => {
+    const trimmedName = String(name).trim();
+    const trimmedEmail = String(email).trim().toLowerCase();
+    const trimmedPhone = String(phone).trim();
+    const trimmedMessage = String(message).trim().replace(/\n/g, '<br>');
+
+    try {
+      // Email to customer (receipt)
+      await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
-        to: String(email).trim().toLowerCase(),
+        to: trimmedEmail,
         subject: 'We Received Your Message',
         html: `
           <h2>Thank You for Contacting MNA Accounting</h2>
-          <p>Hi ${String(name).trim()},</p>
+          <p>Hi ${trimmedName},</p>
           <p>We have received your message and will review it shortly. Our team will get back to you within 24 hours.</p>
           <hr>
           <p><strong>Your Details:</strong></p>
-          <p><strong>Name:</strong> ${String(name).trim()}</p>
-          <p><strong>Phone:</strong> ${String(phone).trim()}</p>
+          <p><strong>Name:</strong> ${trimmedName}</p>
+          <p><strong>Phone:</strong> ${trimmedPhone}</p>
           <p><strong>Message:</strong></p>
-          <p>${String(message).trim().replace(/\n/g, '<br>')}</p>
+          <p>${trimmedMessage}</p>
           <hr>
           <p>Best regards,<br>MNA Accounting Team</p>
         `,
-      })
-      .catch((err) => console.error('Customer email error:', err));
+      });
+      console.log('[v0] Customer receipt email sent to:', trimmedEmail);
+    } catch (err) {
+      console.error('[v0] Customer email error:', err);
+    }
 
-    // Email to admin (new query notification)
-    resend.emails
-      .send({
+    try {
+      // Email to admin (new query notification)
+      await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
         to: 'info@mnaaccounting.co.ke',
         cc: 'info@alghahim.co.ke',
-        subject: `New Website Query from ${String(name).trim()}`,
+        subject: `New Website Query from ${trimmedName}`,
         html: `
           <h2>New Contact Request</h2>
-          <p><strong>Name:</strong> ${String(name).trim()}</p>
-          <p><strong>Email:</strong> ${String(email).trim().toLowerCase()}</p>
-          <p><strong>Phone:</strong> ${String(phone).trim()}</p>
+          <p><strong>Name:</strong> ${trimmedName}</p>
+          <p><strong>Email:</strong> ${trimmedEmail}</p>
+          <p><strong>Phone:</strong> ${trimmedPhone}</p>
           <p><strong>Message:</strong></p>
-          <p>${String(message).trim().replace(/\n/g, '<br>')}</p>
+          <p>${trimmedMessage}</p>
           <hr>
           <p>Login to your dashboard to view this message.</p>
         `,
-      })
-      .catch((err) => console.error('Admin email error:', err));
+      });
+      console.log('[v0] Admin notification email sent');
+    } catch (err) {
+      console.error('[v0] Admin email error:', err);
+    }
+  };
+
+  // Send emails in background without blocking response
+  if (resendKey) {
+    sendEmails();
   }
 
   res.status(200).json({ success: true, message: 'Your message has been received. We will get back to you within 24 hours.' });

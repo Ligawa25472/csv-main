@@ -62,58 +62,74 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
   }
 
   // Send emails asynchronously (don't block the response)
-  if (resendKey) {
-    // Email to customer (receipt)
-    resend.emails
-      .send({
+  const sendBookingEmails = async () => {
+    const trimmedName = String(name).trim();
+    const trimmedEmail = String(email).trim().toLowerCase();
+    const trimmedPhone = String(phone).trim();
+    const trimmedNotes = notes ? String(notes).trim().replace(/\n/g, '<br>') : 'None';
+
+    try {
+      // Email to customer (receipt)
+      await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
-        to: String(email).trim().toLowerCase(),
+        to: trimmedEmail,
         subject: 'Your Booking Request Has Been Received',
         html: `
           <h2>Thank You for Your Booking Request</h2>
-          <p>Hi ${String(name).trim()},</p>
+          <p>Hi ${trimmedName},</p>
           <p>We have received your appointment booking request and will review your details shortly. Our team will contact you within 24 hours to confirm your appointment.</p>
           <hr>
           <p><strong>Booking Details:</strong></p>
-          <p><strong>Name:</strong> ${String(name).trim()}</p>
-          <p><strong>Phone:</strong> ${String(phone).trim()}</p>
+          <p><strong>Name:</strong> ${trimmedName}</p>
+          <p><strong>Phone:</strong> ${trimmedPhone}</p>
           <p><strong>Business Type:</strong> ${businessType ? String(businessType).trim() : 'Not specified'}</p>
           <p><strong>Topic:</strong> ${topic ? String(topic).trim() : 'Not specified'}</p>
           <p><strong>Preferred Date:</strong> ${preferredDate || 'Not specified'}</p>
           <p><strong>Preferred Time:</strong> ${preferredTime || 'Not specified'}</p>
           <p><strong>Meeting Format:</strong> ${format ? String(format).trim() : 'Not specified'}</p>
           <p><strong>Additional Notes:</strong></p>
-          <p>${notes ? String(notes).trim().replace(/\n/g, '<br>') : 'None'}</p>
+          <p>${trimmedNotes}</p>
           <hr>
           <p>Best regards,<br>MNA Accounting Team</p>
         `,
-      })
-      .catch((err) => console.error('Customer email error:', err));
+      });
+      console.log('[v0] Customer booking receipt email sent to:', trimmedEmail);
+    } catch (err) {
+      console.error('[v0] Customer booking email error:', err);
+    }
 
-    // Email to admin (new booking notification)
-    resend.emails
-      .send({
+    try {
+      // Email to admin (new booking notification)
+      await resend.emails.send({
         from: 'noreply@mnaaccounting.co.uk',
         to: 'info@mnaaccounting.co.ke',
         cc: 'info@alghahim.co.ke',
-        subject: `New Booking Request from ${String(name).trim()}`,
+        subject: `New Booking Request from ${trimmedName}`,
         html: `
           <h2>New Appointment Booking</h2>
-          <p><strong>Name:</strong> ${String(name).trim()}</p>
-          <p><strong>Email:</strong> ${String(email).trim().toLowerCase()}</p>
-          <p><strong>Phone:</strong> ${String(phone).trim()}</p>
+          <p><strong>Name:</strong> ${trimmedName}</p>
+          <p><strong>Email:</strong> ${trimmedEmail}</p>
+          <p><strong>Phone:</strong> ${trimmedPhone}</p>
           <p><strong>Business Type:</strong> ${businessType ? String(businessType).trim() : 'Not specified'}</p>
           <p><strong>Topic:</strong> ${topic ? String(topic).trim() : 'Not specified'}</p>
           <p><strong>Preferred Date:</strong> ${preferredDate || 'Not specified'}</p>
           <p><strong>Preferred Time:</strong> ${preferredTime || 'Not specified'}</p>
           <p><strong>Meeting Format:</strong> ${format ? String(format).trim() : 'Not specified'}</p>
           <p><strong>Additional Notes:</strong></p>
-          <p>${notes ? String(notes).trim().replace(/\n/g, '<br>') : 'None'}</p>
+          <p>${trimmedNotes}</p>
           <hr>
           <p>Login to your dashboard to view and manage this booking.</p>
         `,
-      })
-      .catch((err) => console.error('Admin email error:', err));
+      });
+      console.log('[v0] Admin booking notification email sent');
+    } catch (err) {
+      console.error('[v0] Admin booking email error:', err);
+    }
+  };
+
+  // Send emails in background without blocking response
+  if (resendKey) {
+    sendBookingEmails();
   }
 
   res.status(200).json({ success: true, message: 'Your booking request has been submitted. We will confirm your appointment within 24 hours.' });
