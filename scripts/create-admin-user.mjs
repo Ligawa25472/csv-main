@@ -12,9 +12,9 @@ if (!supabaseUrl || !supabaseKey) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 async function createAdminUser() {
-  const email = 'info@alghahim.co.ke';
+  const email = 'info@mnaaccounting.co.uk';
   const password = '@MNA2026..';
-  const fullName = 'MNA Admin - Alghahim';
+  const fullName = 'MNA Admin - Accounting';
 
   try {
     console.log(`[v0] Creating admin user: ${email}`);

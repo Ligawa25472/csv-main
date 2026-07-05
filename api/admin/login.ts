@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { createClient } from '@supabase/supabase-js';
-import * as bcrypt from 'bcryptjs';
-import * as crypto from 'crypto';
+import { compare } from 'bcryptjs';
+import { randomBytes } from 'crypto';
 
 export default async function handler(req: VercelRequest, res: VercelResponse): Promise<void> {
   res.setHeader('Content-Type', 'application/json');
@@ -58,7 +58,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     }
 
     // Verify password
-    const passwordMatch = await bcrypt.compare(String(password), users.password_hash);
+    const passwordMatch = await compare(String(password), users.password_hash);
     console.log('[v0] Password match result:', passwordMatch);
     if (!passwordMatch) {
       res.status(401).json({ error: 'Invalid email or password.' });
@@ -72,7 +72,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse): 
     }
 
     // Generate session token
-    const token = crypto.randomBytes(32).toString('hex');
+    const token = randomBytes(32).toString('hex');
     const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24 hours
 
     // Create session
