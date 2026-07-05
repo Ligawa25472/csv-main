@@ -28,6 +28,7 @@ import { BookConsultationComponent } from './pages/book-consultation/book-consul
 
 // Admin components
 import { LoginComponent } from './features/admin/login/login.component';
+import { SignupComponent } from './features/admin/signup/signup.component';
 import { DashboardComponent } from './features/admin/dashboard/dashboard.component';
 
 // Error pages
@@ -45,6 +46,7 @@ export const routes: Routes = [
 
   // Admin Routes
   { path: 'admin/login', component: LoginComponent },
+  { path: 'admin/signup', component: SignupComponent },
   { path: 'admin/dashboard', component: DashboardComponent },
 
   // Business Services Routes
