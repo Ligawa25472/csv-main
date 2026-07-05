@@ -150,10 +150,24 @@ export default async function handler(
       message: 'Your booking request has been submitted successfully. We will confirm your appointment within 24 hours.'
     });
   } catch (error) {
-    console.error('[v0] Booking form error:', error);
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    res.status(500).json({
-      error: `An error occurred while processing your booking: ${errorMessage}. Please try again later.`
-    });
+    console.error('[v0] Unexpected error in booking handler:', error);
+    console.error('[v0] Error type:', typeof error);
+    console.error('[v0] Error stack:', error instanceof Error ? error.stack : 'No stack trace');
+    
+    if (res.headersSent) {
+      console.error('[v0] Headers already sent, cannot send response');
+      return;
+    }
+
+    const errorMessage = error instanceof Error ? error.message : JSON.stringify(error);
+    
+    try {
+      res.status(500).json({
+        error: `An error occurred while processing your booking: ${errorMessage}. Please try again later.`
+      });
+    } catch (sendError) {
+      console.error('[v0] Failed to send error response:', sendError);
+      res.status(500).end('Internal Server Error');
+    }
   }
 }
