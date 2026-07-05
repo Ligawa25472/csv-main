@@ -9,7 +9,7 @@
         <a routerLink="/home" routerLinkActive="active">Home</a>
         <a routerLink="/about" routerLinkActive="active">About Us</a>
         <div class="dropdown" [class.active]="isDropdownOpen('business')">
-          <a class="dropdown-toggle" (click)="toggleDropdown('business', $event)">Business Services</a>
+          <a class="dropdown-toggle" (click)="toggleDropdown('business', $event)">Business Services <app-icon name="chevronDown"></app-icon></a>
           <div class="dropdown-menu">
             <a routerLink="/business/corporation-tax" (click)="closeDropdown()">Corporation Tax</a>
             <a routerLink="/business/vat-returns" (click)="closeDropdown()">VAT Returns</a>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <div class="dropdown" [class.active]="isDropdownOpen('personal')">
-          <a class="dropdown-toggle" (click)="toggleDropdown('personal', $event)">Personal Services</a>
+          <a class="dropdown-toggle" (click)="toggleDropdown('personal', $event)">Personal Services <app-icon name="chevronDown"></app-icon></a>
           <div class="dropdown-menu">
               <a routerLink="/personal/self-assessment" (click)="closeDropdown()">Self Assessment</a>
             <a routerLink="/personal/capital-gains-tax" (click)="closeDropdown()">Capital Gains Tax</a>

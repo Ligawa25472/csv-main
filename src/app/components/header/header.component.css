@@ -362,6 +362,23 @@
     transform: scaleX(1);
   }
 
+  .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+  }
+
+  .dropdown-toggle app-icon {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-fast);
+  }
+
+  .dropdown.active .dropdown-toggle app-icon {
+    transform: rotate(180deg);
+  }
+
   .dropdown-menu {
     position: absolute;
     top: 100%;
