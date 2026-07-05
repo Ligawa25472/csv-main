@@ -134,18 +134,25 @@
 .star {
   width: 18px;
   height: 18px;
-  color: #d4af37;
 }
 
 .star.filled {
   color: #fbbf24;
+}
+
+.star.filled svg {
   fill: #fbbf24;
+  stroke: none;
 }
 
 .star.partial {
   color: #fbbf24;
+  opacity: 0.6;
+}
+
+.star.partial svg {
   fill: #fbbf24;
-  opacity: 0.5;
+  stroke: none;
 }
 
 .review-count {
@@ -253,6 +260,22 @@
 .review-rating {
   display: flex;
   gap: 0.25rem;
+}
+
+.review-rating .star {
+  width: 16px;
+  height: 16px;
+}
+
+.review-rating .star.filled,
+.review-rating .star.partial {
+  color: #fbbf24;
+}
+
+.review-rating .star.filled svg,
+.review-rating .star.partial svg {
+  fill: #fbbf24;
+  stroke: none;
 }
 
 .review-text {
