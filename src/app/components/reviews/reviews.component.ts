@@ -108,22 +108,6 @@ export class ReviewsComponent {
     },
   ];
 
-  getRatingStars(rating: number): number[] {
-    return Array(Math.floor(rating)).fill(0);
-  }
-
-  getPartialStar(rating: number): boolean {
-    return rating % 1 !== 0;
-  }
-
-  getSourceIcon(source: 'google' | 'trustpilot'): string {
-    return source === 'google' ? 'star' : 'award';
-  }
-
-  getSourceLabel(source: 'google' | 'trustpilot'): string {
-    return source === 'google' ? 'Google Reviews' : 'Trustpilot';
-  }
-
   getFilteredReviews(source?: 'google' | 'trustpilot'): Review[] {
     return source ? this.reviews.filter((r) => r.source === source) : this.reviews;
   }
