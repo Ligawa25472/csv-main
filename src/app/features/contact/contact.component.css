@@ -51,9 +51,10 @@
 
 .hero-subtitle {
   font-size: 1.3rem;
-  opacity: 0.9;
+  opacity: 1;
   line-height: 1.6;
   font-weight: 400;
+  color: #f0f4f8;
 }
 
 /* Contact Methods Section */
