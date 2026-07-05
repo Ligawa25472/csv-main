@@ -1,15 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST,
-  port: parseInt(process.env.SMTP_PORT || '587'),
-  secure: process.env.SMTP_SECURE === 'true',
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASSWORD,
-  },
-});
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: NextRequest) {
   try {
@@ -37,8 +29,8 @@ export async function POST(request: NextRequest) {
       <p>${notes ? notes.replace(/\n/g, '<br>') : 'None'}</p>
     `;
 
-    await transporter.sendMail({
-      from: process.env.SMTP_FROM,
+    const result = await resend.emails.send({
+      from: 'noreply@mnaaccounting.co.uk',
       to: 'info@mnaaccounting.co.ke',
       cc: 'info@alghahim.co.ke',
       subject: `New Booking Request from ${name}`,
@@ -46,8 +38,12 @@ export async function POST(request: NextRequest) {
       replyTo: email,
     });
 
+    if (result.error) {
+      throw new Error(result.error.message);
+    }
+
     return NextResponse.json(
-      { message: 'Booking request sent successfully' },
+      { message: 'Booking request sent successfully', id: result.data?.id },
       { status: 200 }
     );
   } catch (error) {

@@ -27,7 +27,7 @@
     "lucide-angular": "^1.0.0",
     "mammoth": "^1.12.0",
     "nodemailer": "^9.0.3",
-    "resend": "^6.16.0",
+    "resend": "^6.17.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
