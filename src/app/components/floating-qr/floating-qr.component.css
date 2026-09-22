@@ -172,10 +172,11 @@
 
 /* QR Icon Image */
 .qr-icon-img {
+  display: block;
   width: 32px;
   height: 32px;
   object-fit: contain;
-  margin-bottom: -4px;
+  margin: 0;
 }
 
 /* Pulse Animation */

@@ -175,12 +175,13 @@
 }
 
 .social-icon-link {
-  padding: 4px !important;
+  padding: 0 !important;
 }
 
 .social-icon {
-  width: 36px;
-  height: 36px;
+  display: block;
+  width: 24px;
+  height: 24px;
   object-fit: contain;
 }
 
