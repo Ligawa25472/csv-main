@@ -5,6 +5,7 @@ export default defineConfig({
   plugins: [angular()],
   server: {
     allowedHosts: [
+      'sb-35gh6gnn6q5v.vercel.run',
       'sb-1o5houhe0d47.vercel.run',
       'sb-51534wdaimvj.vercel.run',
       '.vercel.run',

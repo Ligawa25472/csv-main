@@ -822,16 +822,18 @@ img, video {
   margin-top: var(--spacing-6);
 }
 
-.footer-social a {
-  width: 44px;
-  height: 44px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.1);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.14);
+.footer-social a,
+.footer-social .social-icon-link {
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
 .footer-support {
