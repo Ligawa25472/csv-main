@@ -172,10 +172,13 @@
 /* QR Icon Image */
 .qr-icon-img {
   display: block;
-  width: 64px;
-  height: 64px;
+  width: 72px !important;
+  height: 72px !important;
   object-fit: contain;
   margin: 0;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
 }
 
 /* Pulse Animation */
@@ -198,8 +201,8 @@
 
 /* Expanded State */
 .floating-qr-container.expanded .qr-toggle-btn {
-  background: linear-gradient(135deg, #0b5c34 0%, #074d2a 100%);
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Mobile Adjustments */
