@@ -2,6 +2,14 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/cv-mo/browser",
   "framework": null,
+  "headers": [
+    {
+      "source": "/index.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, max-age=0" }
+      ]
+    }
+  ],
   "rewrites": [
     {
       "source": "/((?!api/|.*\\.[^/]+$).*)",
