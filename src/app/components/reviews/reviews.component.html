@@ -6,73 +6,20 @@
       <p class="section-subtitle">See what our clients say about working with MNA Accounting</p>
     </div>
 
-    <!-- Rating Badges -->
-    <div class="rating-badges">
-      <!-- Trustpilot Reviews Badge -->
-      <div class="rating-badge trustpilot-badge">
-        <div class="badge-header">
-          <div class="badge-logo">
-            <app-icon name="award" class="badge-icon"></app-icon>
-            <span class="badge-name">Trustpilot</span>
-          </div>
-          <div class="rating-display">
-            <span class="rating-number">{{ trustpilotRating }}</span>
-            <div class="rating-stars">
-              <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(trustpilotRating)"></app-icon>
-              <app-icon name="starFilled" class="star partial" *ngIf="getPartialStar(trustpilotRating)"></app-icon>
-            </div>
-          </div>
-        </div>
-        <p class="review-count">Based on {{ trustpilotReviewCount }} verified reviews</p>
-        <a [href]="trustpilotUrl" target="_blank" rel="noopener noreferrer" class="badge-link">
-          View on Trustpilot
-          <app-icon name="externalLink" class="icon-small"></app-icon>
+    <!-- Trustpilot free-plan TrustBox widget. This widget does not display a score. -->
+    <div class="trustpilot-widget-wrapper">
+      <div
+        class="trustpilot-widget"
+        data-locale="en-GB"
+        data-template-id="5419b6ffb0d04a076446a9ad"
+        data-businessunit-id="689fa533dd17b897f89e2acc"
+        data-style-height="52px"
+        data-style-width="100%"
+        data-theme="light"
+      >
+        <a href="https://uk.trustpilot.com/review/mnaaccounting.co.uk" target="_blank" rel="noopener noreferrer">
+          Read our reviews on Trustpilot
         </a>
-      </div>
-
-      <!-- Google Reviews Badge -->
-      <div class="rating-badge google-badge">
-        <div class="badge-header">
-          <div class="badge-logo">
-            <app-icon name="star" class="badge-icon"></app-icon>
-            <span class="badge-name">Google</span>
-          </div>
-          <div class="rating-display">
-            <span class="rating-number">{{ googleRating }}</span>
-            <div class="rating-stars">
-              <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(googleRating)"></app-icon>
-            </div>
-          </div>
-        </div>
-        <p class="review-count">Google verified reviews</p>
-        <a [href]="googleUrl" target="_blank" rel="noopener noreferrer" class="badge-link">
-          View on Google Maps
-          <app-icon name="externalLink" class="icon-small"></app-icon>
-        </a>
-      </div>
-    </div>
-
-    <!-- Customer Testimonials Grid -->
-    <div class="testimonials-grid">
-      <div class="review-card" *ngFor="let review of reviews">
-        <div class="review-header">
-          <div class="review-meta">
-            <h3 class="reviewer-name">{{ review.author }}</h3>
-            <p class="review-service">{{ review.service }}</p>
-          </div>
-          <div class="review-source">
-            <app-icon name="award" class="source-icon"></app-icon>
-            <span class="source-label">Trustpilot</span>
-          </div>
-        </div>
-
-        <div class="review-rating">
-          <app-icon name="starFilled" class="star filled" *ngFor="let _ of getRatingStars(review.rating)"></app-icon>
-        </div>
-
-        <p class="review-text">{{ review.text }}</p>
-
-        <p class="review-date">{{ review.date | date: 'MMM d, y' }}</p>
       </div>
     </div>
 
