@@ -11,9 +11,14 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/((?!api/|.*\\.[^/]+$).*)",
-      "destination": "/index.html"
-    }
+    { "source": "/home", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" },
+    { "source": "/contact", "destination": "/index.html" },
+    { "source": "/book-consultation", "destination": "/index.html" },
+    { "source": "/faq", "destination": "/index.html" },
+    { "source": "/admin/:path*", "destination": "/index.html" },
+    { "source": "/business/:path*", "destination": "/index.html" },
+    { "source": "/personal/:path*", "destination": "/index.html" },
+    { "source": "/error/:path*", "destination": "/index.html" }
   ]
 }
